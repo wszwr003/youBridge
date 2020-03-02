@@ -1,13 +1,18 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-        <button mat-icon-button (click)="sideMenuButton.emit()" >
+        <button mat-icon-button (click)="sideMenuButton.emit()">
             <mat-icon>menu</mat-icon>
         </button>
-
-        <span>光维物联网云平台</span>
-        <button mat-button color="basic">设备</button>
+        <button mat-icon-button disabled>
+            <img src="../../assets/logo.png" style="max-width: 100%; min-width: 100%;">
+        </button>
+        <p class="header-name">光维物联网云平台</p>
+        <!--<button mat-button color="basic">设备</button>-->
         <span class="spacer"></span>
-        <mat-icon class="icon">face</mat-icon>
-        <mat-icon class="icon">settings</mat-icon>
+
+        <mat-icon>how_to_reg</mat-icon>
+        <p class="user-name">grandway123</p>
+        <mat-icon>settings</mat-icon>
+
     </mat-toolbar-row>
 </mat-toolbar>

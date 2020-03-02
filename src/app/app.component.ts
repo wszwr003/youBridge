@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 
 @Component({
@@ -9,91 +9,84 @@ import {Component} from '@angular/core';
 export class AppComponent {
   navItems = [
     {
-      displayName: 'DevFestFL',
-      iconName: 'recent_actors',
-      route: 'devfestfl',
+      displayName: '系统概况',
+      iconName: 'account_balance',
+      route: 'sys',
+    }, {
+      displayName: '设备管理',
+      iconName: 'format_list_bulleted',
+      route: 'sys',
+      children: [
+
+        {
+          displayName: '环境传感网络',
+          iconName: 'blur_on',
+          route: 'devfestfl/speakers/michael-prentice',
+          children: [
+            {
+              displayName: '5in1环境传感器1',
+              iconName: 'flare',
+              route: 'devfestfl/speakers/michael-prentice/material-design'
+            }, {
+              displayName: '5in1环境传感器2',
+              iconName: 'flare',
+              route: 'devfestfl/speakers/michael-prentice/material-design'
+            }, {
+              displayName: '5in1环境传感器3',
+              iconName: 'flare',
+              route: 'devfestfl/speakers/michael-prentice/material-design'
+            }, {
+              displayName: '5in1环境传感器4',
+              iconName: 'flare',
+              route: 'devfestfl/speakers/michael-prentice/material-design'
+            },
+          ]
+        }, {
+          displayName: '空调',
+          iconName: 'wb_sunny',
+          route: 'devfestfl/speakers/michael-prentice',
+        }, {
+          displayName: '空气净化器',
+          iconName: 'cached',
+          route: 'devfestfl/speakers/michael-prentice',
+        }, {
+          displayName: '光时域反射仪',
+          iconName: 'sync_alt',
+          route: 'devfestfl/speakers/michael-prentice',
+        }, {
+          displayName: '小仪器仪表',
+          iconName: 'widgets',
+          route: 'devfestfl/speakers/michael-prentice',
+        }, {
+          displayName: '熔接机',
+          iconName: 'settings_input_component',
+          route: 'devfestfl/speakers/michael-prentice',
+        }
+
+      ]
+    }, {
+      displayName: '业务管理',
+      iconName: 'group',
+      route: 'group',
       children: [
         {
-          displayName: 'Speakers',
-          iconName: 'group',
-          route: 'devfestfl/speakers',
-          children: [
-            {
-              displayName: 'Michael Prentice',
-              iconName: 'person',
-              route: 'devfestfl/speakers/michael-prentice',
-              children: [
-                {
-                  displayName: 'Create Enterprise UIs',
-                  iconName: 'star_rate',
-                  route: 'devfestfl/speakers/michael-prentice/material-design'
-                }
-              ]
-            },
-            {
-              displayName: 'Stephen Fluin',
-              iconName: 'person',
-              route: 'devfestfl/speakers/stephen-fluin',
-              children: [
-                {
-                  displayName: 'What\'s up with the Web?',
-                  iconName: 'star_rate',
-                  route: 'devfestfl/speakers/stephen-fluin/what-up-web'
-                }
-              ]
-            },
-            {
-              displayName: 'Mike Brocchi',
-              iconName: 'person',
-              route: 'devfestfl/speakers/mike-brocchi',
-              children: [
-                {
-                  displayName: 'My ally, the CLI',
-                  iconName: 'star_rate',
-                  route: 'devfestfl/speakers/mike-brocchi/my-ally-cli'
-                },
-                {
-                  displayName: 'Become an Angular Tailor',
-                  iconName: 'star_rate',
-                  route: 'devfestfl/speakers/mike-brocchi/become-angular-tailer'
-                }
-              ]
-            }
-          ]
+          displayName: '业务员1',
+          iconName: 'person',
+          route: 'group/person'
+        }, {
+          displayName: '业务员2',
+          iconName: 'person',
+          route: 'group/person'
+        }, {
+          displayName: '业务员3',
+          iconName: 'person',
+          route: 'group/person'
+        }, {
+          displayName: '业务员4',
+          iconName: 'person',
+          route: 'group/person'
         },
-        {
-          displayName: 'Sessions',
-          iconName: 'speaker_notes',
-          route: 'devfestfl/sessions',
-          children: [
-            {
-              displayName: 'Create Enterprise UIs',
-              iconName: 'star_rate',
-              route: 'devfestfl/sessions/material-design'
-            },
-            {
-              displayName: 'What\'s up with the Web?',
-              iconName: 'star_rate',
-              route: 'devfestfl/sessions/what-up-web'
-            },
-            {
-              displayName: 'My ally, the CLI',
-              iconName: 'star_rate',
-              route: 'devfestfl/sessions/my-ally-cli'
-            },
-            {
-              displayName: 'Become an Angular Tailor',
-              iconName: 'star_rate',
-              route: 'devfestfl/sessions/become-angular-tailer'
-            }
-          ]
-        },
-        {
-          displayName: 'Feedback',
-          iconName: 'feedback',
-          route: 'devfestfl/feedback'
-        }
       ]
-    },
+    }
   ];
 }
