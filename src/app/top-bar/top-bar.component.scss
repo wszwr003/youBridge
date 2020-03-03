@@ -1,15 +1,14 @@
-.header-name{
+.header-name {
   font-size: 25px;
-  font-family: "华文细黑",Georgia, "Times New Roman", 
-             "Microsoft YaHei", "微软雅黑", 
-             STXihei,  
-             serif;
+  font-family: "华文细黑", Georgia, "Times New Roman", "Microsoft YaHei",
+    "微软雅黑", STXihei, serif;
 }
 .user-name {
-    padding: 0 10px;
-    font-size: 15px;
-  }
+  padding: 0 10px;
+  font-size: 15px;
+  width: 150px;
+}
 
 .spacer {
-    flex: 1 1 auto;
-  }
+  flex: 1 1 auto;
+}

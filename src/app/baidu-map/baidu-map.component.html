@@ -1,0 +1,10 @@
+<baidu-map
+  [options]="options"
+  style="display: block; width: 100%; height: 500px;"
+>
+  <marker
+    [point]="marker.point"
+    [options]="marker.options"
+    (clicked)="showWindow($event)" 
+  ></marker>
+</baidu-map>

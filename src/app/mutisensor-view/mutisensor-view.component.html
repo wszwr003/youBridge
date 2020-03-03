@@ -1,0 +1,80 @@
+<div mat-app-background basic-container>
+  <div
+    class="container"
+    fxLayout="row wrap"
+    fxLayout.xs="column"
+    fxLayoutAlign="space-around center"
+    fxLayoutGap="20px"
+  >
+    <mat-card fxFlex="calc(100%-20px)" fxFlex.sm="calc(100%-20px)">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>实时图表</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <app-data-chart></app-data-chart>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div
+    class="container"
+    fxLayout="row wrap"
+    fxLayout.xs="column"
+    fxLayoutAlign="space-around center"
+    fxLayoutGap="20px"
+  >
+    <mat-card fxFlex="calc(100%-20px)" fxFlex.sm="calc(100%-20px)">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>位置</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <app-baidu-map></app-baidu-map>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div
+    class="container"
+    fxLayout="row wrap"
+    fxLayout.xs="column"
+    fxLayoutAlign="space-around center"
+    fxLayoutGap="20px"
+  >
+    <mat-card fxFlex="calc(50%-20px)" fxFlex.sm="calc(50%-20px)">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>控制</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content> </mat-card-content>
+    </mat-card>
+    <mat-card fxFlex="calc(50%-20px)" fxFlex.sm="calc(50%-20px)">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>警报</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content> </mat-card-content>
+    </mat-card>
+  </div>
+  <div
+    class="container"
+    fxLayout="row wrap"
+    fxLayout.xs="column"
+    fxLayoutAlign="space-around center"
+    fxLayoutGap="20px"
+  >
+    <mat-card fxFlex="calc(100%-20px)" fxFlex.sm="calc(100%-20px)">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>历史数据</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <app-data-table></app-data-table>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
