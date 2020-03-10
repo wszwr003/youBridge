@@ -25,6 +25,7 @@
     "angular2-baidu-map": "^8.0.0",
     "hammerjs": "^2.0.8",
     "highcharts": "^8.0.0",
+    "mqtt": "^3.0.0",
     "ngx-mqtt": "^6.13.2",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
