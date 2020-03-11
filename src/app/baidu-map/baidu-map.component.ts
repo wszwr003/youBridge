@@ -35,8 +35,11 @@ export class BaiduMapComponent {
         lng: 120.679124,
         zoom: 18
       },
-      mapType: MapTypeEnum.BMAP_SATELLITE_MAP,
-      enableKeyboard: true
+      //mapType: MapTypeEnum.BMAP_SATELLITE_MAP,
+      //enableScrollWheelZoom:true,
+    
+    enableKeyboard: true,
+      
     };
   }
 }
