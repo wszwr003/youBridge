@@ -25,6 +25,8 @@ import { MutisensorViewComponent } from "./mutisensor-view/mutisensor-view.compo
 import { BaiduMapComponent } from "./baidu-map/baidu-map.component";
 import { DataTableComponent } from "./data-table/data-table.component";
 import { MouseEnterSetbleDirective } from './directive/mouse-enter-setble.directive';
+import { OverViewComponent } from './over-view/over-view.component';
+import { OverviewD3Component } from './over-view/overview-d3/overview-d3.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { MouseEnterSetbleDirective } from './directive/mouse-enter-setble.direct
     MutisensorViewComponent,
     BaiduMapComponent,
     DataTableComponent,
-    MouseEnterSetbleDirective
+    MouseEnterSetbleDirective,
+    OverViewComponent,
+    OverviewD3Component
   ],
   imports: [
     BrowserModule,
