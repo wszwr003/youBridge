@@ -24,7 +24,7 @@ import { DataChartComponent } from "./data-chart/data-chart.component";
 import { MutisensorViewComponent } from "./mutisensor-view/mutisensor-view.component";
 import { BaiduMapComponent } from "./baidu-map/baidu-map.component";
 import { DataTableComponent } from "./data-table/data-table.component";
-import { MouseEnterSetbleDirective } from './directive/mouse-enter-setble.directive';
+import { MouseEnterSetbleDirective } from './directives/mouse-enter-setble.directive';
 import { OverViewComponent } from './over-view/over-view.component';
 import { OverviewD3Component } from './over-view/overview-d3/overview-d3.component';
 

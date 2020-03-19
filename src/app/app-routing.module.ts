@@ -6,9 +6,8 @@ import { OverviewD3Component } from "./over-view/overview-d3/overview-d3.compone
 const routes: Routes = [
   { path: "", component: OverviewD3Component },
   { path: "mutisensor", component: MutisensorViewComponent },
-  { path: "overview", component: OverviewD3Component }
+  { path: "overview", component: OverViewComponent }
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
