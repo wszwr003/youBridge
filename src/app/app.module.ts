@@ -26,7 +26,15 @@ import { BaiduMapComponent } from "./baidu-map/baidu-map.component";
 import { DataTableComponent } from "./data-table/data-table.component";
 import { MouseEnterSetbleDirective } from './directives/mouse-enter-setble.directive';
 import { OverViewComponent } from './over-view/over-view.component';
-import { OverviewD3Component } from './over-view/overview-d3/overview-d3.component';
+
+import { MqttModule, IMqttServiceOptions } from "ngx-mqtt";
+export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
+  hostname: '127.0.0.1',
+  port: 8888,
+  path: '/mqtt'  //'/mqtt'
+}
+
+import { MyMqttService } from "./services/my-mqtt.service";
 
 @NgModule({
   declarations: [
@@ -40,7 +48,6 @@ import { OverviewD3Component } from './over-view/overview-d3/overview-d3.compone
     DataTableComponent,
     MouseEnterSetbleDirective,
     OverViewComponent,
-    OverviewD3Component
   ],
   imports: [
     BrowserModule,
@@ -57,9 +64,10 @@ import { OverviewD3Component } from './over-view/overview-d3/overview-d3.compone
     MatCardModule,
     MatTableModule,
     FlexLayoutModule,
+    MqttModule.forRoot(MQTT_SERVICE_OPTIONS),
     BaiduMapModule.forRoot({ ak: "FpVG0ppOSI7TwBYGhty65bxe88fqD38v" })
   ],
-  providers: [],
+  providers: [MyMqttService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
