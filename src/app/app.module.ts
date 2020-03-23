@@ -35,6 +35,7 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
 }
 
 import { MyMqttService } from "./services/my-mqtt.service";
+import { LoginPageComponent } from './login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { MyMqttService } from "./services/my-mqtt.service";
     DataTableComponent,
     MouseEnterSetbleDirective,
     OverViewComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,

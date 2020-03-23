@@ -1,5 +1,10 @@
 import { Component } from "@angular/core";
-import { MapOptions, Point, MarkerOptions,MapTypeEnum } from "angular2-baidu-map";
+import {
+  MapOptions,
+  Point,
+  MarkerOptions,
+  MapTypeEnum
+} from "angular2-baidu-map";
 
 @Component({
   selector: "app-baidu-map",
@@ -14,7 +19,7 @@ export class BaiduMapComponent {
     map.openInfoWindow(
       new window.BMap.InfoWindow("地址：海宁市科技绿洲6号楼", {
         offset: new window.BMap.Size(0, -10),
-        title: '多动能传感器'+ marker.getTitle()
+        title: "多动能传感器" + marker.getTitle()
       }),
       marker.getPosition()
     );
@@ -25,7 +30,7 @@ export class BaiduMapComponent {
         title: "No.202000001"
       },
       point: {
-        lat: 30.57610,
+        lat: 30.5761,
         lng: 120.678724
       }
     };
@@ -35,11 +40,10 @@ export class BaiduMapComponent {
         lng: 120.679124,
         zoom: 18
       },
-      //mapType: MapTypeEnum.BMAP_SATELLITE_MAP,
+      mapType: MapTypeEnum.BMAP_SATELLITE_MAP,
       //enableScrollWheelZoom:true,
-    
-    enableKeyboard: true,
-      
+
+      enableKeyboard: true
     };
   }
 }

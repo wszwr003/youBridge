@@ -10,19 +10,20 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class MutisensorViewComponent implements OnInit {
   @ViewChild("msglog", { static: true }) msglog: ElementRef;
-  private device_id: string = "99999999";
-  private subscribe_msg: object ={};
-  public historyMsgStrings: string[] = []; //FAO: 不初始化会出错!!
-  private settingTopic: string = "data";
+  private device_id: string = "";
+  private subscribe_msg: object = {};
+  public historyMsgStrings: string[] = []; //FAO: 不初始化会出错!!??
+  private settingTopic: string = "setting";
+  private settingSensorData = {
+    device_id: "",
+    key: "",
+    time: 0,
+    intervalSecond: 60
+  };
 
   private testTopic: string = "data";
-  private testSensor_mock_data = {
-    device_id: "99999999",
-    key: "12345678",
-    temp: "22度"
-  };
   public sensorChartInit: ChartInit = {
-    chartType: "scatter",
+    chartType: "spline",
     chartHeight: 500,
     dateFormat: "%H:%M:%S",
     seriesName: ["温度", "湿度", "二氧化碳浓度", "PM2.5浓度"]
@@ -34,8 +35,8 @@ export class MutisensorViewComponent implements OnInit {
 
   publishMsg() {
     this.myMqttService.sendMsg(
-      this.testTopic,
-      JSON.stringify(this.testSensor_mock_data)
+      this.settingTopic,
+      JSON.stringify(this.settingSensorData)
     );
   }
 
@@ -58,19 +59,18 @@ export class MutisensorViewComponent implements OnInit {
         ) {
           var date = new Date();
           var mytime = date.toLocaleTimeString();
-          this.subscribe_msg = message.payload;
-          //console.log("msg: ", message);
+          this.subscribe_msg = JSON.parse(message.payload.toString());
           console.log(
             "WEB:Message: " +
-              this.subscribe_msg.toString() +
-              "<br> for topic: " +
-              message.topic
+              JSON.stringify(this.subscribe_msg) +
+              " for topic: " +
+              this.testTopic
           );
           if (this.historyMsgStrings.length >= 8) {
             this.historyMsgStrings.shift();
           }
           this.historyMsgStrings.push(
-            mytime + ":" + this.subscribe_msg.toString()
+            mytime + ":" + JSON.stringify(this.subscribe_msg)
           );
         }
       }
@@ -82,7 +82,7 @@ export class MutisensorViewComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       //获取当前页面的(设备id)来显示不同的设备数据
       this.device_id = params.get("deviceId");
-      this.testSensor_mock_data.device_id = this.device_id;
+      this.settingSensorData.device_id = this.device_id;
     });
     this.subscribeTopic();
     //this.publishMsg();
