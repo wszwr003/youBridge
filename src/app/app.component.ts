@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { NavItem } from "./services/nav-item";
 
 @Component({
   selector: "app-root",
@@ -6,7 +7,7 @@ import { Component } from "@angular/core";
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-  navItems = [
+  navItems: NavItem[] = [
     {
       displayName: "系统概况",
       iconName: "account_balance",
@@ -15,32 +16,32 @@ export class AppComponent {
     {
       displayName: "设备管理",
       iconName: "format_list_bulleted",
-      route: "sys",
+      route: "devices",
       children: [
         {
           displayName: "环境传感网络",
           iconName: "blur_on",
-          route: "devfestfl/speakers/michael-prentice",
+          route: "devices/env",
           children: [
             {
               displayName: "5in1环境传感器1",
               iconName: "flare",
-              route: "devfestfl/speakers/michael-prentice/material-design"
+              route: "devices/env/:1"
             },
             {
               displayName: "5in1环境传感器2",
               iconName: "flare",
-              route: "devfestfl/speakers/michael-prentice/material-design"
+              route: "devices/env/:2"
             },
             {
               displayName: "5in1环境传感器3",
               iconName: "flare",
-              route: "devfestfl/speakers/michael-prentice/material-design"
+              route: "devices/env/:3"
             },
             {
               displayName: "5in1环境传感器4",
               iconName: "flare",
-              route: "devfestfl/speakers/michael-prentice/material-design"
+              route: "device/env/:4"
             }
           ]
         },

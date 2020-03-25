@@ -24,18 +24,19 @@ import { DataChartComponent } from "./data-chart/data-chart.component";
 import { MutisensorViewComponent } from "./mutisensor-view/mutisensor-view.component";
 import { BaiduMapComponent } from "./baidu-map/baidu-map.component";
 import { DataTableComponent } from "./data-table/data-table.component";
-import { MouseEnterSetbleDirective } from './directives/mouse-enter-setble.directive';
-import { OverViewComponent } from './over-view/over-view.component';
+import { MouseEnterSetbleDirective } from "./directives/mouse-enter-setble.directive";
+import { OverViewComponent } from "./over-view/over-view.component";
 
 import { MqttModule, IMqttServiceOptions } from "ngx-mqtt";
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
-  hostname: '127.0.0.1',
+  hostname: "127.0.0.1",
   port: 8888,
-  path: '/mqtt'  //'/mqtt'
-}
+  path: "/mqtt" //'/mqtt'
+};
 
 import { MyMqttService } from "./services/my-mqtt.service";
-import { LoginPageComponent } from './login-page/login-page.component';
+import { LoginPageComponent } from "./login-page/login-page.component";
+import { NavService } from "./services/nav.service";
 
 @NgModule({
   declarations: [
@@ -49,7 +50,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
     DataTableComponent,
     MouseEnterSetbleDirective,
     OverViewComponent,
-    LoginPageComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +70,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
     MqttModule.forRoot(MQTT_SERVICE_OPTIONS),
     BaiduMapModule.forRoot({ ak: "FpVG0ppOSI7TwBYGhty65bxe88fqD38v" })
   ],
-  providers: [MyMqttService],
+  providers: [MyMqttService, NavService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
