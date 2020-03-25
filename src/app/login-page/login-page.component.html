@@ -1,1 +1,33 @@
-<p>login-page works!</p>
+<div class="signin-content">
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <h2>光维物联网云平台</h2>
+        <mat-form-field class="full-width-input">
+          <input
+            matInput
+            placeholder="管理员"
+            formControlName="userName"
+            required
+          />
+          <mat-error *ngIf="isFieldInvalid('userName')">
+            请输入管理员账户
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+          <input
+            matInput
+            type="password"
+            placeholder="密码"
+            formControlName="password"
+            required
+          />
+          <mat-error *ngIf="isFieldInvalid('userName')">
+            请输入密码
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">登录</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
