@@ -26,7 +26,11 @@ const routes: Routes = [
     canActivate: [AuthGuardService],
     children: [
       {
-        path: "",
+        path: "sys",
+        component: OverViewComponent
+      },
+      {
+        path: "devices/env/:deviceId",
         component: MutisensorViewComponent
       }
     ]

@@ -50,23 +50,23 @@ export class HomeLayoutComponent {
           children: [
             {
               displayName: "5in1环境传感器1",
-              iconName: "flare",
-              route: "devices/env/:1"
+              //iconName: "",
+              route: "devices/env/00000001"
             },
             {
               displayName: "5in1环境传感器2",
-              iconName: "flare",
-              route: "devices/env/:2"
+              //iconName: "",
+              route: "devices/env/00000002"
             },
             {
               displayName: "5in1环境传感器3",
-              iconName: "flare",
-              route: "devices/env/:3"
+              //iconName: "",
+              route: "devices/env/00000003"
             },
             {
               displayName: "5in1环境传感器4",
-              iconName: "flare",
-              route: "device/env/:4"
+              //iconName: "",
+              route: "devices/env/00000004"
             }
           ]
         },
