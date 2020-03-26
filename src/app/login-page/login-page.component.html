@@ -2,7 +2,12 @@
   <mat-card>
     <mat-card-content>
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <h2>光维物联网云平台</h2>
+        <img
+          src="../../assets/logo.png"
+          style="max-width: 10%; min-width: 10%;"
+        />
+        <br />
+        <a style="font-size: 25px;">光维物联网云平台</a>
         <mat-form-field class="full-width-input">
           <input
             matInput
@@ -26,6 +31,7 @@
             请输入密码
           </mat-error>
         </mat-form-field>
+        <br />
         <button mat-raised-button color="primary" type="submit">登录</button>
       </form>
     </mat-card-content>
