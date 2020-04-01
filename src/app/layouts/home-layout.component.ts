@@ -44,8 +44,8 @@ export class HomeLayoutComponent {
       route: "devices",
       children: [
         {
-          displayName: "环境传感网络",
-          iconName: "blur_on",
+          displayName: "环境传感设备",
+          //iconName: "blur_on",
           route: "devices/env",
           children: [
             {
@@ -72,27 +72,27 @@ export class HomeLayoutComponent {
         },
         {
           displayName: "空调",
-          iconName: "wb_sunny",
+          //iconName: "wb_sunny",
           route: "devfestfl/speakers/michael-prentice"
         },
         {
           displayName: "空气净化器",
-          iconName: "cached",
+          //iconName: "cached",
           route: "devfestfl/speakers/michael-prentice"
         },
         {
           displayName: "光时域反射仪",
-          iconName: "sync_alt",
+          //iconName: "sync_alt",
           route: "devfestfl/speakers/michael-prentice"
         },
         {
           displayName: "小仪器仪表",
-          iconName: "widgets",
+          //iconName: "widgets",
           route: "devfestfl/speakers/michael-prentice"
         },
         {
           displayName: "熔接机",
-          iconName: "settings_input_component",
+          //iconName: "settings_input_component",
           route: "devfestfl/speakers/michael-prentice"
         }
       ]

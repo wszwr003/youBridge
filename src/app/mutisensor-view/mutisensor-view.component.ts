@@ -11,7 +11,7 @@ import { ActivatedRoute } from "@angular/router";
 export class MutisensorViewComponent implements OnInit {
   @ViewChild("msglog", { static: true }) msglog: ElementRef;
   private device_id: string = "";
-  private subscribe_msg: object = {};
+  public subscribe_msg: object = {};
   public historyMsgStrings: string[] = []; //FAO: 不初始化会出错!!??
   private settingTopic: string = "setting";
   private settingSensorData = {

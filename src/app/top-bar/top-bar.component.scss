@@ -1,7 +1,9 @@
+.topbar {
+  height: 50px;
+}
+
 .header-name {
-  font-size: 25px;
-  font-family: "华文细黑", Georgia, "Times New Roman", "Microsoft YaHei",
-    "微软雅黑", STXihei, serif;
+  font-size: 20px;
 }
 .user-name {
   padding: 0 10px;
@@ -14,5 +16,7 @@
 }
 
 mat-toolbar {
+  min-height: 50px;
+  max-height: 50px;
   position: relative;
 }
