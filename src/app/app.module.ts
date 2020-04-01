@@ -31,7 +31,6 @@ import { BaiduMapComponent } from "./baidu-map/baidu-map.component";
 import { DataTableComponent } from "./data-table/data-table.component";
 import { MouseEnterSetbleDirective } from "./directives/mouse-enter-setble.directive";
 import { OverViewComponent } from "./over-view/over-view.component";
-
 import { HomeLayoutComponent } from "./layouts/home-layout.component";
 import { LoginLayoutComponent } from "./layouts/login-layout.component";
 import { MqttModule, IMqttServiceOptions } from "ngx-mqtt";
@@ -47,6 +46,7 @@ import { NavService } from "./services/nav.service";
 import { AuthService } from "./services/auth.service";
 import { AuthGuardService } from "./services/auth-guard.service";
 import { ReactiveFormsModule } from "@angular/forms";
+import { DataPieComponent } from "./data-pie/data-pie.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +61,8 @@ import { ReactiveFormsModule } from "@angular/forms";
     OverViewComponent,
     LoginPageComponent,
     HomeLayoutComponent,
-    LoginLayoutComponent
+    LoginLayoutComponent,
+    DataPieComponent
   ],
   imports: [
     BrowserModule,
