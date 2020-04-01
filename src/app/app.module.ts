@@ -35,7 +35,8 @@ import { HomeLayoutComponent } from "./layouts/home-layout.component";
 import { LoginLayoutComponent } from "./layouts/login-layout.component";
 import { MqttModule, IMqttServiceOptions } from "ngx-mqtt";
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
-  hostname: "127.0.0.1",
+  //hostname: "127.0.0.1",
+  hostname: "116.62.151.59",
   port: 8888,
   path: "/mqtt" //'/mqtt'
 };
