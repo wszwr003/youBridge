@@ -49,24 +49,54 @@ export class HomeLayoutComponent {
           route: "devices/env",
           children: [
             {
-              displayName: "5in1环境传感器1",
+              displayName: "环境传感器1(486233)",
               //iconName: "",
-              route: "devices/env/00000001"
+              route: "devices/env/861011047486233"
             },
             {
-              displayName: "5in1环境传感器2",
+              displayName: "环境传感器2(455360)",
               //iconName: "",
-              route: "devices/env/00000002"
+              route: "devices/env/861011047455360"
             },
             {
-              displayName: "5in1环境传感器3",
+              displayName: "环境传感器3(485656)",
               //iconName: "",
-              route: "devices/env/00000003"
+              route: "devices/env/861011047485656"
             },
             {
-              displayName: "5in1环境传感器4",
+              displayName: "环境传感器4(485565)",
               //iconName: "",
-              route: "devices/env/00000004"
+              route: "devices/env/861011047485565"
+            },
+            {
+              displayName: "环境传感器5(418186)",
+              //iconName: "",
+              route: "devices/env/861011047418186"
+            },
+            {
+              displayName: "环境传感器6(485599)",
+              //iconName: "",
+              route: "devices/env/861011047485599"
+            },
+            {
+              displayName: "环境传感器7(486225)",
+              //iconName: "",
+              route: "devices/env/861011047486225"
+            },
+            {
+              displayName: "环境传感器8(486134)",
+              //iconName: "",
+              route: "devices/env/861011047486134"
+            },
+            {
+              displayName: "环境传感器9(511899)",
+              //iconName: "",
+              route: "devices/env/861011047511899"
+            },
+            {
+              displayName: "环境传感器10(418186)",
+              //iconName: "",
+              route: "devices/env/861011047418186"
             }
           ]
         },
