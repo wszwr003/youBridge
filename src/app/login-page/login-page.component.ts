@@ -1,26 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-import { AuthService } from '../services/auth.service';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { AuthService } from "../services/auth.service";
 
 @Component({
-  selector: 'app-login-page',
-  templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.scss']
+  selector: "app-login-page",
+  templateUrl: "./login-page.component.html",
+  styleUrls: ["./login-page.component.scss"]
 })
 export class LoginPageComponent implements OnInit {
   form: FormGroup;
   private formSubmitAttempt: boolean;
 
-  constructor(
-    private fb: FormBuilder,
-    private authService: AuthService
-  ) {}
+  constructor(private fb: FormBuilder, private authService: AuthService) {}
 
   ngOnInit() {
     this.form = this.fb.group({
-      userName: ['', Validators.required],
-      password: ['', Validators.required]
+      userName: ["", Validators.required],
+      password: ["", Validators.required]
     });
   }
 
@@ -33,7 +29,8 @@ export class LoginPageComponent implements OnInit {
 
   onSubmit() {
     if (this.form.valid) {
-      this.authService.login(this.form.value);
+      if (this.authService.login(this.form.value) == false) {
+      }
     }
     this.formSubmitAttempt = true;
   }

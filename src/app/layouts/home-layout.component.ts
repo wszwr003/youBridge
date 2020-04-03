@@ -94,9 +94,9 @@ export class HomeLayoutComponent {
               route: "devices/env/861011047511899"
             },
             {
-              displayName: "环境传感器10(418186)",
+              displayName: "环境传感器10(486209)",
               //iconName: "",
-              route: "devices/env/861011047418186"
+              route: "devices/env/861011047486209"
             }
           ]
         },

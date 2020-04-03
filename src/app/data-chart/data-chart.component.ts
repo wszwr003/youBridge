@@ -1,3 +1,4 @@
+//FAO: 使用了纯highchart,没有使用angular-highcharts,notuse
 import {
   Component,
   OnInit,

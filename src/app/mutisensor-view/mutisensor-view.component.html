@@ -8,7 +8,7 @@
         <mat-card-subtitle></mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <app-data-chart [data]="subscribe_msg" [chartInit]="sensorChartInit"></app-data-chart>
+        <!-- <app-data-chart [data]="subscribe_msg" [chartInit]="sensorChartInit"></app-data-chart> -->
       </mat-card-content>
     </mat-card>
   </div>
@@ -42,7 +42,7 @@
         <mat-card-subtitle></mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <div *ngFor="let message of historyMsgStrings.reverse()">
+        <div class = "message" *ngFor="let message of historyMsgStrings.reverse()">
           {{ message }}
         </div>
       </mat-card-content>

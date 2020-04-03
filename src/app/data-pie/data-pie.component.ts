@@ -1,3 +1,4 @@
+//FAO: 使用了纯highchart,没有使用angular-highcharts,notuse
 import {
   Component,
   OnInit,
@@ -28,6 +29,7 @@ export class DataPieComponent implements OnInit {
     //FAO:放到此处初始化,如果在声明的时候初始化,会出现INPUT尚未传值的情况.
     this.options = {
       chart: {
+        height: 100,
         type: "pie",
         options3d: {
           enabled: true,
@@ -42,8 +44,8 @@ export class DataPieComponent implements OnInit {
       },
       plotOptions: {
         pie: {
-          innerSize: 50,
-          depth: 45
+          innerSize: 30,
+          depth: 20
         }
       },
       series: [
