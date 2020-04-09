@@ -33,7 +33,6 @@ import { MouseEnterSetbleDirective } from "./directives/mouse-enter-setble.direc
 import { OverViewComponent } from "./over-view/over-view.component";
 import { HomeLayoutComponent } from "./layouts/home-layout.component";
 import { LoginLayoutComponent } from "./layouts/login-layout.component";
-import { DataPieComponent } from "./data-pie/data-pie.component";
 import { LoginPageComponent } from "./login-page/login-page.component";
 
 import { MyMqttService } from "./services/my-mqtt.service";
@@ -42,7 +41,9 @@ import { AuthService } from "./services/auth.service";
 import { AuthGuardService } from "./services/auth-guard.service";
 import { NewLineChartComponent } from "./new-line-chart/new-line-chart.component";
 import { NewPieChartComponent } from "./new-pie-chart/new-pie-chart.component";
-import { NewMutiaxisLineChartComponent } from './new-mutiaxis-line-chart/new-mutiaxis-line-chart.component';
+import { NewMutiaxisLineChartComponent } from "./new-mutiaxis-line-chart/new-mutiaxis-line-chart.component";
+import { NewSolidgaugeChartComponent } from "./new-solidgauge-chart/new-solidgauge-chart.component";
+import { NewPieChart2Component } from "./new-pie-chart2/new-pie-chart2.component";
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   //hostname: "127.0.0.1",
@@ -66,10 +67,11 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     LoginPageComponent,
     HomeLayoutComponent,
     LoginLayoutComponent,
-    DataPieComponent,
     NewLineChartComponent,
     NewPieChartComponent,
     NewMutiaxisLineChartComponent,
+    NewSolidgaugeChartComponent,
+    NewPieChart2Component,
   ],
   imports: [
     BrowserModule,

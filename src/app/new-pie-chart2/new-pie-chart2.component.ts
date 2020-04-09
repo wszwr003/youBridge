@@ -2,11 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import * as Highcharts from "highcharts";
 
 @Component({
-  selector: "app-new-pie-chart",
-  templateUrl: "./new-pie-chart.component.html",
-  styleUrls: ["./new-pie-chart.component.scss"],
+  selector: "app-new-pie-chart2",
+  templateUrl: "./new-pie-chart2.component.html",
+  styleUrls: ["./new-pie-chart2.component.scss"],
 })
-export class NewPieChartComponent implements OnInit {
+export class NewPieChart2Component implements OnInit {
   Highcharts: typeof Highcharts = Highcharts;
   chartOptions: any = {
     credits: {
@@ -35,12 +35,9 @@ export class NewPieChartComponent implements OnInit {
       {
         name: "设备数量",
         data: [
-          ["5IN1传感器", 11],
-          ["空调", 4],
-          ["空气净化器", 3],
-          ["OTDR", 1],
-          ["熔接机", 1],
-          ["小仪器仪表", 0],
+          ["在线设备", 10],
+          ["离线设备", 9],
+          ["异常设备", 2],
         ],
       },
     ],

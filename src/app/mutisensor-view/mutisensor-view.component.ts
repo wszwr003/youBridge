@@ -6,7 +6,7 @@ import { ActivatedRoute } from "@angular/router";
 @Component({
   selector: "app-mutisensor-view",
   templateUrl: "./mutisensor-view.component.html",
-  styleUrls: ["./mutisensor-view.component.scss"]
+  styleUrls: ["./mutisensor-view.component.scss"],
 })
 export class MutisensorViewComponent implements OnInit {
   @ViewChild("msglog", { static: true }) msglog: ElementRef;
@@ -18,7 +18,7 @@ export class MutisensorViewComponent implements OnInit {
     device_id: "",
     key: "",
     time: 0,
-    intervalSecond: 60
+    intervalSecond: 60,
   };
 
   private testTopic: string = "data";
@@ -26,7 +26,7 @@ export class MutisensorViewComponent implements OnInit {
     chartType: "spline",
     chartHeight: 500,
     dateFormat: "%H:%M:%S",
-    seriesName: ["温度", "湿度", "二氧化碳浓度", "PM2.5浓度"]
+    seriesName: ["温度", "湿度", "二氧化碳浓度", "PM2.5浓度"],
   };
   constructor(
     private myMqttService: MyMqttService,
@@ -79,7 +79,7 @@ export class MutisensorViewComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe((params) => {
       //获取当前页面的(设备id)来显示不同的设备数据
       this.device_id = params.get("deviceId");
       this.settingSensorData.device_id = this.device_id;

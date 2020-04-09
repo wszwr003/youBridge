@@ -1,12 +1,7 @@
 <div mat-app-background basic-container>
   <span class="view-name">总览</span>
-  <div
-    class="container"
-    fxLayout="row wrap"
-    fxLayout.xs="column"
-    fxLayoutGap="20px"
-  >
-    <div fxLayout="column" fxFlex="calc(50%-10px)" fxLayoutGap="20px">
+  <div class="container" fxLayout="row" fxLayoutGap="20px">
+    <div fxLayout="column" fxFlex="calc(50%-20px)" fxLayoutGap="20px">
       <div fxLayout="row" fxLayoutGap="20px">
         <mat-card fxFlex="calc(33%-20px)">
           <mat-card-header>
@@ -50,7 +45,7 @@
         <mat-card-content overflow="hidden">
           <div fxLayout="row" fxLayoutAlign="space-around">
             <app-new-pie-chart fxFlex="calc(50%-20px)"></app-new-pie-chart>
-            <app-new-line-chart fxFlex="calc(50%-20px)"></app-new-line-chart>
+            <app-new-pie-chart2 fxFlex="calc(50%-20px)"></app-new-pie-chart2>
             <!-- <app-new-line-chart fxFlex="calc(50%-20px)"></app-new-line-chart> -->
             <!-- <app-data-pie></app-data-pie> -->
           </div>
@@ -58,7 +53,7 @@
       </mat-card>
     </div>
     <!-- TODO:baidu地图显示问题 -->
-    <mat-card fxFlex="calc(50%-10px)">
+    <mat-card fxFlex="calc(50%-20px)">
       <mat-card-header>
         <!-- <div mat-card-avatar class="example-header-image"></div> -->
         <mat-card-title>设备分布</mat-card-title>
@@ -69,21 +64,18 @@
       </mat-card-content>
     </mat-card>
   </div>
-  <div
-    class="container"
-    fxLayout="row wrap"
-    fxLayout.xs="column"
-    fxLayoutGap="20px"
-  >
-    <mat-card class="control" fxFlex="calc(50%-10px)" style="height: 28vh;">
+  <div class="container" fxLayout="row" fxLayoutGap="20px">
+    <mat-card class="control" fxFlex="calc(50%-20px)">
       <mat-card-header>
         <!-- <div mat-card-avatar class="example-header-image"></div> -->
         <mat-card-title>设备数增长情况</mat-card-title>
         <mat-card-subtitle></mat-card-subtitle>
       </mat-card-header>
-      <mat-card-content> </mat-card-content>
+      <mat-card-content>
+        <app-new-line-chart fxFlex="calc(100px)"></app-new-line-chart>
+      </mat-card-content>
     </mat-card>
-    <mat-card class="message" fxFlex="calc(25%-20px)" style="height: 28vh;">
+    <mat-card class="message" fxFlex="calc(25%-20px)">
       <mat-card-header>
         <!-- <div mat-card-avatar class="example-header-image"></div> -->
         <mat-card-title>设备详情</mat-card-title>
@@ -91,7 +83,7 @@
       </mat-card-header>
       <mat-card-content> </mat-card-content>
     </mat-card>
-    <mat-card class="message" fxFlex="calc(25%-20px)" style="height: 28vh;">
+    <mat-card class="message" fxFlex="calc(25%-20px)">
       <mat-card-header>
         <!-- <div mat-card-avatar class="example-header-image"></div> -->
         <mat-card-title>消息事件</mat-card-title>
