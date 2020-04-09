@@ -1,16 +1,16 @@
 import { Directive, ElementRef, HostListener, Input } from "@angular/core";
 
 @Directive({
-  selector: "[appMouseEnterSetble]"
+  selector: "[appMouseEnterSetble]",
 })
 export class MouseEnterSetbleDirective {
   private els: ElementRef; //[1]
   //TBS:此处赋初始值无效?
-  @Input('appMouseEnterSetble') backgroundColor: string;
+  @Input("appMouseEnterSetble") backgroundColor: string;
 
   @HostListener("mouseenter") onMouseEnter() {
     this.els.nativeElement.style.backgroundColor =
-      this.backgroundColor || '#DCDCFF';
+      this.backgroundColor || "#DCDCFF";
   }
 
   @HostListener("mouseleave") onMouseLeave() {

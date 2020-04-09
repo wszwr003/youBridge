@@ -1,0 +1,28 @@
+<ng-container>
+  <app-progress-bar class="progress"></app-progress-bar>
+  <app-top-bar class="header" (sideMenuButton)="sidenav.toggle()"></app-top-bar>
+
+  <mat-sidenav-container class="container">
+    <mat-sidenav
+      #sidenav
+      mode="side"
+      class="sidenav"
+      style="background-color: #38649d;"
+      opened
+    >
+      <mat-nav-list>
+        <app-side-menu
+          *ngFor="let item of navItems"
+          [item]="item"
+        ></app-side-menu>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+      <div fxLayout fxLayoutAlign="center center">
+        <p>版权所有© 浙江光维通信技术有限公司</p>
+      </div>
+      <div #msglog></div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</ng-container>

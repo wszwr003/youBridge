@@ -3,7 +3,7 @@ import { AppRoutingModule } from "./app-routing.module"; // 路由模块
 import { BrowserModule } from "@angular/platform-browser"; // 应用浏览器支持
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations"; // 浏览器动画支持
 import { CommonModule } from "@angular/common"; // NgIF和NgFor
-
+import { FormsModule } from "@angular/forms";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatToolbarModule } from "@angular/material/toolbar"; // topBar
 import { MatSidenavModule } from "@angular/material/sidenav"; // sideNav
@@ -20,7 +20,7 @@ import { MatTableModule } from "@angular/material/table";
 import { ReactiveFormsModule } from "@angular/forms";
 import { BaiduMapModule } from "angular2-baidu-map";
 import { MqttModule, IMqttServiceOptions } from "ngx-mqtt";
-
+import { HighchartsChartModule } from "highcharts-angular";
 import { AppComponent } from "./app.component"; // 根组件
 import { TopBarComponent } from "./top-bar/top-bar.component";
 import { SideMenuComponent } from "./side-menu/side-menu.component";
@@ -40,12 +40,15 @@ import { MyMqttService } from "./services/my-mqtt.service";
 import { NavService } from "./services/nav.service";
 import { AuthService } from "./services/auth.service";
 import { AuthGuardService } from "./services/auth-guard.service";
+import { NewLineChartComponent } from "./new-line-chart/new-line-chart.component";
+import { NewPieChartComponent } from "./new-pie-chart/new-pie-chart.component";
+import { NewMutiaxisLineChartComponent } from './new-mutiaxis-line-chart/new-mutiaxis-line-chart.component';
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   //hostname: "127.0.0.1",
   hostname: "116.62.151.59",
   port: 8888,
-  path: "/mqtt" //'/mqtt'
+  path: "/mqtt", //'/mqtt'
 };
 
 @NgModule({
@@ -63,7 +66,10 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     LoginPageComponent,
     HomeLayoutComponent,
     LoginLayoutComponent,
-    DataPieComponent
+    DataPieComponent,
+    NewLineChartComponent,
+    NewPieChartComponent,
+    NewMutiaxisLineChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -83,10 +89,12 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     MatTableModule,
     MatInputModule,
     MatFormFieldModule,
+    FormsModule,
     MqttModule.forRoot(MQTT_SERVICE_OPTIONS),
-    BaiduMapModule.forRoot({ ak: "FpVG0ppOSI7TwBYGhty65bxe88fqD38v" })
+    BaiduMapModule.forRoot({ ak: "FpVG0ppOSI7TwBYGhty65bxe88fqD38v" }),
+    HighchartsChartModule,
   ],
   providers: [MyMqttService, NavService, AuthService, AuthGuardService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

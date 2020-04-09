@@ -1,15 +1,25 @@
-<mat-toolbar class="topbar" color="primary">
-  <mat-toolbar-row>
+<div fxLayout="row">
+  <mat-toolbar class="topbar" color="warn" fxFlex="240px">
     <button mat-icon-button (click)="sideMenuButton.emit()">
       <mat-icon>menu</mat-icon>
+      <!-- <span class="header-name">光维物联网云平台</span> -->
     </button>
     <button mat-icon-button disabled>
-      <img src="../../assets/logo.png" style="max-width:70%; min-width: 70%;" />
+      <img
+        src="../../assets/logo.png"
+        style="max-width: 90%; min-width: 90%;"
+      />
     </button>
-    <span class="header-name">光维物联网云平台</span>
-    <!--<button mat-button color="basic">设备</button>-->
+    <span class="header-name">Grandway IOT</span>
+  </mat-toolbar>
+  <mat-toolbar class="topbar" color="white" fxFlex="100%">
+    <form class="search-form">
+      <mat-form-field class="search-bar">
+        <!-- <mat-label>Email</mat-label> -->
+        <input matInput [formControl]="emailFormControl" placeholder="搜索" />
+      </mat-form-field>
+    </form>
     <span class="spacer"></span>
-
     <button class="user-name" mat-button [matMenuTriggerFor]="usermenu">
       <mat-icon>how_to_reg</mat-icon>
       grandway
@@ -20,7 +30,7 @@
       </mat-menu>
     </button>
 
-    <button mat-icon-button [matMenuTriggerFor]="settingmenu">
+    <button mat-button [matMenuTriggerFor]="settingmenu">
       <mat-icon>settings</mat-icon>
       <mat-menu #settingmenu="matMenu">
         <button mat-menu-item>操作人员设备管理</button>
@@ -29,5 +39,5 @@
         <button mat-menu-item>系统设置</button>
       </mat-menu>
     </button>
-  </mat-toolbar-row>
-</mat-toolbar>
+  </mat-toolbar>
+</div>

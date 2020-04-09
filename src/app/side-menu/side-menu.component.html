@@ -1,20 +1,28 @@
 <!--[ngStyle]="{ 'padding-left': depth * 12 + 'px' }"-->
 <a
   mat-list-item
-  [appMouseEnterSetble]="'#DDDDDD'"
+  [appMouseEnterSetble]="'#284770'"
   (click)="onItemSelected(item)"
   [ngClass]="{
     active: item.route ? router.isActive(item.route, true) : false,
     expanded: expanded
   }"
   class="menu-list-item"
-  [ngStyle]="{ 'padding-left': depth * 12 + 'px' }"
+  [ngStyle]="{ 'padding-left': depth * 8 + 'px' }"
+  color="primary"
+  style="color: rgb(255, 255, 255);"
 >
-  <mat-icon class="routeIcon">{{ item.iconName }}</mat-icon>
+  <mat-icon class="routeIcon" style="color: rgb(255, 255, 255);">{{
+    item.iconName
+  }}</mat-icon>
+  <span fxFlex="5px"></span>
   {{ item.displayName }}
   <span fxFlex *ngIf="item.children && item.children.length">
     <span fxFlex></span>
-    <mat-icon [@indicatorRotate]="expanded ? 'expanded' : 'collapsed'">
+    <mat-icon
+      [@indicatorRotate]="expanded ? 'expanded' : 'collapsed'"
+      style="color: rgb(255, 255, 255);"
+    >
       expand_more
     </mat-icon>
   </span>

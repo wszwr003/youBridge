@@ -5,7 +5,7 @@ import {
   state,
   style,
   transition,
-  trigger
+  trigger,
 } from "@angular/animations";
 import { Router } from "@angular/router";
 import { NavService } from "../services/nav.service";
@@ -22,9 +22,9 @@ import { NavItem } from "../services/nav-item";
       transition(
         "expanded <=> collapsed",
         animate("225ms cubic-bezier(0.4,0.0,0.2,1)")
-      )
-    ])
-  ]
+      ),
+    ]),
+  ],
 })
 export class SideMenuComponent implements OnInit {
   expanded: boolean;
@@ -33,10 +33,10 @@ export class SideMenuComponent implements OnInit {
   @Input() depth: number;
   constructor(public navService: NavService, public router: Router) {
     if (this.depth === undefined) {
-      this.depth = 0;
+      this.depth = 1;
     }
   }
-  
+
   ngOnInit() {
     this.navService.currentUrl.subscribe((url: string) => {
       if (this.item.route && url) {
