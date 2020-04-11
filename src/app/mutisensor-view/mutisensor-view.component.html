@@ -107,5 +107,20 @@
         <app-data-table></app-data-table>
       </mat-card-content>
     </mat-card>
+    <!-- 以下为翻转flip卡片 -->
+    <div class="card-container">
+      <div
+        class="flippable-card"
+        [ngClass]="{ flipped: flipped }"
+        (click)="flipped = !flipped"
+      >
+        <mat-card class="">
+          <mat-card-title>Booya</mat-card-title>
+        </mat-card>
+        <mat-card class="back">
+          <mat-card-title>to ya</mat-card-title>
+        </mat-card>
+      </div>
+    </div>
   </div>
 </div>
