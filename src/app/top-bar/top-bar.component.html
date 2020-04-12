@@ -1,9 +1,5 @@
 <div fxLayout="row">
   <mat-toolbar class="topbar" color="warn" fxFlex="240px">
-    <button mat-icon-button (click)="sideMenuButton.emit()">
-      <mat-icon>menu</mat-icon>
-      <!-- <span class="header-name">光维物联网云平台</span> -->
-    </button>
     <button mat-icon-button disabled>
       <img
         src="../../assets/logo.png"
@@ -13,6 +9,10 @@
     <span class="header-name">Grandway IOT</span>
   </mat-toolbar>
   <mat-toolbar class="topbar" color="white" fxFlex="100%">
+    <button mat-icon-button (click)="sideMenuButton.emit()">
+      <mat-icon>menu</mat-icon>
+      <!-- <span class="header-name">光维物联网云平台</span> -->
+    </button>
     <form class="search-form">
       <mat-form-field class="search-bar">
         <!-- <mat-label>Email</mat-label> -->
