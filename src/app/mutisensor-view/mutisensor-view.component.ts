@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { ChartInit } from "./sensor-chart";
-import { MyMqttService } from "../services/my-mqtt.service";
 import { IMqttMessage } from "ngx-mqtt";
 import { ActivatedRoute } from "@angular/router";
+import { MyMqttService } from "../services/my-mqtt.service";
+import { HttpService } from "../services/http.service";
 @Component({
   selector: "app-mutisensor-view",
   templateUrl: "./mutisensor-view.component.html",
@@ -10,8 +11,9 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class MutisensorViewComponent implements OnInit {
   @ViewChild("msglog", { static: true }) msglog: ElementRef;
-  private device_id: string = "";
+  public device_id: string = "";
   public subscribe_msg: object = {};
+  public datas: object = {};
   public historyMsgStrings: string[] = []; //FAO: 不初始化会出错!!??
   private settingTopic: string = "setting";
   private settingSensorData = {
@@ -24,13 +26,14 @@ export class MutisensorViewComponent implements OnInit {
   private testTopic: string = "data";
   public sensorChartInit: ChartInit = {
     chartType: "spline",
-    chartHeight: 500,
+    chartHeight: 350,
     dateFormat: "%H:%M:%S",
     seriesName: ["温度", "湿度", "二氧化碳浓度", "PM2.5浓度"],
   };
   constructor(
     private myMqttService: MyMqttService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private http: HttpService
   ) {}
 
   publishMsg() {
@@ -46,14 +49,9 @@ export class MutisensorViewComponent implements OnInit {
   }
 
   subscribeTopic() {
-    console.log("WEB:Subscribe new topic");
     // TBS:如何在component中订阅这个订阅
     this.myMqttService.MQRRService.observe(this.testTopic).subscribe(
       (message: IMqttMessage) => {
-        console.log(
-          JSON.parse(message.payload.toString()).device_id,
-          this.device_id
-        );
         if (
           JSON.parse(message.payload.toString()).device_id == this.device_id
         ) {
@@ -61,9 +59,9 @@ export class MutisensorViewComponent implements OnInit {
           var mytime = date.toLocaleTimeString();
           this.subscribe_msg = JSON.parse(message.payload.toString());
           console.log(
-            "WEB:Message: " +
+            "GET MQTT MSG: " +
               JSON.stringify(this.subscribe_msg) +
-              " for topic: " +
+              ",TOPIC: " +
               this.testTopic
           );
           if (this.historyMsgStrings.length >= 8) {
@@ -75,16 +73,24 @@ export class MutisensorViewComponent implements OnInit {
         }
       }
     );
-    console.log("WEB:subscribed to topic: " + this.testTopic);
   }
 
   ngOnInit() {
+    //获取当前页面的(设备id)来显示不同的设备页面和数据
     this.route.paramMap.subscribe((params) => {
-      //获取当前页面的(设备id)来显示不同的设备数据
       this.device_id = params.get("deviceId");
       this.settingSensorData.device_id = this.device_id;
     });
+    //订阅MQTT服务器的data主题
     this.subscribeTopic();
     //this.publishMsg();
+    //通过post方式从mysql服务器获取历史数据
+    this.http
+      .postHttp("/get-datas", {
+        device_id: this.device_id,
+      })
+      .subscribe((datas) => {
+        this.datas = datas;
+      });
   }
 }

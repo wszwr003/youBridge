@@ -13,8 +13,8 @@
   color: rgb(100, 100, 100);
 }
 
-.mat-card {
-  display: flex !important;
-  flex-direction: column !important;
-  overflow: visible !important;
+@media (max-width: 600px) {
+  .mat-card {
+    min-width: 600px;
+  }
 }

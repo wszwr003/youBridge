@@ -6,10 +6,10 @@
   <mat-sidenav-container class="container">
     <mat-sidenav
       #sidenav
-      mode="side"
+      [opened]="screenWidth > 600"
+      [mode]="screenWidth > 600 ? 'side' : 'over'"
       class="sidenav"
-      style="background-color: #38649d;"
-      opened
+      style="background-color: rgb(43, 63, 83);"
     >
       <mat-nav-list>
         <app-side-menu

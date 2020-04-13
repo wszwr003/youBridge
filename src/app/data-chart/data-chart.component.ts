@@ -32,66 +32,103 @@ export class DataChartComponent implements OnInit, OnChanges {
     seriesName: null,
   };
   @Input() data: sensorData;
+  @Input() datas: sensorData[];
   private chartPoints = 60; //chart最多数据点设置
   private dataChart: Highcharts.Chart = null;
   public options: any;
   constructor() {}
-  // 监测@input:data改动!
+  ngAfterViewInit() {}
+  // 监测@input:data改动! //FAO:simplechanges 写法!
   ngOnChanges(changes: SimpleChanges): void {
-    var time = new Date().getTime();
-    var time_second = time - (time % 1000);
-    var shift = false; //chart是否平移
-
-    console.log("ngOnChanges:", JSON.stringify(this.data));
-    console.log(time_second);
-    for (var i = 0; i < 4; i++)
-      if (this.dataChart.series[i].data.length >= this.chartPoints)
-        shift = true;
-    this.dataChart.series[0].addPoint(
-      [
-        this.data.time == undefined ? time_second : this.data.time,
-        this.data.pm25,
-      ],
-      false,
-      shift,
-      false
-    );
-    this.dataChart.series[1].addPoint(
-      [
-        this.data.time == undefined ? time_second : this.data.time,
-        this.data.co2,
-      ],
-      false,
-      shift,
-      false
-    );
-    this.dataChart.series[2].addPoint(
-      [
-        this.data.time == undefined ? time_second : this.data.time,
-        this.data.temp,
-      ],
-      false,
-      shift,
-      false
-    );
-    this.dataChart.series[3].addPoint(
-      [
-        this.data.time == undefined ? time_second : this.data.time,
-        this.data.humi,
-      ],
-      true, //FAO:repaint!!!!
-      shift,
-      false
-    );
-    // this.dataChart.series[4].addPoint(
-    //   [
-    //     this.data.time == undefined ? time_second : this.data.time,
-    //     this.data.voc_lvl,
-    //   ],
-    //   true,
-    //   shift,
-    //   false
-    // );
+    for (const propName in changes) {
+      if (changes.hasOwnProperty(propName)) {
+        switch (propName) {
+          case "data": {
+            console.log("data", this.data, "data-end");
+            if (this.data == null || this.dataChart == null) {
+              return;
+            }
+            var time = new Date().getTime();
+            var time_second = time - (time % 1000);
+            var shift = false; //chart是否平移
+            for (var i = 0; i < 4; i++)
+              if (this.dataChart.series[i].data.length >= this.chartPoints)
+                shift = true;
+            this.dataChart.series[0].addPoint(
+              [
+                this.data.time == undefined ? time_second : this.data.time,
+                this.data.pm25,
+              ],
+              false,
+              shift,
+              false
+            );
+            this.dataChart.series[1].addPoint(
+              [
+                this.data.time == undefined ? time_second : this.data.time,
+                this.data.co2,
+              ],
+              false,
+              shift,
+              false
+            );
+            this.dataChart.series[2].addPoint(
+              [
+                this.data.time == undefined ? time_second : this.data.time,
+                this.data.temp,
+              ],
+              false,
+              shift,
+              false
+            );
+            this.dataChart.series[3].addPoint(
+              [
+                this.data.time == undefined ? time_second : this.data.time,
+                this.data.humi,
+              ],
+              true, //FAO:repaint!!!!
+              shift,
+              false
+            );
+          }
+          case "datas": {
+            console.log("datas", this.datas, "datas-end");
+            this.datas.reverse().forEach((element) => {
+              var time = new Date(element.time).getTime();
+              var time_second = time - (time % 1000);
+              var shift = false; //chart是否平移
+              for (var i = 0; i < 4; i++)
+                if (this.dataChart.series[i].data.length >= this.chartPoints)
+                  shift = true;
+              this.dataChart.series[0].addPoint(
+                [time_second, element.pm25],
+                false,
+                shift,
+                false
+              );
+              this.dataChart.series[1].addPoint(
+                [time_second, element.co2],
+                false,
+                shift,
+                false
+              );
+              this.dataChart.series[2].addPoint(
+                [time_second, element.temp],
+                false,
+                shift,
+                false
+              );
+              this.dataChart.series[3].addPoint(
+                [time_second, element.humi],
+                true, //FAO:repaint!!!!
+                shift,
+                false
+              );
+            });
+          }
+        }
+      }
+    }
   }
 
   ngOnInit() {
@@ -215,24 +252,6 @@ export class DataChartComponent implements OnInit, OnChanges {
           minRange: 5,
           opposite: true,
         },
-        // {
-        //   // Tertiary yAxis
-        //   gridLineWidth: 1,
-        //   type: "Data",
-        //   title: {
-        //     text: "voc",
-        //     style: {
-        //       color: Highcharts.getOptions().colors[4],
-        //     },
-        //   },
-        //   labels: {
-        //     format: "{value}",
-        //     style: {
-        //       color: Highcharts.getOptions().colors[4],
-        //     },
-        //   },
-        //   opposite: true,
-        // },
       ],
       series: [
         {
@@ -267,14 +286,6 @@ export class DataChartComponent implements OnInit, OnChanges {
             // [new Date("2018-01-25 18:38:31").getTime(), 55],
           ],
         },
-        // {
-        //   name: "VOC等级",
-        //   turboThreshold: 50000,
-        //   yAxis: 4,
-        //   data: [
-        //     //[new Date("2018-01-25 18:38:31").getTime(), 32],
-        //   ],
-        // },
       ],
     };
 

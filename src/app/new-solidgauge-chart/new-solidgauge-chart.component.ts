@@ -1,5 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input, SimpleChanges } from "@angular/core";
 import * as Highcharts from "highcharts";
+import { sensorData } from "../services/sensor-data";
 declare var require: any;
 let SolidGauge = require("highcharts/modules/solid-gauge");
 let More = require("highcharts/highcharts-more");
@@ -11,6 +12,7 @@ More(Highcharts);
   styleUrls: ["./new-solidgauge-chart.component.scss"],
 })
 export class NewSolidgaugeChartComponent implements OnInit {
+  @Input() data: sensorData;
   Highcharts: typeof Highcharts = Highcharts;
   chartOptions: any = {
     chart: {
@@ -33,7 +35,7 @@ export class NewSolidgaugeChartComponent implements OnInit {
     },
     yAxis: {
       min: 0,
-      max: 4,
+      max: 5,
       title: {
         text: "质量等级",
         y: 10,
@@ -80,5 +82,17 @@ export class NewSolidgaugeChartComponent implements OnInit {
   };
   constructor() {}
 
+  ngOnChanges(changes: SimpleChanges): void {
+    for (const propName in changes) {
+      if (changes.hasOwnProperty(propName)) {
+        switch (propName) {
+          case "data": {
+            //var point = this.Highcharts;
+            //point.update(this.data.voc_lvl);
+          }
+        }
+      }
+    }
+  }
   ngOnInit() {}
 }

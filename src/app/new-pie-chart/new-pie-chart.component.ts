@@ -35,12 +35,12 @@ export class NewPieChartComponent implements OnInit {
       {
         name: "设备数量",
         data: [
-          ["5IN1传感器", 11],
-          ["空调", 4],
-          ["空气净化器", 3],
-          ["OTDR", 1],
-          ["熔接机", 1],
-          ["小仪器仪表", 0],
+          { name: "5IN1传感器", y: 11, color: "#00BEA0" },
+          { name: "空调", y: 4, color: "#0A96DC" },
+          { name: "空气净化器", y: 3, color: "#435C73" },
+          { name: "OTDR", y: 1, color: "#7360BB" },
+          { name: "熔接机", y: 1, color: "#C0C4C8" },
+          { name: "小仪器仪表", y: 0, color: "#E64B3F" },
         ],
       },
     ],

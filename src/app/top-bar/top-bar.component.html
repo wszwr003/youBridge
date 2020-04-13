@@ -8,7 +8,7 @@
     </button>
     <span class="header-name">Grandway IOT</span>
   </mat-toolbar>
-  <mat-toolbar class="topbar" color="white" fxFlex="100%">
+  <mat-toolbar class="topbar" color="accent" fxFlex="100%">
     <button mat-icon-button (click)="sideMenuButton.emit()">
       <mat-icon>menu</mat-icon>
       <!-- <span class="header-name">光维物联网云平台</span> -->
@@ -24,8 +24,8 @@
       <mat-icon>how_to_reg</mat-icon>
       grandway
       <mat-menu #usermenu="matMenu">
-        <button mat-menu-item>账户管理</button>
-        <button mat-menu-item>设备管理</button>
+        <button mat-menu-item>管理员账号</button>
+        <button mat-menu-item>设备</button>
         <button mat-menu-item>退出</button>
       </mat-menu>
     </button>
@@ -33,9 +33,9 @@
     <button mat-button [matMenuTriggerFor]="settingmenu">
       <mat-icon>settings</mat-icon>
       <mat-menu #settingmenu="matMenu">
-        <button mat-menu-item>操作人员设备管理</button>
-        <button mat-menu-item>操作人员账户管理</button>
-        <button mat-menu-item>注册操作人员账户</button>
+        <button mat-menu-item>用户账号设置</button>
+        <button mat-menu-item>用户账号注册</button>
+        <button mat-menu-item>用户设备管理</button>
         <button mat-menu-item>系统设置</button>
       </mat-menu>
     </button>

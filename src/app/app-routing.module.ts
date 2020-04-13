@@ -23,17 +23,18 @@ const routes: Routes = [
   {
     path: "",
     component: HomeLayoutComponent,
-    canActivate: [AuthGuardService],
+    //canActivate: [AuthGuardService],
     children: [
       {
         path: "sys",
-        component: OverViewComponent
+        component: OverViewComponent,
       },
       {
         path: "devices/env/:deviceId",
-        component: MutisensorViewComponent
-      }
-    ]
+        component: MutisensorViewComponent,
+
+      },
+    ],
   },
   {
     path: "",
@@ -41,14 +42,14 @@ const routes: Routes = [
     children: [
       {
         path: "login",
-        component: LoginPageComponent
-      }
-    ]
+        component: LoginPageComponent,
+      },
+    ],
   },
-  { path: "**", redirectTo: "" }
+  { path: "**", redirectTo: "" },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

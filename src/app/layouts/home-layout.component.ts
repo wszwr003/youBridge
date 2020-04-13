@@ -1,5 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild, ElementRef } from "@angular/core";
 import { NavItem } from "../services/nav-item";
+import { NavService } from "../services/nav.service";
 
 @Component({
   selector: "app-home-layout",
@@ -7,15 +8,29 @@ import { NavItem } from "../services/nav-item";
   styleUrls: ["./home-layout.component.scss"],
 })
 export class HomeLayoutComponent {
+  screenWidth: number;
+  @ViewChild("sidenav", null) sidenav: ElementRef;
+  constructor(private navService: NavService) {
+    // set screenWidth on page load
+    this.screenWidth = window.innerWidth;
+    window.onresize = () => {
+      // set screenWidth on screen size change
+      this.screenWidth = window.innerWidth;
+    };
+  }
+
+  ngAfterViewInit() {
+    this.navService.appDrawer = this.sidenav;
+  }
   navItems: NavItem[] = [
     {
       displayName: "总览",
-      iconName: "account_balance",
+      iconName: "view_quilt",
       route: "sys",
     },
     {
       displayName: "设备管理",
-      iconName: "format_list_bulleted",
+      iconName: "list",
       route: "devices",
       children: [
         {
@@ -104,7 +119,7 @@ export class HomeLayoutComponent {
     },
     {
       displayName: "设备组管理",
-      iconName: "group",
+      iconName: "list_alt",
       route: "group",
       children: [
         {
@@ -195,17 +210,17 @@ export class HomeLayoutComponent {
     },
     {
       displayName: "数据分析",
-      iconName: "group",
+      iconName: "bar_chart",
       route: "group",
     },
     {
       displayName: "日志分析",
-      iconName: "group",
+      iconName: "assignment",
       route: "group",
     },
     {
       displayName: "用户行为分析",
-      iconName: "group",
+      iconName: "assignment_ind",
       route: "group",
     },
   ];

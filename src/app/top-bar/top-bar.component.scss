@@ -3,7 +3,8 @@
 }
 
 .header-name {
-  font-size: 18px;
+  font-size: 24px;
+  font-weight: lighter;
 }
 .user-name {
   padding: 0 10px;
@@ -16,11 +17,10 @@
 }
 .search-form {
   position: relative;
-  top: 8px;
+  top: 6px;
   left: 20px;
   min-width: 100px;
-  max-width: 200px;
-  width: 100%;
+  max-width: 150px;
 }
 
 .search-bar {

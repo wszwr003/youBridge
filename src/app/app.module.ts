@@ -44,6 +44,9 @@ import { NewPieChartComponent } from "./new-pie-chart/new-pie-chart.component";
 import { NewMutiaxisLineChartComponent } from "./new-mutiaxis-line-chart/new-mutiaxis-line-chart.component";
 import { NewSolidgaugeChartComponent } from "./new-solidgauge-chart/new-solidgauge-chart.component";
 import { NewPieChart2Component } from "./new-pie-chart2/new-pie-chart2.component";
+import { HttpService } from "./services/http.service";
+import { HttpClientModule } from "@angular/common/http";
+import { NewColumeChartComponent } from './new-colume-chart/new-colume-chart.component';
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   hostname: "127.0.0.1",
@@ -72,10 +75,10 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     NewMutiaxisLineChartComponent,
     NewSolidgaugeChartComponent,
     NewPieChart2Component,
+    NewColumeChartComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     CommonModule,
@@ -95,8 +98,17 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     MqttModule.forRoot(MQTT_SERVICE_OPTIONS),
     BaiduMapModule.forRoot({ ak: "FpVG0ppOSI7TwBYGhty65bxe88fqD38v" }),
     HighchartsChartModule,
+    HttpClientModule,
+    AppRoutingModule,
   ],
-  providers: [MyMqttService, NavService, AuthService, AuthGuardService],
-  bootstrap: [AppComponent],
+  providers: [
+    HttpService,
+    MyMqttService,
+    NavService,
+    AuthService,
+    AuthGuardService,
+    
+  ],
+  bootstrap: [AppComponent], //TBS:为什么增加http功能后需要加这个才正常?
 })
 export class AppModule {}
