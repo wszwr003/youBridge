@@ -14,6 +14,7 @@ More(Highcharts);
 export class NewSolidgaugeChartComponent implements OnInit {
   @Input() data: sensorData;
   Highcharts: typeof Highcharts = Highcharts;
+  public chart: Highcharts.Chart;
   chartOptions: any = {
     chart: {
       type: "solidgauge",
@@ -22,8 +23,8 @@ export class NewSolidgaugeChartComponent implements OnInit {
     pane: {
       center: ["50%", "85%"],
       size: "140%",
-      startAngle: -90,
-      endAngle: 90,
+      startAngle: -90, // 仪表开始角度 -90为<--
+      endAngle: 90, // 仪表结束角度 +90为-->
       background: {
         innerRadius: "60%",
         outerRadius: "100%",
@@ -34,29 +35,30 @@ export class NewSolidgaugeChartComponent implements OnInit {
       enabled: false,
     },
     yAxis: {
-      min: 0,
-      max: 5,
+      min: 2,
+      max: 0,
       title: {
+        //标题
         text: "质量等级",
         y: 10,
       },
       stops: [
-        [0.1, "#55BF3B"], // green
+        [0.1, "#DF5353"], // red
         [0.5, "#DDDF0D"], // yellow
-        [0.9, "#DF5353"], // red
+        [0.9, "#55BF3B"], // green
       ],
       lineWidth: 0,
       minorTickInterval: null,
       tickPixelInterval: 100,
       tickWidth: 0,
       labels: {
-        y: 12,
+        y: 0, //刻度位置
       },
     },
     plotOptions: {
       solidgauge: {
         dataLabels: {
-          y: 5,
+          y: 0,
           borderWidth: 0,
           useHTML: true,
         },
@@ -68,7 +70,12 @@ export class NewSolidgaugeChartComponent implements OnInit {
     series: [
       {
         name: "空气质量",
-        data: [3],
+        data: [
+          {
+            y: 0,
+          },
+        ],
+
         dataLabels: {
           format:
             '<div style="text-align:center"><span style="font-size:25px;">{y}</span><br/>' +
@@ -79,20 +86,65 @@ export class NewSolidgaugeChartComponent implements OnInit {
         },
       },
     ],
+    // responsive: {
+    //   rules: [
+    //     {
+    //       condition: {
+    //         maxWidth: 500,
+    //         minWidth: 100,
+    //       },
+    //       chartOptions: {
+    //         legend: {
+    //           align: "center",
+    //           verticalAlign: "bottom",
+    //           layout: "horizontal",
+    //         },
+    //         yAxis: {
+    //           labels: {
+    //             align: "left",
+    //             x: 0,
+    //             y: -5,
+    //           },
+    //           title: {
+    //             text: null,
+    //           },
+    //         },
+    //         subtitle: {
+    //           text: null,
+    //         },
+    //         credits: {
+    //           enabled: false,
+    //         },
+    //       },
+    //     },
+    //   ],
+    // },
   };
+  logChartInstance(chart: Highcharts.Chart) {
+    this.chart = chart;
+  }
   constructor() {}
-
   ngOnChanges(changes: SimpleChanges): void {
     for (const propName in changes) {
       if (changes.hasOwnProperty(propName)) {
         switch (propName) {
           case "data": {
-            //var point = this.Highcharts;
-            //point.update(this.data.voc_lvl);
+            // console.log(
+            //   "line chart history datas change",
+            //   this.data,
+            //   "datas-end"
+            // );
+            if (this.chart != undefined)
+              this.chart.series[0].points[0].update(this.data.voc_lvl);
           }
         }
       }
     }
   }
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.chart != undefined) this.chart.setSize(50);
+  }
+  ngAfterViewInit() {
+    if (this.chart != undefined) this.chart.setSize(null);
+  }
 }

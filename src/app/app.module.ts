@@ -46,11 +46,11 @@ import { NewSolidgaugeChartComponent } from "./new-solidgauge-chart/new-solidgau
 import { NewPieChart2Component } from "./new-pie-chart2/new-pie-chart2.component";
 import { HttpService } from "./services/http.service";
 import { HttpClientModule } from "@angular/common/http";
-import { NewColumeChartComponent } from './new-colume-chart/new-colume-chart.component';
+import { NewColumeChartComponent } from "./new-colume-chart/new-colume-chart.component";
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
-  hostname: "127.0.0.1",
-  //hostname: "116.62.151.59",
+  //hostname: "127.0.0.1",
+  hostname: "116.62.151.59",
   port: 8888,
   path: "/mqtt", //'/mqtt'
 };
@@ -107,7 +107,6 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     NavService,
     AuthService,
     AuthGuardService,
-    
   ],
   bootstrap: [AppComponent], //TBS:为什么增加http功能后需要加这个才正常?
 })

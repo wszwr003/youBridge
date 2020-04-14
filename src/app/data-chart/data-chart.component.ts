@@ -44,7 +44,7 @@ export class DataChartComponent implements OnInit, OnChanges {
       if (changes.hasOwnProperty(propName)) {
         switch (propName) {
           case "data": {
-            console.log("data", this.data, "data-end");
+            console.log("line chart data change", this.data, "data-end");
             if (this.data == null || this.dataChart == null) {
               return;
             }
@@ -92,7 +92,7 @@ export class DataChartComponent implements OnInit, OnChanges {
             );
           }
           case "datas": {
-            console.log("datas", this.datas, "datas-end");
+            console.log("line chart history datas change", this.datas, "datas-end");
             this.datas.reverse().forEach((element) => {
               var time = new Date(element.time).getTime();
               var time_second = time - (time % 1000);

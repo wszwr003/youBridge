@@ -23,7 +23,7 @@ const routes: Routes = [
   {
     path: "",
     component: HomeLayoutComponent,
-    //canActivate: [AuthGuardService],
+    canActivate: [AuthGuardService],
     children: [
       {
         path: "sys",
@@ -32,7 +32,6 @@ const routes: Routes = [
       {
         path: "devices/env/:deviceId",
         component: MutisensorViewComponent,
-
       },
     ],
   },

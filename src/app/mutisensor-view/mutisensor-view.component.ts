@@ -4,6 +4,7 @@ import { IMqttMessage } from "ngx-mqtt";
 import { ActivatedRoute } from "@angular/router";
 import { MyMqttService } from "../services/my-mqtt.service";
 import { HttpService } from "../services/http.service";
+import { sensorData } from "../services/sensor-data";
 @Component({
   selector: "app-mutisensor-view",
   templateUrl: "./mutisensor-view.component.html",
@@ -12,7 +13,13 @@ import { HttpService } from "../services/http.service";
 export class MutisensorViewComponent implements OnInit {
   @ViewChild("msglog", { static: true }) msglog: ElementRef;
   public device_id: string = "";
-  public subscribe_msg: object = {};
+  public subscribe_msg: sensorData = {
+    co2: 0,
+    pm25: 0,
+    temp: 0,
+    humi: 0,
+    voc_lvl: 0,
+  };
   public datas: object = {};
   public historyMsgStrings: string[] = []; //FAO: 不初始化会出错!!??
   private settingTopic: string = "setting";
@@ -22,7 +29,7 @@ export class MutisensorViewComponent implements OnInit {
     time: 0,
     intervalSecond: 60,
   };
-
+  private observeMQTT;
   private testTopic: string = "data";
   public sensorChartInit: ChartInit = {
     chartType: "spline",
@@ -50,31 +57,31 @@ export class MutisensorViewComponent implements OnInit {
 
   subscribeTopic() {
     // TBS:如何在component中订阅这个订阅
-    this.myMqttService.MQRRService.observe(this.testTopic).subscribe(
-      (message: IMqttMessage) => {
-        if (
-          JSON.parse(message.payload.toString()).device_id == this.device_id
-        ) {
-          var date = new Date();
-          var mytime = date.toLocaleTimeString();
-          this.subscribe_msg = JSON.parse(message.payload.toString());
-          console.log(
-            "GET MQTT MSG: " +
-              JSON.stringify(this.subscribe_msg) +
-              ",TOPIC: " +
-              this.testTopic
-          );
-          if (this.historyMsgStrings.length >= 8) {
-            this.historyMsgStrings.shift();
-          }
-          this.historyMsgStrings.push(
-            mytime + ":" + JSON.stringify(this.subscribe_msg)
-          );
+    this.observeMQTT = this.myMqttService.MQRRService.observe(
+      this.testTopic
+    ).subscribe((message: IMqttMessage) => {
+      if (JSON.parse(message.payload.toString()).device_id == this.device_id) {
+        var date = new Date();
+        var mytime = date.toLocaleTimeString();
+        this.subscribe_msg = JSON.parse(message.payload.toString());
+        console.log(
+          "GET MQTT MSG: " +
+            JSON.stringify(this.subscribe_msg) +
+            ",TOPIC: " +
+            this.testTopic
+        );
+        if (this.historyMsgStrings.length >= 8) {
+          this.historyMsgStrings.shift();
         }
+        this.historyMsgStrings.push(
+          mytime + ":" + JSON.stringify(this.subscribe_msg)
+        );
       }
-    );
+    });
   }
-
+  ngOnDestroy() {
+    this.observeMQTT.unsubscribe();
+  }
   ngOnInit() {
     //获取当前页面的(设备id)来显示不同的设备页面和数据
     this.route.paramMap.subscribe((params) => {

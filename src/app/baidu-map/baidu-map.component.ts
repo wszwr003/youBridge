@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
 import {
   MapOptions,
   Point,
@@ -12,10 +12,12 @@ import {
   styleUrls: ["./baidu-map.component.scss"],
 })
 export class BaiduMapComponent {
+  @Output() notify = new EventEmitter<string>(); //output component
   options: MapOptions;
   marker: { point: Point; options?: MarkerOptions };
   markers: { point: Point; options?: MarkerOptions }[];
   public showWindow({ e, marker, map }: any): void {
+    this.notify.emit(marker.getTitle());
     map.openInfoWindow(
       new window.BMap.InfoWindow("地址：海宁市科技绿洲6号楼", {
         offset: new window.BMap.Size(0, -10),
@@ -37,7 +39,7 @@ export class BaiduMapComponent {
     this.markers = [
       {
         options: {
-          title: "No.861011047486233",
+          title: "861011047486233",
         },
         point: {
           lat: 30.5764,
@@ -46,7 +48,7 @@ export class BaiduMapComponent {
       },
       {
         options: {
-          title: "No.861011047455360",
+          title: "861011047455360",
         },
         point: {
           lat: 30.5759,
@@ -55,7 +57,7 @@ export class BaiduMapComponent {
       },
       {
         options: {
-          title: "No.861011047485656",
+          title: "861011047485656",
         },
         point: {
           lat: 30.5761,
@@ -64,7 +66,7 @@ export class BaiduMapComponent {
       },
       {
         options: {
-          title: "No.861011047485565",
+          title: "861011047485565",
         },
         point: {
           lat: 30.5761,
@@ -73,7 +75,7 @@ export class BaiduMapComponent {
       },
       {
         options: {
-          title: "No.861011047418186",
+          title: "861011047418186",
         },
         point: {
           lat: 30.5761,
@@ -82,7 +84,7 @@ export class BaiduMapComponent {
       },
       {
         options: {
-          title: "No.861011047485599",
+          title: "861011047485599",
         },
         point: {
           lat: 30.5763,
@@ -91,7 +93,7 @@ export class BaiduMapComponent {
       },
       {
         options: {
-          title: "No.861011047486225",
+          title: "861011047486225",
         },
         point: {
           lat: 30.5758,
@@ -100,7 +102,7 @@ export class BaiduMapComponent {
       },
       {
         options: {
-          title: "No.861011047486134",
+          title: "861011047486134",
         },
         point: {
           lat: 30.5761,
@@ -109,7 +111,7 @@ export class BaiduMapComponent {
       },
       {
         options: {
-          title: "No.861011047511899",
+          title: "861011047511899",
         },
         point: {
           lat: 30.5763,
@@ -118,10 +120,10 @@ export class BaiduMapComponent {
       },
       {
         options: {
-          title: "No.861011047486209",
+          title: "861011047486209",
         },
         point: {
-          lat: 30.5761,
+          lat: 30.57611,
           lng: 120.678724,
         },
       },

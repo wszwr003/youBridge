@@ -9,11 +9,19 @@ import { FormControl, Validators } from "@angular/forms";
 })
 export class TopBarComponent implements OnInit {
   @Output() sideMenuButton = new EventEmitter(); //output component
+  screenWidth: number;
   emailFormControl = new FormControl("", [
     Validators.required,
     Validators.email,
   ]);
-  constructor() {}
+  constructor() {
+    // set screenWidth on page load
+    this.screenWidth = window.innerWidth;
+    window.onresize = () => {
+      // set screenWidth on screen size change
+      this.screenWidth = window.innerWidth;
+    };
+  }
 
   ngOnInit() {}
 }

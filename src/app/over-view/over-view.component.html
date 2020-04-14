@@ -7,31 +7,25 @@
           <mat-card-header>
             <!-- <div mat-card-avatar class="example-header-image"></div> -->
             <mat-card-title>设备总数</mat-card-title>
-            <mat-card-subtitle>
-              设备总数:21
-            </mat-card-subtitle>
+            <mat-card-subtitle> </mat-card-subtitle>
           </mat-card-header>
-          <mat-card-content> </mat-card-content>
+          <mat-card-content class="summary-text">21 </mat-card-content>
         </mat-card>
         <mat-card fxFlex="calc(33%-20px)">
           <mat-card-header>
             <!-- <div mat-card-avatar class="example-header-image"></div> -->
-            <mat-card-title>设备组</mat-card-title>
-            <mat-card-subtitle>
-              设备组数量:1
-            </mat-card-subtitle>
+            <mat-card-title>设备组数</mat-card-title>
+            <mat-card-subtitle> </mat-card-subtitle>
           </mat-card-header>
-          <mat-card-content></mat-card-content>
+          <mat-card-content class="summary-text">1</mat-card-content>
         </mat-card>
         <mat-card fxFlex="calc(33%-20px)">
           <mat-card-header>
             <!-- <div mat-card-avatar class="example-header-image"></div> -->
-            <mat-card-title>用户总数</mat-card-title>
-            <mat-card-subtitle>
-              用户数量:4
-            </mat-card-subtitle>
+            <mat-card-title>用户数</mat-card-title>
+            <mat-card-subtitle> </mat-card-subtitle>
           </mat-card-header>
-          <mat-card-content> </mat-card-content>
+          <mat-card-content class="summary-text">4 </mat-card-content>
         </mat-card>
       </div>
       <mat-card>
@@ -39,7 +33,7 @@
           <!-- <div mat-card-avatar class="example-header-image"></div> -->
           <mat-card-title>设备概况</mat-card-title>
           <mat-card-subtitle>
-            设备类型数量:5 在线设备:10 离线设备:10 异常设备:1
+            设备类型:5 在线设备:10 离线设备:10 异常设备:1
           </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content overflow="hidden">
@@ -60,7 +54,7 @@
         <mat-card-subtitle></mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <app-baidu-map></app-baidu-map>
+        <app-baidu-map (notify)="onNotify($event)"></app-baidu-map>
       </mat-card-content>
     </mat-card>
   </div>
@@ -78,17 +72,42 @@
         <mat-card-subtitle></mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <!-- <app-new-line-chart fxFlex="calc(100px)"></app-new-line-chart> -->
-        <app-new-colume-chart fxFlex="calc(50%-20px)"></app-new-colume-chart>
+        <app-new-line-chart fxFlex="calc(100px)"></app-new-line-chart>
+        <!-- <app-new-colume-chart fxFlex="calc(50%-20px)"></app-new-colume-chart> -->
       </mat-card-content>
     </mat-card>
     <mat-card class="message" fxFlex="calc(25%-20px)">
       <mat-card-header>
         <!-- <div mat-card-avatar class="example-header-image"></div> -->
-        <mat-card-title>设备详情</mat-card-title>
+        <mat-card-title>监控设备详情({{ device_id }})</mat-card-title>
         <mat-card-subtitle></mat-card-subtitle>
       </mat-card-header>
-      <mat-card-content> </mat-card-content>
+      <mat-card-content>
+        <div class="container" fxLayout="row" fxLayoutAlign="space-around">
+          <!-- <app-new-solidgauge-chart [data]="data"> </app-new-solidgauge-chart> -->
+        </div>
+        <div class="data-label">
+          VOC等级:
+          <a class="data-text">
+            {{ data.voc_lvl }}
+          </a>
+        </div>
+        <div class="data-label">
+          CO2:
+          <a class="data-text">
+            {{ data.co2 }}
+          </a>
+          PM2.5:
+          <a class="data-text">{{ data.pm25 }} </a>
+        </div>
+        <div class="data-label">
+          温度:<a class="data-text"> {{ data.temp }} </a>, 湿度:<a
+            class="data-text"
+          >
+            {{ data.humi }}
+          </a>
+        </div>
+      </mat-card-content>
     </mat-card>
     <mat-card class="message" fxFlex="calc(25%-20px)">
       <mat-card-header>
@@ -96,7 +115,14 @@
         <mat-card-title>消息事件</mat-card-title>
         <mat-card-subtitle></mat-card-subtitle>
       </mat-card-header>
-      <mat-card-content> </mat-card-content>
+      <mat-card-content>
+        <div
+          class="message"
+          *ngFor="let message of historyMsgStrings.reverse()"
+        >
+          {{ message }}
+        </div>
+      </mat-card-content>
     </mat-card>
   </div>
 </div>

@@ -1,5 +1,6 @@
 <highcharts-chart
   [Highcharts]="Highcharts"
   [options]="chartOptions"
-  style="height: 350px; width: 100%; display: block;"
+  style="height: 100px; width: 100%; display: block;"
+  (chartInstance)="logChartInstance($event)"
 ></highcharts-chart>

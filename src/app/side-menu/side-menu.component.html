@@ -1,7 +1,7 @@
 <!--[ngStyle]="{ 'padding-left': depth * 12 + 'px' }"-->
 <a
   mat-list-item
-  [ngStyle]="{ 'padding-left': depth * 8 + 'px' }"
+  [ngStyle]="{ 'padding-left': depth * 5 + 'px' }"
   (click)="onItemSelected(item)"
   [ngClass]="{
     active: item.route ? router.isActive(item.route, true) : false,
@@ -12,7 +12,6 @@
   style="color: rgb(237, 237, 237);"
 >
   <mat-icon class="routeIcon">{{ item.iconName }}</mat-icon>
-  <span fxFlex="5px"></span>
   {{ item.displayName }}
   <span fxFlex *ngIf="item.children && item.children.length">
     <span fxFlex></span>

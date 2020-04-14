@@ -10,20 +10,46 @@
     <mat-card fxFlex="calc(30%-20px)" fxFlex.sm="calc(30%-20px)">
       <mat-card-header>
         <!-- <div mat-card-avatar class="example-header-image"></div> -->
-        <mat-card-title>空气质量</mat-card-title>
+        <mat-card-title>
+          <!-- <mat-icon> filter_tilt_shift </mat-icon> -->
+          实时数据
+        </mat-card-title>
         <mat-card-subtitle></mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <!-- <app-new-line-chart></app-new-line-chart> -->
-        <app-new-solidgauge-chart
-          [data]="subscribe_msg"
-        ></app-new-solidgauge-chart>
+        <div class="container" fxLayout="row" fxLayoutAlign="space-around">
+          <!-- <app-new-solidgauge-chart [data]="data"> </app-new-solidgauge-chart> -->
+        </div>
+        <div class="data-label">
+          VOC等级:
+          <a class="data-text">
+            {{ subscribe_msg.voc_lvl }}
+          </a>
+        </div>
+        <div class="data-label">
+          CO2:
+          <a class="data-text">
+            {{ subscribe_msg.co2 }}
+          </a>
+          PM2.5:
+          <a class="data-text">{{ subscribe_msg.pm25 }} </a>
+        </div>
+        <div class="data-label">
+          温度:<a class="data-text"> {{ subscribe_msg.temp }} </a>, 湿度:<a
+            class="data-text"
+          >
+            {{ subscribe_msg.humi }}
+          </a>
+        </div>
       </mat-card-content>
     </mat-card>
     <mat-card fxFlex="calc(70%-20px)" fxFlex.sm="calc(70%-20px)">
       <mat-card-header>
         <!-- <div mat-card-avatar class="example-header-image"></div> -->
-        <mat-card-title>实时数据</mat-card-title>
+        <mat-card-title>
+          <!-- <mat-icon> show_chart </mat-icon> -->
+          历史数据
+        </mat-card-title>
         <mat-card-subtitle></mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
@@ -44,8 +70,10 @@
   >
     <mat-card fxFlex="calc(100%-20px)" fxFlex.sm="calc(100%-20px)">
       <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>位置</mat-card-title>
+        <mat-card-title>
+          <!-- <mat-icon> gps_fixed </mat-icon> -->
+          位置</mat-card-title
+        >
         <mat-card-subtitle></mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
