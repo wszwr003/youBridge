@@ -9,9 +9,10 @@ export interface sensorData {
   voc_lvl: number;
   lat?: number;
   lon?: number;
+  hcho?: number;
   time?: string;
-  //hcho?: number;
 }
+
 export interface deviceState {
   device_id: string;
   state: boolean;

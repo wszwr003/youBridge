@@ -1,13 +1,12 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { HTTP_SERVICE_OPTIONS } from "../app.module";
 
 @Injectable({
   providedIn: "root",
 })
 export class HttpService {
-  URL_local = "http://127.0.0.1:4000";
-  URL_ali = "http://116.62.151.59:4000";
-  URL = this.URL_ali;
+  URL = HTTP_SERVICE_OPTIONS.URL_ali;
   constructor(private http: HttpClient) {}
 
   getHttp(URL: string) {

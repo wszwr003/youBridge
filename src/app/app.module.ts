@@ -55,7 +55,10 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   port: 8888,
   path: "/mqtt", //'/mqtt'
 };
-
+export const HTTP_SERVICE_OPTIONS: any = {
+  URL_local: "http://127.0.0.1:4000",
+  URL_ali: "http://116.62.151.59:4000",
+};
 @NgModule({
   declarations: [
     AppComponent,
