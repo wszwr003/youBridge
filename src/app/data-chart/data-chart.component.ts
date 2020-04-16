@@ -36,6 +36,7 @@ export class DataChartComponent implements OnInit, OnChanges {
   private chartPoints = 60; //chart最多数据点设置
   private dataChart: Highcharts.Chart = null;
   public options: any;
+  public optionsG: any;
   constructor() {}
   ngAfterViewInit() {}
   // 监测@input:data改动! //FAO:simplechanges 写法!
@@ -138,6 +139,11 @@ export class DataChartComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     //FAO:放到此处初始化,如果在声明的时候初始化,会出现INPUT尚未传值的情况.
+    this.optionsG = {
+      global: {
+        useUTC: false,
+      },
+    };
     this.options = {
       plotOptions: {
         spline: {
@@ -164,7 +170,7 @@ export class DataChartComponent implements OnInit, OnChanges {
         text: "",
       },
       credits: {
-        enabled: false,
+        enabled: false,   //highchart 标志取消
       },
       tooltip: {
         formatter: function () {
@@ -294,6 +300,7 @@ export class DataChartComponent implements OnInit, OnChanges {
       ],
     };
 
+    Highcharts.setOptions(this.optionsG);
     this.dataChart = Highcharts.chart("container", this.options);
   }
 }

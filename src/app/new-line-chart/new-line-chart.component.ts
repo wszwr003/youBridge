@@ -46,7 +46,9 @@ export class NewLineChartComponent implements OnInit {
           x: -10,
         },
       },
-
+      credits: {
+        enabled: false, //highchart 标志取消
+      },
       yAxis: {
         allowDecimals: false,
         title: {
