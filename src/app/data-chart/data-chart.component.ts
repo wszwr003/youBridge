@@ -92,8 +92,13 @@ export class DataChartComponent implements OnInit, OnChanges {
             );
           }
           case "datas": {
-            console.log("line chart history datas change", this.datas, "datas-end");
-            this.datas.reverse().forEach((element) => {
+            console.log(
+              "line chart history datas change",
+              this.datas,
+              "datas-end"
+            );
+            for (let index = this.datas.length - 1; index >= 0; index--) {
+              var element = this.datas[index];
               var time = new Date(element.time).getTime();
               var time_second = time - (time % 1000);
               var shift = false; //chart是否平移
@@ -124,7 +129,7 @@ export class DataChartComponent implements OnInit, OnChanges {
                 shift,
                 false
               );
-            });
+            }
           }
         }
       }
@@ -198,13 +203,13 @@ export class DataChartComponent implements OnInit, OnChanges {
           gridLineWidth: 1,
           type: "Data",
           title: {
-            text: "二氧化碳浓度",
+            text: "二氧化碳浓度(ppm)",
             style: {
               color: Highcharts.getOptions().colors[1],
             },
           },
           labels: {
-            format: "{value} ppm",
+            format: "{value}",
             style: {
               color: Highcharts.getOptions().colors[1],
             },
@@ -217,13 +222,13 @@ export class DataChartComponent implements OnInit, OnChanges {
           gridLineWidth: 1,
           type: "Data",
           title: {
-            text: "温度",
+            text: "温度(°C)",
             style: {
               color: Highcharts.getOptions().colors[2],
             },
           },
           labels: {
-            format: "{value} °C",
+            format: "{value}",
             style: {
               color: Highcharts.getOptions().colors[2],
             },
@@ -237,13 +242,13 @@ export class DataChartComponent implements OnInit, OnChanges {
           gridLineWidth: 1,
           type: "Data",
           title: {
-            text: "湿度",
+            text: "湿度(%)",
             style: {
               color: Highcharts.getOptions().colors[3],
             },
           },
           labels: {
-            format: "{value} %",
+            format: "{value}",
             style: {
               color: Highcharts.getOptions().colors[3],
             },

@@ -24,3 +24,139 @@
   font-weight: light;
   color: rgb(40, 63, 82);
 }
+
+.data-icon-voc {
+  display: inline;
+  position: absolute;
+  top: 80px;
+  left: 100px;
+  font-size: 65px;
+  font-weight: bolder;
+  color: #435c73;
+}
+.data-label-voc {
+  display: inline;
+  position: absolute;
+  top: 75px;
+  left: 190px;
+  font-size: 15px;
+  font-weight: light;
+  color: #707070;
+}
+.data-text-voc {
+  display: inline;
+  position: absolute;
+  top: 90px;
+  left: 185px;
+  font-size: 50px;
+  font-weight: bolder;
+  color: #435c73;
+}
+.data-icon-co2 {
+  display: inline;
+  position: absolute;
+  top: 80+100px;
+  left: 100-100px;
+  font-size: 65px;
+  font-weight: bolder;
+  color: #435c73;
+}
+.data-label-co2 {
+  display: inline;
+  position: absolute;
+  top: 75+100px;
+  left: 175-100px;
+  font-size: 15px;
+  font-weight: light;
+  color: #435c73;
+}
+.data-text-co2 {
+  display: inline;
+  position: absolute;
+  top: 90+100px;
+  left: 170-100px;
+  font-size: 50px;
+  font-weight: bolder;
+  color: #435c73;
+}
+.data-icon-temp {
+  display: inline;
+  position: absolute;
+  top: 80+200px;
+  left: 100-100px;
+  font-size: 65px;
+  font-weight: bolder;
+  color: #435c73;
+}
+.data-label-temp {
+  display: inline;
+  position: absolute;
+  top: 75+100+100px;
+  left: 175-100px;
+  font-size: 15px;
+  font-weight: light;
+  color: #435c73;
+}
+.data-text-temp {
+  display: inline;
+  position: absolute;
+  top: 90+100+100px;
+  left: 170-100px;
+  font-size: 50px;
+  font-weight: bolder;
+  color: #435c73;
+}
+.data-icon-pm25 {
+  display: inline;
+  position: absolute;
+  top: 80+100px;
+  left: 100+80px;
+  font-size: 65px;
+  font-weight: bolder;
+  color: #435c73;
+}
+.data-label-pm25 {
+  display: inline;
+  position: absolute;
+  top: 75+100px;
+  left: 175+80px;
+  font-size: 15px;
+  font-weight: light;
+  color: #435c73;
+}
+.data-text-pm25 {
+  display: inline;
+  position: absolute;
+  top: 90+100px;
+  left: 170+80px;
+  font-size: 50px;
+  font-weight: bolder;
+  color: #435c73;
+}
+.data-icon-humi {
+  display: inline;
+  position: absolute;
+  top: 80+100+100px;
+  left: 100+80px;
+  font-size: 65px;
+  font-weight: bolder;
+  color: #435c73;
+}
+.data-label-humi {
+  display: inline;
+  position: absolute;
+  top: 75+100+100px;
+  left: 175+80px;
+  font-size: 15px;
+  font-weight: light;
+  color: #435c73;
+}
+.data-text-humi {
+  display: inline;
+  position: absolute;
+  top: 90+100+100px;
+  left: 170+80px;
+  font-size: 50px;
+  font-weight: bolder;
+  color: #435c73;
+}

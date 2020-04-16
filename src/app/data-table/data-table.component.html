@@ -3,7 +3,7 @@
           The actual rendered columns are set as a property on the row definition" -->
 
   <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef>编号</th>
+    <th mat-header-cell *matHeaderCellDef>设备ID</th>
     <td mat-cell *matCellDef="let element">{{ element.id }}</td>
   </ng-container>
 
@@ -13,28 +13,13 @@
   </ng-container>
 
   <ng-container matColumnDef="temp">
-    <th mat-header-cell *matHeaderCellDef>温度</th>
-    <td mat-cell *matCellDef="let element">{{ element.temp }}</td>
+    <th mat-header-cell *matHeaderCellDef>事件类型</th>
+    <td mat-cell *matCellDef="let element">{{ element.kind }}</td>
   </ng-container>
 
   <ng-container matColumnDef="hum">
-    <th mat-header-cell *matHeaderCellDef>湿度</th>
-    <td mat-cell *matCellDef="let element">{{ element.hum }}</td>
-  </ng-container>
-
-  <ng-container matColumnDef="co2">
-    <th mat-header-cell *matHeaderCellDef>二氧化碳浓度</th>
-    <td mat-cell *matCellDef="let element">{{ element.co2 }}</td>
-  </ng-container>
-
-  <ng-container matColumnDef="hcho">
-    <th mat-header-cell *matHeaderCellDef>甲醛浓度</th>
-    <td mat-cell *matCellDef="let element">{{ element.hcho }}</td>
-  </ng-container>
-
-  <ng-container matColumnDef="tvoc">
-    <th mat-header-cell *matHeaderCellDef>TVOC</th>
-    <td mat-cell *matCellDef="let element">{{ element.tvoc }}</td>
+    <th mat-header-cell *matHeaderCellDef>参数</th>
+    <td mat-cell *matCellDef="let element">{{ element.para }}</td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

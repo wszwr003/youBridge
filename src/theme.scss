@@ -49,6 +49,7 @@ $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
 // 设置自定义主题，使其生效
 @include angular-material-theme($my-app-theme);
 
+//取消百度地图logo
 .BMap_cpyCtrl {
   display: none !important;
 }

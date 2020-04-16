@@ -9,7 +9,7 @@
             <mat-card-title>设备总数</mat-card-title>
             <mat-card-subtitle> </mat-card-subtitle>
           </mat-card-header>
-          <mat-card-content class="summary-text">21 </mat-card-content>
+          <mat-card-content class="summary-text">36 </mat-card-content>
         </mat-card>
         <mat-card fxFlex="calc(33%-20px)">
           <mat-card-header>
@@ -33,7 +33,7 @@
           <!-- <div mat-card-avatar class="example-header-image"></div> -->
           <mat-card-title>设备概况</mat-card-title>
           <mat-card-subtitle>
-            设备类型:5 在线设备:10 离线设备:10 异常设备:1
+            设备类型:6 在线设备:10 离线设备:25 异常设备:1
           </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content overflow="hidden">
@@ -83,46 +83,70 @@
         <mat-card-subtitle></mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <div class="container" fxLayout="row" fxLayoutAlign="space-around">
-          <!-- <app-new-solidgauge-chart [data]="data"> </app-new-solidgauge-chart> -->
-        </div>
-        <div class="data-label">
-          VOC等级:
-          <a class="data-text">
+        <!-- <div class="container" fxLayout="row" fxLayoutAlign="space-around">
+          <app-new-solidgauge-chart [data]="data"> </app-new-solidgauge-chart>
+        </div> -->
+        <div
+          class="container"
+          fxLayout="row"
+          fxLayout.xs="column"
+          fxLayoutGap="20px"
+          fxLayoutAlign="space-around"
+        >
+          <mat-icon class="data-icon-voc">filter_list</mat-icon>
+          <div class="data-label-voc">
+            VOC
+          </div>
+          <div class="data-text-voc">
             {{ data.voc_lvl }}
-          </a>
-        </div>
-        <div class="data-label">
-          CO2:
-          <a class="data-text">
+          </div>
+
+          <mat-icon class="data-icon-co2">bubble_chart</mat-icon>
+          <div class="data-label-co2">
+            CO2(ppm)
+          </div>
+          <div class="data-text-co2">
             {{ data.co2 }}
-          </a>
-          PM2.5:
-          <a class="data-text">{{ data.pm25 }} </a>
-        </div>
-        <div class="data-label">
-          温度:<a class="data-text"> {{ data.temp }} </a>, 湿度:<a
-            class="data-text"
-          >
+          </div>
+          <mat-icon class="data-icon-pm25">smoking_rooms</mat-icon>
+          <div class="data-label-pm25">
+            PM2.5(μg/m3)
+          </div>
+          <div class="data-text-pm25">
+            {{ data.pm25 }}
+          </div>
+          <mat-icon class="data-icon-temp">wb_sunny</mat-icon>
+          <div class="data-label-temp">
+            温度(℃)
+          </div>
+          <div class="data-text-temp">
+            {{ data.temp }}
+          </div>
+          <mat-icon class="data-icon-humi">invert_colors</mat-icon>
+          <div class="data-label-humi">
+            湿度(%)
+          </div>
+          <div class="data-text-humi">
             {{ data.humi }}
-          </a>
+          </div>
         </div>
       </mat-card-content>
     </mat-card>
-    <mat-card class="message" fxFlex="calc(25%-20px)">
+    <app-data-table
+      [historyMsg]="historyMsg"
+      fxFlex="calc(25%-20px)"
+    ></app-data-table>
+    <!-- <mat-card class="message" fxFlex="calc(25%-20px)">
       <mat-card-header>
-        <!-- <div mat-card-avatar class="example-header-image"></div> -->
+        <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>消息事件</mat-card-title>
         <mat-card-subtitle></mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <div
-          class="message"
-          *ngFor="let message of historyMsgStrings.reverse()"
-        >
+        <div class="message" *ngFor="let message of historyMsgStrings">
           {{ message }}
         </div>
       </mat-card-content>
-    </mat-card>
+    </mat-card> -->
   </div>
 </div>

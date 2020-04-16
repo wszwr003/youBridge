@@ -28,6 +28,7 @@ import { ProgressBarComponent } from "./progress-bar/progress-bar.component";
 import { DataChartComponent } from "./data-chart/data-chart.component";
 import { MutisensorViewComponent } from "./mutisensor-view/mutisensor-view.component";
 import { BaiduMapComponent } from "./baidu-map/baidu-map.component";
+import { BaiduMapSingleComponent } from "./baidu-map-single/baidu-map-single.component";
 import { DataTableComponent } from "./data-table/data-table.component";
 import { MouseEnterSetbleDirective } from "./directives/mouse-enter-setble.directive";
 import { OverViewComponent } from "./over-view/over-view.component";
@@ -64,6 +65,7 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     DataChartComponent,
     MutisensorViewComponent,
     BaiduMapComponent,
+    BaiduMapSingleComponent,
     DataTableComponent,
     MouseEnterSetbleDirective,
     OverViewComponent,

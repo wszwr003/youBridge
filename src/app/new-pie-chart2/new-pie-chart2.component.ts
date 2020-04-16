@@ -29,14 +29,19 @@ export class NewPieChart2Component implements OnInit {
       pie: {
         innerSize: 30,
         depth: 30,
+        showInLegend: true, //增加legend
+        //取消直接表示
+        dataLabels: {
+          enabled: false,
+        },
       },
     },
     series: [
       {
         name: "设备数量",
         data: [
-          { name: "在线设备", y: 10, color: "#00BEA0" },
-          { name: "离线设备", y: 8, color: "#0A96DC" },
+          { name: "在线设备", y: 10, color: "#55FF00" },
+          { name: "离线设备", y: 8, color: "#C0C4C8" },
           { name: "异常设备", y: 3, color: "#435C73" },
         ],
       },

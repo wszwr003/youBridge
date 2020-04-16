@@ -53,31 +53,36 @@ export class NewLineChartComponent implements OnInit {
           text: "数量",
         },
       },
-
       series: [
         {
           name: "5IN1传感器",
-          data: [1, 5, 10],
+          data: [2, 5, 10],
+          color: "#00BEA0",
         },
         {
           name: "空调",
-          data: [1, 1, 6],
+          data: [2, 4, 6],
+          color: "#0A96DC",
         },
         {
           name: "空气净化器",
-          data: [1, 2, 4],
+          data: [1, 4, 8],
+          color: "#435C73",
         },
         {
           name: "OTDR",
           data: [2, 2, 3],
+          color: "#7360BB",
         },
         {
           name: "熔接机",
           data: [1, 1, 3],
+          color: "#C0C4C8",
         },
         {
           name: "小仪器仪表",
-          data: [2, 3, 1],
+          data: [2, 3, 6],
+          color: "#E64B3F",
         },
       ],
 

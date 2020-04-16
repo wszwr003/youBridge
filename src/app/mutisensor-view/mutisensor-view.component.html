@@ -4,56 +4,17 @@
     class="container"
     fxLayout="row wrap"
     fxLayout.xs="column"
-    fxLayoutAlign="space-around stretch"
     fxLayoutGap="20px"
   >
-    <mat-card fxFlex="calc(30%-20px)" fxFlex.sm="calc(30%-20px)">
+    <mat-card fxFlex="calc(100%-20px)" fxFlex.sm="calc(100%-20px)">
       <mat-card-header>
-        <!-- <div mat-card-avatar class="example-header-image"></div> -->
         <mat-card-title>
-          <!-- <mat-icon> filter_tilt_shift </mat-icon> -->
-          实时数据
-        </mat-card-title>
+          <!-- <mat-icon> gps_fixed </mat-icon> -->
+          实时图表</mat-card-title
+        >
         <mat-card-subtitle></mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <div class="container" fxLayout="row" fxLayoutAlign="space-around">
-          <!-- <app-new-solidgauge-chart [data]="data"> </app-new-solidgauge-chart> -->
-        </div>
-        <div class="data-label">
-          VOC等级:
-          <a class="data-text">
-            {{ subscribe_msg.voc_lvl }}
-          </a>
-        </div>
-        <div class="data-label">
-          CO2:
-          <a class="data-text">
-            {{ subscribe_msg.co2 }}
-          </a>
-          PM2.5:
-          <a class="data-text">{{ subscribe_msg.pm25 }} </a>
-        </div>
-        <div class="data-label">
-          温度:<a class="data-text"> {{ subscribe_msg.temp }} </a>, 湿度:<a
-            class="data-text"
-          >
-            {{ subscribe_msg.humi }}
-          </a>
-        </div>
-      </mat-card-content>
-    </mat-card>
-    <mat-card fxFlex="calc(70%-20px)" fxFlex.sm="calc(70%-20px)">
-      <mat-card-header>
-        <!-- <div mat-card-avatar class="example-header-image"></div> -->
-        <mat-card-title>
-          <!-- <mat-icon> show_chart </mat-icon> -->
-          历史数据
-        </mat-card-title>
-        <mat-card-subtitle></mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <!-- <app-new-line-chart></app-new-line-chart> -->
         <app-data-chart
           [data]="subscribe_msg"
           [datas]="datas"
@@ -66,22 +27,76 @@
     class="container"
     fxLayout="row wrap"
     fxLayout.xs="column"
+    fxLayoutAlign="space-around stretch"
     fxLayoutGap="20px"
   >
-    <mat-card fxFlex="calc(100%-20px)" fxFlex.sm="calc(100%-20px)">
+    <mat-card class="message" fxFlex="calc(30%-20px)" fxFlex.sm="calc(30%-20px)">
       <mat-card-header>
+        <!-- <div mat-card-avatar class="example-header-image"></div> -->
         <mat-card-title>
-          <!-- <mat-icon> gps_fixed </mat-icon> -->
-          位置</mat-card-title
-        >
+          <!-- <mat-icon> filter_tilt_shift </mat-icon> -->
+          实时数据
+        </mat-card-title>
         <mat-card-subtitle></mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <app-baidu-map></app-baidu-map>
+        <!-- <div class="container" fxLayout="row" fxLayoutAlign="space-around">
+          <app-new-solidgauge-chart [data]="data"> </app-new-solidgauge-chart>
+        </div> -->
+        <mat-icon class="data-icon-voc">filter_list</mat-icon>
+        <div class="data-label-voc">
+          VOC
+        </div>
+        <div class="data-text-voc">
+          {{ subscribe_msg.voc_lvl }}
+        </div>
+        <mat-icon class="data-icon-co2">bubble_chart</mat-icon>
+        <div class="data-label-co2">
+          CO2(ppm)
+        </div>
+        <div class="data-text-co2">
+          {{ subscribe_msg.co2 }}
+        </div>
+        <mat-icon class="data-icon-pm25">smoking_rooms</mat-icon>
+        <div class="data-label-pm25">
+          PM2.5(μg/m3)
+        </div>
+        <div class="data-text-pm25">
+          {{ subscribe_msg.pm25 }}
+        </div>
+        <mat-icon class="data-icon-temp">wb_sunny</mat-icon>
+        <div class="data-label-temp">
+          温度(℃)
+        </div>
+        <div class="data-text-temp">
+          {{ subscribe_msg.temp }}
+        </div>
+        <mat-icon class="data-icon-humi">invert_colors</mat-icon>
+        <div class="data-label-humi">
+          湿度(%)
+        </div>
+        <div class="data-text-humi">
+          {{ subscribe_msg.humi }}
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card fxFlex="calc(70%-20px)" fxFlex.sm="calc(70%-20px)">
+      <mat-card-header>
+        <!-- <div mat-card-avatar class="example-header-image"></div> -->
+        <mat-card-title>
+          <!-- <mat-icon> show_chart </mat-icon> -->
+          位置
+        </mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <!-- <app-new-line-chart></app-new-line-chart> -->
+        <app-baidu-map-single></app-baidu-map-single>
       </mat-card-content>
     </mat-card>
   </div>
-  <div
+
+  <!-- <div
     class="container"
     fxLayout="row wrap"
     fxLayout.xs="column"
@@ -93,7 +108,7 @@
       fxFlex.sm="calc(50%-20px)"
     >
       <mat-card-header>
-        <!-- <div mat-card-avatar class="example-header-image"></div> -->
+        <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>控制</mat-card-title>
         <mat-card-subtitle></mat-card-subtitle>
       </mat-card-header>
@@ -105,15 +120,12 @@
       fxFlex.sm="calc(50%-20px)"
     >
       <mat-card-header>
-        <!-- <div mat-card-avatar class="example-header-image"></div> -->
+        <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>消息</mat-card-title>
         <mat-card-subtitle></mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <div
-          class="message"
-          *ngFor="let message of historyMsgStrings.reverse()"
-        >
+        <div class="message" *ngFor="let message of historyMsgStrings">
           {{ message }}
         </div>
       </mat-card-content>
@@ -127,13 +139,13 @@
   >
     <mat-card fxFlex="calc(100%-20px)" fxFlex.sm="calc(100%-20px)">
       <mat-card-header>
-        <!-- <div mat-card-avatar class="example-header-image"></div> -->
+        <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>历史数据</mat-card-title>
         <mat-card-subtitle></mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
         <app-data-table></app-data-table>
       </mat-card-content>
-    </mat-card>
-  </div>
+    </mat-card> 
+  </div>-->
 </div>

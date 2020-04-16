@@ -19,6 +19,12 @@ export class NewPieChartComponent implements OnInit {
         alpha: 30,
       },
     },
+    //legend位置
+    legend: {
+      align: "center",
+      verticalAlign: "bottom",
+      layout: "horizontal",
+    },
     title: {
       text: "",
     },
@@ -29,6 +35,11 @@ export class NewPieChartComponent implements OnInit {
       pie: {
         innerSize: 30,
         depth: 30,
+        showInLegend: true, //增加legend
+        //取消直接表示
+        dataLabels: {
+          enabled: false,
+        },
       },
     },
     series: [

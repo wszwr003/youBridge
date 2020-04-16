@@ -39,9 +39,9 @@ export class HomeLayoutComponent {
           route: "devices/env",
           children: [
             {
-              displayName: "传感器(486233)",
+              displayName: "传感器(511899)",
               //iconName: "",
-              route: "devices/env/861011047486233",
+              route: "devices/env/861011047511899",
             },
             {
               displayName: "传感器(455360)",
@@ -64,9 +64,9 @@ export class HomeLayoutComponent {
               route: "devices/env/861011047418186",
             },
             {
-              displayName: "传感器(485599)",
+              displayName: "传感器(486233)",
               //iconName: "",
-              route: "devices/env/861011047485599",
+              route: "devices/env/861011047486233",
             },
             {
               displayName: "传感器(486225)",
@@ -128,9 +128,9 @@ export class HomeLayoutComponent {
           route: "group/group1",
           children: [
             {
-              displayName: "传感器(486233)",
+              displayName: "传感器(511899)",
               //iconName: "",
-              route: "devices/env/861011047486233",
+              route: "devices/env/861011047511899",
             },
             {
               displayName: "传感器(455360)",
@@ -168,9 +168,9 @@ export class HomeLayoutComponent {
               route: "devices/env/861011047486134",
             },
             {
-              displayName: "传感器(511899)",
+              displayName: "传感器(486233)",
               //iconName: "",
-              route: "devices/env/861011047511899",
+              route: "devices/env/861011047486233",
             },
             {
               displayName: "传感器(486209)",

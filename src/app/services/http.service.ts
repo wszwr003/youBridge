@@ -5,8 +5,9 @@ import { HttpClient } from "@angular/common/http";
   providedIn: "root",
 })
 export class HttpService {
-  URL = "http://127.0.0.1:4000";
-
+  URL_local = "http://127.0.0.1:4000";
+  URL_ali = "http://116.62.151.59:4000";
+  URL = this.URL_ali;
   constructor(private http: HttpClient) {}
 
   getHttp(URL: string) {

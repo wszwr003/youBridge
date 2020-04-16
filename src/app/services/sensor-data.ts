@@ -12,3 +12,8 @@ export interface sensorData {
   time?: string;
   //hcho?: number;
 }
+export interface deviceState {
+  device_id: string;
+  state: boolean;
+  timer?: NodeJS.Timer;
+}

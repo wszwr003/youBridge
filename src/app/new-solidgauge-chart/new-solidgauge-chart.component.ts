@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, SimpleChanges } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  Input,
+  SimpleChanges,
+  ElementRef,
+  ViewChild,
+} from "@angular/core";
 import * as Highcharts from "highcharts";
 import { sensorData } from "../services/sensor-data";
 declare var require: any;
@@ -35,7 +42,7 @@ export class NewSolidgaugeChartComponent implements OnInit {
       enabled: false,
     },
     yAxis: {
-      min: 2,
+      min: 3,
       max: 0,
       title: {
         //标题
@@ -45,7 +52,7 @@ export class NewSolidgaugeChartComponent implements OnInit {
       stops: [
         [0.1, "#DF5353"], // red
         [0.5, "#DDDF0D"], // yellow
-        [0.9, "#55BF3B"], // green
+        [0.9, "#00BEA0"], // green
       ],
       lineWidth: 0,
       minorTickInterval: null,
@@ -142,7 +149,7 @@ export class NewSolidgaugeChartComponent implements OnInit {
     }
   }
   ngOnInit() {
-    if (this.chart != undefined) this.chart.setSize(50);
+    //if (this.chart != undefined) this.chart.setSize(50);
   }
   ngAfterViewInit() {
     if (this.chart != undefined) this.chart.setSize(null);
