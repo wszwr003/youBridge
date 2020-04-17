@@ -45,7 +45,7 @@ export class MutisensorViewComponent implements OnInit {
     dateFormat: "%H:%M:%S",
     seriesName: ["温度", "湿度", "二氧化碳浓度", "PM2.5浓度"],
   };
-  private observeMQTT; //mqtt 实例
+  private observeMQTT = null; //mqtt 实例
   private dataTopic: string = "data";
   private settingTopic: string = "setting";
   private settingSensorData = {
@@ -65,34 +65,48 @@ export class MutisensorViewComponent implements OnInit {
 
   ngOnInit() {
     //获取当前页面的(设备id)来显示不同的设备页面和数据
+    //FAO!!!TBS!!!TODO:!!!FIXME:!!!
+    //ngOnInit不同的参数子界面,只会初始化一次!!!!!!!!
+    //需要放到订阅中处理每次载入子界面才会调用!!!!!!!
     this.route.paramMap.subscribe((params) => {
+      console.log("##1##mutisensor-view!");
       this.deviceId = params.get("deviceId");
       this.settingSensorData.deviceId = this.deviceId;
+      console.log("##2##deviceId:", this.deviceId);
+      //取消之前的订阅
+      try {
+        this.observeMQTT.unsubscribe();
+      } catch (error) {
+        console.log("##3##there is no subscribe!");
+      }
+      //初始化child component 数据!
+      console.log("##4##deviceId:", this.deviceId);
+
+      //订阅MQTT服务器的data主题
+      this.subscribeTopic(this.deviceId);
+      //通过post方式从mysql服务器获取图表历史数据
+      this.http
+        .postHttp("/get-datas", {
+          device_id: this.deviceId,
+        })
+        .subscribe((datas: sensorData[]) => {
+          this.historyDatas = datas;
+          this.newestCardData = datas[0];
+        });
     });
-    //订阅MQTT服务器的data主题
-    this.subscribeTopic();
-    //通过post方式从mysql服务器获取图表历史数据
-    this.http
-      .postHttp("/get-datas", {
-        device_id: this.deviceId,
-      })
-      .subscribe((datas: sensorData[]) => {
-        this.historyDatas = datas;
-        this.newestCardData = datas[0];
-      });
   }
 
   ngOnDestroy() {
     this.observeMQTT.unsubscribe();
   }
 
-  subscribeTopic() {
+  subscribeTopic(deviceId: string) {
     // TBS:如何在component中订阅这个订阅
     this.observeMQTT = this.myMqttService.MQRRService.observe(
       this.dataTopic
     ).subscribe((message: IMqttMessage) => {
       var tempSensorData: sensorData = JSON.parse(message.payload.toString());
-      if (tempSensorData.device_id == this.deviceId) {
+      if (tempSensorData.device_id == deviceId) {
         var date = new Date();
         this.realTimeData = tempSensorData;
         this.newestCardData = tempSensorData;

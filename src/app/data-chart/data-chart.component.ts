@@ -98,6 +98,11 @@ export class DataChartComponent implements OnInit, OnChanges {
               this.datas,
               "datas-end"
             );
+            this.dataChart.series[0].setData([]);
+            this.dataChart.series[1].setData([]);
+            this.dataChart.series[2].setData([]);
+            this.dataChart.series[3].setData([]);
+
             for (let index = this.datas.length - 1; index >= 0; index--) {
               var element = this.datas[index];
               var time = new Date(element.time).getTime();
@@ -170,7 +175,7 @@ export class DataChartComponent implements OnInit, OnChanges {
         text: "",
       },
       credits: {
-        enabled: false,   //highchart 标志取消
+        enabled: false, //highchart 标志取消
       },
       tooltip: {
         formatter: function () {
@@ -181,7 +186,7 @@ export class DataChartComponent implements OnInit, OnChanges {
         type: "datetime",
         labels: {
           formatter: function () {
-            return Highcharts.dateFormat("%H:%M", this.value); //TBS:this.value
+            return Highcharts.dateFormat("%m/%d %H:%M", this.value); //TBS:this.value
           },
         },
       },
