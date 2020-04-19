@@ -1,34 +1,77 @@
 import {
   Component,
-  EventEmitter,
-  Output,
   OnInit,
-  ElementRef,
-  ViewChild,
+  Input,
+  OnChanges,
+  SimpleChanges,
 } from "@angular/core";
 import {
+  Animation,
   MapOptions,
   Point,
   MarkerOptions,
   MapTypeEnum,
+  BMarker,
+  NavigationControlOptions,
+  OverviewMapControlOptions,
+  ScaleControlOptions,
+  MapTypeControlOptions,
+  ControlAnchor,
+  NavigationControlType,
+  MapTypeControlType,
 } from "angular2-baidu-map";
-import { environment } from "src/environments/environment";
+import { GPS } from "../services/sensor-data";
 
 @Component({
   selector: "app-baidu-map-single",
   templateUrl: "./baidu-map-single.component.html",
   styleUrls: ["./baidu-map-single.component.scss"],
 })
-export class BaiduMapSingleComponent {
-  @Output() notify = new EventEmitter<string>(); //output component
+export class BaiduMapSingleComponent implements OnInit, OnChanges {
+  public controlOpts: NavigationControlOptions;
+  public overviewmapOpts: OverviewMapControlOptions;
+  public scaleOpts: ScaleControlOptions;
+  public mapTypeOpts: MapTypeControlOptions;
+  @Input() location: GPS;
+  public prevMark: any;
+
   options: MapOptions;
   marker: { point: Point; options?: MarkerOptions };
   newmark: any;
-
+  // public showWindow({ e, marker, map }: any): void {
+  //   var info = new window.BMap.InfoWindow(this.location.locString, {
+  //     offset: new window.BMap.Size(0, -10),
+  //     title: "多动能传感器: " + this.location.deviceId,
+  //   });
+  //   map.openInfoWindow(info, marker.getPosition());
+  // }
+  public setAnimation(marker: BMarker): void {
+    this.prevMark = marker;
+    marker.setAnimation(Animation.BMAP_ANIMATION_BOUNCE);
+  }
   constructor() {
+    console.log("map-construct");
+    this.controlOpts = {
+      anchor: ControlAnchor.BMAP_ANCHOR_TOP_LEFT,
+      type: NavigationControlType.BMAP_NAVIGATION_CONTROL_LARGE,
+    };
+
+    this.overviewmapOpts = {
+      anchor: ControlAnchor.BMAP_ANCHOR_BOTTOM_RIGHT,
+      isOpen: false,
+    };
+
+    this.scaleOpts = {
+      anchor: ControlAnchor.BMAP_ANCHOR_BOTTOM_LEFT,
+    };
+
+    this.mapTypeOpts = {
+      type: MapTypeControlType.BMAP_MAPTYPE_CONTROL_HORIZONTAL,
+      mapTypes: [MapTypeEnum.BMAP_NORMAL_MAP, MapTypeEnum.BMAP_SATELLITE_MAP],
+    };
     this.marker = {
       options: {
-        title:"",
+        title: "",
       },
       point: {
         lat: 30.5761,
@@ -45,5 +88,55 @@ export class BaiduMapSingleComponent {
       //enableScrollWheelZoom: true,
       enableKeyboard: true,
     };
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log("map-change");
+
+    for (const propName in changes) {
+      if (changes.hasOwnProperty(propName)) {
+        switch (propName) {
+          case "location": {
+            if (this.location.lat != undefined) {
+              console.log("!!!!****:", this.location.lat, this.location.lng);
+              this.marker.point.lat = this.location.lat;
+              this.marker.point.lng = this.location.lng;
+              this.options.centerAndZoom.lat = this.location.lat;
+              this.options.centerAndZoom.lng = this.location.lng;
+              try {
+                var newmark = new window.BMap.Marker(
+                  new window.BMap.Point(this.location.lng, this.location.lat)
+                );
+                this.prevMark.getMap().addOverlay(newmark);
+                this.prevMark
+                  .getMap()
+                  .setCenter(
+                    new window.BMap.Point(this.location.lng, this.location.lat)
+                  );
+
+                //FAO
+                // newmark.addEventListener("click", ({ e, marker, map }: any) => {
+                //   console.log("123123123");
+                //   var info = new window.BMap.InfoWindow(
+                //     this.location.locString,
+                //     {
+                //       offset: new window.BMap.Size(0, -10),
+                //       title: "多动能传感器: " + this.location.deviceId,
+                //     }
+                //   );
+                //   map.openInfoWindow(info, marker.getPosition());
+                // });
+                newmark.setAnimation(Animation.BMAP_ANIMATION_BOUNCE);
+                this.prevMark.getMap().removeOverlay(this.prevMark); //FAO:先到add前面就不行了!
+                this.prevMark = newmark;
+              } catch (error) {}
+            }
+          }
+        }
+      }
+    }
+  }
+  ngOnInit() {
+    console.log("map-init");
   }
 }

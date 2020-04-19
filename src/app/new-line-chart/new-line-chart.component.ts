@@ -63,29 +63,29 @@ export class NewLineChartComponent implements OnInit {
         },
         {
           name: "空调",
-          data: [2, 4, 6],
+          data: [2, 2, 3],
           color: "#0A96DC",
         },
         {
           name: "空气净化器",
-          data: [1, 4, 8],
+          data: [0, 1, 2],
           color: "#435C73",
         },
-        {
-          name: "OTDR",
-          data: [2, 2, 3],
-          color: "#7360BB",
-        },
-        {
-          name: "熔接机",
-          data: [1, 1, 3],
-          color: "#C0C4C8",
-        },
-        {
-          name: "小仪器仪表",
-          data: [2, 3, 6],
-          color: "#E64B3F",
-        },
+        // {
+        //   name: "OTDR",
+        //   data: [2, 2, 3],
+        //   color: "#7360BB",
+        // },
+        // {
+        //   name: "熔接机",
+        //   data: [1, 1, 3],
+        //   color: "#C0C4C8",
+        // },
+        // {
+        //   name: "小仪器仪表",
+        //   data: [2, 3, 6],
+        //   color: "#E64B3F",
+        // },
       ],
 
       responsive: {

@@ -91,6 +91,7 @@ export class DataChartComponent implements OnInit, OnChanges {
               shift,
               false
             );
+            break; //FAO: 不能丢!!
           }
           case "datas": {
             console.log(
@@ -136,6 +137,7 @@ export class DataChartComponent implements OnInit, OnChanges {
                 false
               );
             }
+            break; //FAO: 不能丢!!
           }
         }
       }

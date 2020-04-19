@@ -6,7 +6,7 @@ import { HTTP_SERVICE_OPTIONS } from "../app.module";
   providedIn: "root",
 })
 export class HttpService {
-  URL = HTTP_SERVICE_OPTIONS.URL_ali;
+  URL = HTTP_SERVICE_OPTIONS.URL;
   constructor(private http: HttpClient) {}
 
   getHttp(URL: string) {

@@ -13,7 +13,7 @@ export class OverViewComponent {
   public historyMsgStrings: string[] = []; //FAO: 不初始化会出错!!??
   public historyMsg: SensorData[] = []; //FAO: 不初始化会出错!!??
   private testTopic: string = "data";
-  public device_id: string = "861011047511899";
+  public device_id: string = "861011047418186";
   public online_num: number = 0;
   public device_list: DeviceState[] = [
     { device_id: "861011047511899", state: false },

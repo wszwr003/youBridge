@@ -100,21 +100,21 @@ export class HomeLayoutComponent {
           //iconName: "cached",
           route: "devfestfl/speakers/michael-prentice",
         },
-        {
-          displayName: "光时域反射仪",
-          //iconName: "sync_alt",
-          route: "devfestfl/speakers/michael-prentice",
-        },
-        {
-          displayName: "小仪器仪表",
-          //iconName: "widgets",
-          route: "devfestfl/speakers/michael-prentice",
-        },
-        {
-          displayName: "熔接机",
-          //iconName: "settings_input_component",
-          route: "devfestfl/speakers/michael-prentice",
-        },
+        // {
+        //   displayName: "光时域反射仪",
+        //   //iconName: "sync_alt",
+        //   route: "devfestfl/speakers/michael-prentice",
+        // },
+        // {
+        //   displayName: "小仪器仪表",
+        //   //iconName: "widgets",
+        //   route: "devfestfl/speakers/michael-prentice",
+        // },
+        // {
+        //   displayName: "熔接机",
+        //   //iconName: "settings_input_component",
+        //   route: "devfestfl/speakers/michael-prentice",
+        // },
       ],
     },
     {

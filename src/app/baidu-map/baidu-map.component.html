@@ -2,15 +2,20 @@
   [options]="options"
   style="display: block; width: 100%; height: 390px;"
 >
-  <!-- <marker
+  <marker
     [point]="marker.point"
     [options]="marker.options"
     (clicked)="showWindow($event)"
-  ></marker> -->
+    (loaded)="setAnimation($event)"
+  ></marker>
   <marker
     *ngFor="let marker of markers"
     [point]="marker.point"
     [options]="marker.options"
     (clicked)="showWindow($event)"
   ></marker>
+  <control type="navigation" [options]="controlOpts"></control>
+  <control type="overviewmap" [options]="overviewmapOpts"></control>
+  <control type="scale" [options]="scaleOpts"></control>
+  <control type="maptype" [options]="mapTypeOpts"></control>
 </baidu-map>

@@ -48,17 +48,18 @@ import { NewPieChart2Component } from "./new-pie-chart2/new-pie-chart2.component
 import { HttpService } from "./services/http.service";
 import { HttpClientModule } from "@angular/common/http";
 import { NewColumeChartComponent } from "./new-colume-chart/new-colume-chart.component";
-import { MutisensorsViewComponent } from './mutisensors-view/mutisensors-view.component';
+import { MutisensorsViewComponent } from "./mutisensors-view/mutisensors-view.component";
+import { MutisensorCardComponent } from "./mutisensor-card/mutisensor-card.component";
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
-  //hostname: "127.0.0.1",
-  hostname: "116.62.151.59",
+  hostname: "127.0.0.1",
+  // hostname: "116.62.151.59",
   port: 8888,
   path: "/mqtt", //'/mqtt'
 };
 export const HTTP_SERVICE_OPTIONS: any = {
-  URL_local: "http://127.0.0.1:4000",
-  URL_ali: "http://116.62.151.59:4000",
+  URL: "http://127.0.0.1:4000",
+  // URL: "http://116.62.151.59:4000",
 };
 @NgModule({
   declarations: [
@@ -83,6 +84,7 @@ export const HTTP_SERVICE_OPTIONS: any = {
     NewPieChart2Component,
     NewColumeChartComponent,
     MutisensorsViewComponent,
+    MutisensorCardComponent,
   ],
   imports: [
     BrowserModule,

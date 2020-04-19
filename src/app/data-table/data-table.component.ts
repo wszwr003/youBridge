@@ -11,7 +11,7 @@ export interface PeriodicElement {
   id: string;
   time: string;
   kind: string;
-  para: string;
+  // para: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
@@ -25,49 +25,49 @@ const ELEMENT_DATA: PeriodicElement[] = [
     id: " ",
     time: " ",
     kind: " ",
-    para: " ",
+    // para: " ",
   },
   {
     id: " ",
     time: " ",
     kind: " ",
-    para: " ",
+    // para: " ",
   },
   {
     id: " ",
     time: " ",
     kind: " ",
-    para: " ",
+    // para: " ",
   },
   {
     id: " ",
     time: " ",
     kind: " ",
-    para: " ",
+    // para: " ",
   },
   {
     id: " ",
     time: " ",
     kind: " ",
-    para: " ",
+    // para: " ",
   },
   {
     id: " ",
     time: " ",
     kind: " ",
-    para: " ",
+    // para: " ",
   },
   {
     id: " ",
     time: " ",
     kind: " ",
-    para: " ",
+    // para: " ",
   },
   {
     id: " ",
     time: " ",
     kind: " ",
-    para: " ",
+    // para: " ",
   },
 ];
 
@@ -94,17 +94,17 @@ export class DataTableComponent implements OnInit, OnChanges {
               this.dataSource[i].id = element.device_id.slice(9);
               this.dataSource[i].time = element.time;
               this.dataSource[i].kind = "数据";
-              this.dataSource[i].para =
-                "VOC:" +
-                element.voc_lvl +
-                ",CO2:" +
-                element.co2 +
-                ",PM2.5:" +
-                element.pm25 +
-                ",温度:" +
-                element.temp +
-                ",湿度:" +
-                element.humi;
+              // this.dataSource[i].para =
+              //   "VOC:" +
+              //   element.voc_lvl +
+              //   ",CO2:" +
+              //   element.co2 +
+              //   ",PM2.5:" +
+              //   element.pm25 +
+              //   ",温度:" +
+              //   element.temp +
+              //   ",湿度:" +
+              //   element.humi;
             }
           }
         }
