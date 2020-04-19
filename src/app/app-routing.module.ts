@@ -6,6 +6,7 @@ import { HomeLayoutComponent } from "./layouts/home-layout.component";
 import { LoginPageComponent } from "./login-page/login-page.component";
 import { LoginLayoutComponent } from "./layouts/login-layout.component";
 import { AuthGuardService } from "./services/auth-guard.service";
+import { MutisensorsViewComponent } from "./mutisensors-view/mutisensors-view.component";
 const routes: Routes = [
   //   { path: "mutisensor/:deviceId", component: MutisensorViewComponent },
   //   { path: "", component: MutisensorViewComponent },
@@ -23,11 +24,15 @@ const routes: Routes = [
   {
     path: "",
     component: HomeLayoutComponent,
-    canActivate: [AuthGuardService],
+    //canActivate: [AuthGuardService],
     children: [
       {
         path: "sys",
         component: OverViewComponent,
+      },
+      {
+        path: "devices/env",
+        component: MutisensorsViewComponent,
       },
       {
         path: "devices/env/:deviceId",

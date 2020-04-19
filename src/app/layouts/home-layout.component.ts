@@ -123,6 +123,23 @@ export class HomeLayoutComponent {
       route: "group",
       children: [
         {
+          displayName: "上海光维设备组",
+          //iconName: "settings_input_component",
+          route: "group/group1",
+          children: [
+            {
+              displayName: "传感器(418186)",
+              //iconName: "",
+              route: "devices/env/861011047418186",
+            },
+            {
+              displayName: "传感器(486134)",
+              //iconName: "",
+              route: "devices/env/861011047486134",
+            },
+          ],
+        },
+        {
           displayName: "浙江光维设备组",
           //iconName: "settings_input_component",
           route: "group/group1",
@@ -148,11 +165,6 @@ export class HomeLayoutComponent {
               route: "devices/env/861011047485565",
             },
             {
-              displayName: "传感器(418186)",
-              //iconName: "",
-              route: "devices/env/861011047418186",
-            },
-            {
               displayName: "传感器(485599)",
               //iconName: "",
               route: "devices/env/861011047485599",
@@ -161,11 +173,6 @@ export class HomeLayoutComponent {
               displayName: "传感器(486225)",
               //iconName: "",
               route: "devices/env/861011047486225",
-            },
-            {
-              displayName: "传感器(486134)",
-              //iconName: "",
-              route: "devices/env/861011047486134",
             },
             {
               displayName: "传感器(486233)",

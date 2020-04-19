@@ -5,7 +5,7 @@ import {
   OnChanges,
   SimpleChanges,
 } from "@angular/core";
-import { sensorData } from "../services/sensor-data";
+import { SensorData } from "../services/sensor-data";
 
 export interface PeriodicElement {
   id: string;
@@ -78,7 +78,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class DataTableComponent implements OnInit, OnChanges {
   displayedColumns: string[] = ["id", "time", "temp", "hum"];
-  @Input() historyMsg: sensorData[] = [];
+  @Input() historyMsg: SensorData[] = [];
   dataSource: PeriodicElement[] = ELEMENT_DATA;
   constructor() {}
   ngOnInit() {}

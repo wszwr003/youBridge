@@ -7,7 +7,7 @@ import {
   ViewChild,
 } from "@angular/core";
 import * as Highcharts from "highcharts";
-import { sensorData } from "../services/sensor-data";
+import { SensorData } from "../services/sensor-data";
 declare var require: any;
 let SolidGauge = require("highcharts/modules/solid-gauge");
 let More = require("highcharts/highcharts-more");
@@ -19,7 +19,7 @@ More(Highcharts);
   styleUrls: ["./new-solidgauge-chart.component.scss"],
 })
 export class NewSolidgaugeChartComponent implements OnInit {
-  @Input() data: sensorData;
+  @Input() data: SensorData;
   Highcharts: typeof Highcharts = Highcharts;
   public chart: Highcharts.Chart;
   chartOptions: any = {

@@ -8,7 +8,7 @@ import {
 } from "@angular/core";
 import * as Highcharts from "highcharts";
 import { ChartInit } from "../mutisensor-view/sensor-chart";
-import { sensorData } from "../services/sensor-data";
+import { SensorData } from "../services/sensor-data";
 declare var require: any;
 let Boost = require("highcharts/modules/boost");
 let noData = require("highcharts/modules/no-data-to-display");
@@ -31,8 +31,8 @@ export class DataChartComponent implements OnInit, OnChanges {
     dateFormat: null,
     seriesName: null,
   };
-  @Input() data: sensorData;
-  @Input() datas: sensorData[];
+  @Input() data: SensorData;
+  @Input() datas: SensorData[];
   private chartPoints = 60; //chart最多数据点设置
   private dataChart: Highcharts.Chart = null;
   public options: any;

@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { MyMqttService } from "../services/my-mqtt.service";
 import { HttpService } from "../services/http.service";
 import { IMqttMessage } from "ngx-mqtt";
-import { sensorData, deviceState } from "../services/sensor-data";
+import { SensorData, DeviceState } from "../services/sensor-data";
 
 @Component({
   selector: "app-over-view",
@@ -11,11 +11,11 @@ import { sensorData, deviceState } from "../services/sensor-data";
 })
 export class OverViewComponent {
   public historyMsgStrings: string[] = []; //FAO: 不初始化会出错!!??
-  public historyMsg: sensorData[] = []; //FAO: 不初始化会出错!!??
+  public historyMsg: SensorData[] = []; //FAO: 不初始化会出错!!??
   private testTopic: string = "data";
   public device_id: string = "861011047511899";
   public online_num: number = 0;
-  public device_list: deviceState[] = [
+  public device_list: DeviceState[] = [
     { device_id: "861011047511899", state: false },
     { device_id: "861011047486233", state: false },
     { device_id: "861011047455360", state: false },
@@ -27,14 +27,14 @@ export class OverViewComponent {
     { device_id: "861011047486134", state: false },
     { device_id: "861011047486209", state: false },
   ];
-  public subscribe_msg: sensorData = {
+  public subscribe_msg: SensorData = {
     co2: 0,
     pm25: 0,
     temp: 0,
     humi: 0,
     voc_lvl: 0,
   };
-  public data: sensorData = {
+  public data: SensorData = {
     co2: 0,
     pm25: 0,
     temp: 0,

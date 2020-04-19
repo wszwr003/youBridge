@@ -16,8 +16,8 @@ export class AuthService {
   constructor(private router: Router) {}
 
   login(user: User): boolean {
-    if (user.userName !== "" && user.password !== "") {
-      if (user.userName == "grandway" && user.password == "grandway") {
+    if (user.username !== "" && user.password !== "") {
+      if (user.username == "grandway" && user.password == "grandway") {
         this.loggedIn.next(true);
         this.router.navigate(["/sys"]);
         return true;
