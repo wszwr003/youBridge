@@ -4,7 +4,7 @@ import { IMqttMessage } from "ngx-mqtt";
 import { ActivatedRoute } from "@angular/router";
 import { MyMqttService } from "../services/my-mqtt.service";
 import { HttpService } from "../services/http.service";
-import { sensorData } from "../services/sensor-data";
+import { SensorData, LOCATIONS, GPS } from "../services/sensor-data";
 @Component({
   selector: "app-mutisensor-view",
   templateUrl: "./mutisensor-view.component.html",
@@ -12,8 +12,9 @@ import { sensorData } from "../services/sensor-data";
 })
 export class MutisensorViewComponent implements OnInit {
   public deviceId: string = "";
+  public location: GPS;
   //实时数据 @input to chart card
-  public realTimeData: sensorData = {
+  public realTimeData: SensorData = {
     co2: 0,
     pm25: 0,
     temp: 0,
@@ -21,7 +22,7 @@ export class MutisensorViewComponent implements OnInit {
     voc_lvl: 0,
   };
   //历史数据 @input to chart card
-  public historyDatas: sensorData[] = [
+  public historyDatas: SensorData[] = [
     {
       co2: 0,
       pm25: 0,
@@ -31,7 +32,7 @@ export class MutisensorViewComponent implements OnInit {
     },
   ];
   //实时数据模块,数据(先从数据库获取一个最新数据,再获取实时数据) @input to newest card
-  public newestCardData: sensorData = {
+  public newestData: SensorData = {
     co2: 0,
     pm25: 0,
     temp: 0,
@@ -81,7 +82,12 @@ export class MutisensorViewComponent implements OnInit {
       }
       //初始化child component 数据!
       console.log("##4##deviceId:", this.deviceId);
-
+      //从LOCATIONS常量获取定位信息,后续改成从数据库或实时数据获取
+      LOCATIONS.forEach((element) => {
+        if (element.deviceId == this.deviceId) {
+          this.location = element;
+        }
+      });
       //订阅MQTT服务器的data主题
       this.subscribeTopic(this.deviceId);
       //通过post方式从mysql服务器获取图表历史数据
@@ -89,9 +95,9 @@ export class MutisensorViewComponent implements OnInit {
         .postHttp("/get-datas", {
           device_id: this.deviceId,
         })
-        .subscribe((datas: sensorData[]) => {
+        .subscribe((datas: SensorData[]) => {
           this.historyDatas = datas;
-          this.newestCardData = datas[0];
+          this.newestData = datas[0];
         });
     });
   }
@@ -105,11 +111,11 @@ export class MutisensorViewComponent implements OnInit {
     this.observeMQTT = this.myMqttService.MQRRService.observe(
       this.dataTopic
     ).subscribe((message: IMqttMessage) => {
-      var tempSensorData: sensorData = JSON.parse(message.payload.toString());
+      var tempSensorData: SensorData = JSON.parse(message.payload.toString());
       if (tempSensorData.device_id == deviceId) {
         var date = new Date();
         this.realTimeData = tempSensorData;
-        this.newestCardData = tempSensorData;
+        this.newestData = tempSensorData;
         console.log(
           "<-MutiSensor View Get MQTT MSG: " +
             JSON.stringify(this.realTimeData) +

@@ -3,6 +3,8 @@ import { MyMqttService } from "../services/my-mqtt.service";
 import { HttpService } from "../services/http.service";
 import { IMqttMessage } from "ngx-mqtt";
 import { SensorData, DeviceState } from "../services/sensor-data";
+import { Device } from "../services/device";
+import { ElementSchemaRegistry } from "@angular/compiler";
 
 @Component({
   selector: "app-over-view",
@@ -10,6 +12,8 @@ import { SensorData, DeviceState } from "../services/sensor-data";
   styleUrls: ["./over-view.component.scss"],
 })
 export class OverViewComponent {
+  public tick;
+  public online: number = 0;
   public historyMsgStrings: string[] = []; //FAO: 不初始化会出错!!??
   public historyMsg: SensorData[] = []; //FAO: 不初始化会出错!!??
   private testTopic: string = "data";
@@ -138,5 +142,23 @@ export class OverViewComponent {
           };
         else this.data = data[0];
       });
+
+    this.tick = setInterval(() => {
+      this.http
+        .postHttp("/get-all-device", {})
+        .subscribe((devices: Array<Device>) => {
+          var online = 0;
+          devices.forEach((element) => {
+            if (element.device_state == 1) {
+              online++;
+            }
+            //console.log(element);
+            // if (this.data.device_id == element.device_no) {
+            //   //设置卡片信息以及更新数据,设备状态
+            // }
+          });
+          this.online = online;
+        });
+    }, 10000);
   }
 }

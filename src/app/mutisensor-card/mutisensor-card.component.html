@@ -1,0 +1,55 @@
+<mat-card [routerLink]="['/devices/env', device.device_no]">
+  <mat-card-header>
+    <mat-card-title
+      >{{ device.device_no }} | {{ device.location }} |
+      {{ state }}</mat-card-title
+    >
+  </mat-card-header>
+  <mat-card-content>
+    <div
+      class="container"
+      fxLayout="row"
+      fxLayoutGap="20px"
+      fxLayoutAlign="space-around"
+    >
+      <app-new-solidgauge-chart
+        [newestData]="[newestData]"
+        fxFlex="calc(50%-20px)"
+      ></app-new-solidgauge-chart>
+      <div fxFlex="calc(50%-20px)">
+        <mat-icon class="data-icon-co2">bubble_chart</mat-icon>
+        <div class="data-label-co2">
+          CO2
+        </div>
+        <div class="data-text-co2">
+          {{ newestData == null ? "无数据" : newestData.co2
+          }}<a class="unit">ppm</a>
+        </div>
+        <mat-icon class="data-icon-pm25">grain</mat-icon>
+        <div class="data-label-pm25">
+          PM2.5
+        </div>
+        <div class="data-text-pm25">
+          {{ newestData == null ? "无数据" : newestData.pm25
+          }}<a class="unit">μg/m3</a>
+        </div>
+        <mat-icon class="data-icon-temp">wb_sunny</mat-icon>
+        <div class="data-label-temp">
+          温度
+        </div>
+        <div class="data-text-temp">
+          {{ newestData == null ? "无数据" : newestData.temp
+          }}<a class="unit">℃</a>
+        </div>
+        <mat-icon class="data-icon-humi">invert_colors</mat-icon>
+        <div class="data-label-humi">
+          湿度
+        </div>
+        <div class="data-text-humi">
+          {{ newestData == null ? "无数据" : newestData.humi
+          }}<a class="unit">%</a>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

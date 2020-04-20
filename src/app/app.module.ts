@@ -42,24 +42,22 @@ import { AuthService } from "./services/auth.service";
 import { AuthGuardService } from "./services/auth-guard.service";
 import { NewLineChartComponent } from "./new-line-chart/new-line-chart.component";
 import { NewPieChartComponent } from "./new-pie-chart/new-pie-chart.component";
-import { NewMutiaxisLineChartComponent } from "./new-mutiaxis-line-chart/new-mutiaxis-line-chart.component";
 import { NewSolidgaugeChartComponent } from "./new-solidgauge-chart/new-solidgauge-chart.component";
 import { NewPieChart2Component } from "./new-pie-chart2/new-pie-chart2.component";
 import { HttpService } from "./services/http.service";
 import { HttpClientModule } from "@angular/common/http";
-import { NewColumeChartComponent } from "./new-colume-chart/new-colume-chart.component";
 import { MutisensorsViewComponent } from "./mutisensors-view/mutisensors-view.component";
 import { MutisensorCardComponent } from "./mutisensor-card/mutisensor-card.component";
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
-  hostname: "127.0.0.1",
-  // hostname: "116.62.151.59",
+  // hostname: "127.0.0.1",
+  hostname: "116.62.151.59",
   port: 8888,
   path: "/mqtt", //'/mqtt'
 };
 export const HTTP_SERVICE_OPTIONS: any = {
-  URL: "http://127.0.0.1:4000",
-  // URL: "http://116.62.151.59:4000",
+  // URL: "http://127.0.0.1:4000",
+  URL: "http://116.62.151.59:4000",
 };
 @NgModule({
   declarations: [
@@ -79,10 +77,8 @@ export const HTTP_SERVICE_OPTIONS: any = {
     LoginLayoutComponent,
     NewLineChartComponent,
     NewPieChartComponent,
-    NewMutiaxisLineChartComponent,
     NewSolidgaugeChartComponent,
     NewPieChart2Component,
-    NewColumeChartComponent,
     MutisensorsViewComponent,
     MutisensorCardComponent,
   ],

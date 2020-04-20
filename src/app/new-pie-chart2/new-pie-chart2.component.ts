@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input, OnChanges } from "@angular/core";
 import * as Highcharts from "highcharts";
 
 @Component({
@@ -6,7 +6,8 @@ import * as Highcharts from "highcharts";
   templateUrl: "./new-pie-chart2.component.html",
   styleUrls: ["./new-pie-chart2.component.scss"],
 })
-export class NewPieChart2Component implements OnInit {
+export class NewPieChart2Component implements OnInit, OnChanges {
+  @Input() online = 0;
   Highcharts: typeof Highcharts = Highcharts;
   chartOptions: any = {
     credits: {
@@ -48,6 +49,7 @@ export class NewPieChart2Component implements OnInit {
     ],
   };
   constructor() {}
+  ngOnChanges(changes: import("@angular/core").SimpleChanges): void {}
 
   ngOnInit() {}
 }

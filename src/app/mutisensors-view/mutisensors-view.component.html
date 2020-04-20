@@ -1,0 +1,18 @@
+<div mat-app-background basic-container>
+  <span class="view-name">设备/环境传感设备</span>
+  <div
+    class="container"
+    fxLayout="row warp"
+    fxLayout.xs="column"
+    fxLayoutAlign="space-around center"
+    fxLayoutGap="10px grid"
+  >
+    <app-mutisensor-card
+      *ngFor="let device of devicesInit; let i = index"
+      [device]="device"
+      [newestDatas]="newestDatas"
+      fxFlex="30%"
+    ></app-mutisensor-card>
+    <p *ngIf="devicesInit == null">连接错误,请检查网络!</p>
+  </div>
+</div>

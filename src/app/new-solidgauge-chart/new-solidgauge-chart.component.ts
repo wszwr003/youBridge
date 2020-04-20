@@ -1,11 +1,4 @@
-import {
-  Component,
-  OnInit,
-  Input,
-  SimpleChanges,
-  ElementRef,
-  ViewChild,
-} from "@angular/core";
+import { Component, OnInit, Input, SimpleChanges } from "@angular/core";
 import * as Highcharts from "highcharts";
 import { SensorData } from "../services/sensor-data";
 declare var require: any;
@@ -19,19 +12,20 @@ More(Highcharts);
   styleUrls: ["./new-solidgauge-chart.component.scss"],
 })
 export class NewSolidgaugeChartComponent implements OnInit {
-  @Input() data: SensorData;
+  @Input() newestData: SensorData;
   Highcharts: typeof Highcharts = Highcharts;
   public chart: Highcharts.Chart;
   chartOptions: any = {
     chart: {
       type: "solidgauge",
+      height: 200,
     },
     title: null,
     pane: {
       center: ["50%", "85%"],
-      size: "140%",
-      startAngle: -90, // 仪表开始角度 -90为<--
-      endAngle: 90, // 仪表结束角度 +90为-->
+      size: "100%",
+      startAngle: -180, // 仪表开始角度 -90为<--
+      endAngle: 180, // 仪表结束角度 +90为-->
       background: {
         innerRadius: "60%",
         outerRadius: "100%",
@@ -93,39 +87,6 @@ export class NewSolidgaugeChartComponent implements OnInit {
         },
       },
     ],
-    // responsive: {
-    //   rules: [
-    //     {
-    //       condition: {
-    //         maxWidth: 500,
-    //         minWidth: 100,
-    //       },
-    //       chartOptions: {
-    //         legend: {
-    //           align: "center",
-    //           verticalAlign: "bottom",
-    //           layout: "horizontal",
-    //         },
-    //         yAxis: {
-    //           labels: {
-    //             align: "left",
-    //             x: 0,
-    //             y: -5,
-    //           },
-    //           title: {
-    //             text: null,
-    //           },
-    //         },
-    //         subtitle: {
-    //           text: null,
-    //         },
-    //         credits: {
-    //           enabled: false,
-    //         },
-    //       },
-    //     },
-    //   ],
-    // },
   };
   logChartInstance(chart: Highcharts.Chart) {
     this.chart = chart;
@@ -142,7 +103,7 @@ export class NewSolidgaugeChartComponent implements OnInit {
             //   "datas-end"
             // );
             if (this.chart != undefined)
-              this.chart.series[0].points[0].update(this.data.voc_lvl);
+              this.chart.series[0].points[0].update(this.newestData.voc_lvl);
           }
         }
       }

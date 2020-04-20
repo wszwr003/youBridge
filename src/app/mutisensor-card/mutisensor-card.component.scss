@@ -1,0 +1,147 @@
+.spacer {
+  flex: 1 1 auto;
+}
+.unit {
+  font-size: 15px;
+  color: #aaaaaa;
+}
+
+.mat-card {
+  overflow: hidden;
+}
+//以下为newest card 里面的布局,有待优化修改
+.data-icon-voc {
+  display: inline;
+  position: absolute;
+  top: 80px;
+  left: 100px;
+  font-size: 55px;
+  font-weight: bolder;
+  color: #000000;
+}
+.data-label-voc {
+  display: inline;
+  position: absolute;
+  top: 75px;
+  left: 190px;
+  font-size: 15px;
+  font-weight: light;
+  color: #707070;
+}
+.data-text-voc {
+  display: inline;
+  position: absolute;
+  top: 90px;
+  left: 185px;
+  font-size: 40px;
+  font-weight: bolder;
+  color: #435c73;
+}
+.data-icon-co2 {
+  display: inline;
+  position: absolute;
+  top: 60px;
+  left: 250px;
+  font-size: 55px;
+  font-weight: bolder;
+  color: #e64b3f;
+}
+.data-label-co2 {
+  display: inline;
+  position: absolute;
+  top: 65px;
+  left: 325px;
+  font-size: 15px;
+  font-weight: light;
+  color: #aaaaaa;
+}
+.data-text-co2 {
+  display: inline;
+  position: absolute;
+  top: 80px;
+  left: 320px;
+  font-size: 30px;
+  font-weight: bolder;
+  color: #000000;
+}
+.data-icon-temp {
+  display: inline;
+  position: absolute;
+  top: 60+65px;
+  left: 250px;
+  font-size: 55px;
+  font-weight: bolder;
+  color: #de932e;
+}
+.data-label-temp {
+  display: inline;
+  position: absolute;
+  top: 65+65px;
+  left: 325px;
+  font-size: 15px;
+  font-weight: light;
+  color: #aaaaaa;
+}
+.data-text-temp {
+  display: inline;
+  position: absolute;
+  top: 80+65px;
+  left: 320px;
+  font-size: 30px;
+  font-weight: bolder;
+  color: #000000;
+}
+.data-icon-pm25 {
+  display: inline;
+  position: absolute;
+  top: 60+130px;
+  left: 250px;
+  font-size: 55px;
+  font-weight: bolder;
+  color: #888888;
+}
+.data-label-pm25 {
+  display: inline;
+  position: absolute;
+  top: 65+130px;
+  left: 325px;
+  font-size: 15px;
+  font-weight: light;
+  color: #aaaaaa;
+}
+.data-text-pm25 {
+  display: inline;
+  position: absolute;
+  top: 80+130px;
+  left: 320px;
+  font-size: 30px;
+  font-weight: bolder;
+  color: #000000;
+}
+.data-icon-humi {
+  display: inline;
+  position: absolute;
+  top: 60+195px;
+  left: 250px;
+  font-size: 55px;
+  font-weight: bolder;
+  color: #7dcff8;
+}
+.data-label-humi {
+  display: inline;
+  position: absolute;
+  top: 65+195px;
+  left: 325px;
+  font-size: 15px;
+  font-weight: light;
+  color: #aaaaaa;
+}
+.data-text-humi {
+  display: inline;
+  position: absolute;
+  top: 80+195px;
+  left: 320px;
+  font-size: 30px;
+  font-weight: bolder;
+  color: #000000;
+}

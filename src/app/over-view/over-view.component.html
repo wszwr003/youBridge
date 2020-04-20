@@ -33,13 +33,17 @@
           <!-- <div mat-card-avatar class="example-header-image"></div> -->
           <mat-card-title>设备概况</mat-card-title>
           <mat-card-subtitle>
-            设备类型:3 在线设备:8 离线设备:2 异常设备:5
+            设备类型:3 在线设备:{{ online }} 离线设备:{{ 10 - online }}
+            异常设备:5
           </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content overflow="hidden">
           <div fxLayout="row" fxLayoutAlign="space-around">
             <app-new-pie-chart fxFlex="calc(50%-20px)"></app-new-pie-chart>
-            <app-new-pie-chart2 fxFlex="calc(50%-20px)"></app-new-pie-chart2>
+            <app-new-pie-chart2
+              [online]="online"
+              fxFlex="calc(50%-20px)"
+            ></app-new-pie-chart2>
             <!-- <app-new-line-chart fxFlex="calc(50%-20px)"></app-new-line-chart> -->
             <!-- <app-data-pie></app-data-pie> -->
           </div>

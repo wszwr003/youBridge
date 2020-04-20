@@ -1,5 +1,5 @@
 <div mat-app-background basic-container>
-  <span class="view-name">设备/传感器({{ deviceId }})</span>
+  <span class="view-name">设备/环境传感设备/传感器({{ deviceId }})</span>
   <div
     class="container"
     fxLayout="row wrap"
@@ -50,35 +50,35 @@
           VOC
         </div>
         <div class="data-text-voc">
-          {{ newestCardData.voc_lvl }}
+          {{ newestData.voc_lvl }}
         </div>
         <mat-icon class="data-icon-co2">bubble_chart</mat-icon>
         <div class="data-label-co2">
           CO2(ppm)
         </div>
         <div class="data-text-co2">
-          {{ newestCardData.co2 }}
+          {{ newestData.co2 }}
         </div>
         <mat-icon class="data-icon-pm25">smoking_rooms</mat-icon>
         <div class="data-label-pm25">
           PM2.5(μg/m3)
         </div>
         <div class="data-text-pm25">
-          {{ newestCardData.pm25 }}
+          {{ newestData.pm25 }}
         </div>
         <mat-icon class="data-icon-temp">wb_sunny</mat-icon>
         <div class="data-label-temp">
           温度(℃)
         </div>
         <div class="data-text-temp">
-          {{ newestCardData.temp }}
+          {{ newestData.temp }}
         </div>
         <mat-icon class="data-icon-humi">invert_colors</mat-icon>
         <div class="data-label-humi">
           湿度(%)
         </div>
         <div class="data-text-humi">
-          {{ newestCardData.humi }}
+          {{ newestData.humi }}
         </div>
       </mat-card-content>
     </mat-card>
@@ -90,7 +90,7 @@
         <mat-card-subtitle></mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <app-baidu-map-single></app-baidu-map-single>
+        <app-baidu-map-single [location]="location"></app-baidu-map-single>
       </mat-card-content>
     </mat-card>
   </div>
