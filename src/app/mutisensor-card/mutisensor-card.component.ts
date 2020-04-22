@@ -10,6 +10,7 @@ import { SensorData } from "../services/sensor-data";
 export class MutisensorCardComponent implements OnChanges {
   @Input() newestDatas: SensorData[];
   @Input() device: Device;
+  public vocString = "-";
   public state: string = "离线";
   public newestData: SensorData = null;
   ngOnChanges(changes: SimpleChanges): void {
@@ -20,6 +21,10 @@ export class MutisensorCardComponent implements OnChanges {
             for (let i = 0; i < this.newestDatas.length; i++) {
               if (this.device.device_no == this.newestDatas[i].device_id) {
                 this.newestData = this.newestDatas[i];
+                if (this.newestData.voc_lvl == 0) this.vocString = "优";
+                else if (this.newestData.voc_lvl == 0) this.vocString = "良";
+                else if (this.newestData.voc_lvl == 0) this.vocString = "差";
+                else this.vocString = "-";
               }
             }
             break;

@@ -4,19 +4,20 @@
       >{{ device.device_no }} | {{ device.location }} |
       {{ state }}</mat-card-title
     >
+    <mat-card-subtitle> 最新数据时间:{{ newestData.time }} </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <div
-      class="container"
-      fxLayout="row"
-      fxLayoutGap="20px"
-      fxLayoutAlign="space-around"
-    >
-      <app-new-solidgauge-chart
+    <div fxLayout="row" fxLayoutAlign="space-around">
+      <!-- <app-new-gauge-chart
         [newestData]="[newestData]"
         fxFlex="calc(50%-20px)"
-      ></app-new-solidgauge-chart>
-      <div fxFlex="calc(50%-20px)">
+      ></app-new-gauge-chart> -->
+      <div fxFlex="calc(50%-20px)" style="height: 240px;">
+        <mat-icon class="data-icon-voc">filter_list</mat-icon>
+        <div class="data-label-voc">
+          空气质量
+        </div>
+        <div class="data-text-voc">{{ vocString }}</div>
         <mat-icon class="data-icon-co2">bubble_chart</mat-icon>
         <div class="data-label-co2">
           CO2

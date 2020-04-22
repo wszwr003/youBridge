@@ -15,10 +15,11 @@ export class NewSolidgaugeChartComponent implements OnInit {
   @Input() newestData: SensorData;
   Highcharts: typeof Highcharts = Highcharts;
   public chart: Highcharts.Chart;
+
   chartOptions: any = {
     chart: {
       type: "solidgauge",
-      height: 200,
+      height: 260,
     },
     title: null,
     pane: {
@@ -111,6 +112,9 @@ export class NewSolidgaugeChartComponent implements OnInit {
   }
   ngOnInit() {
     //if (this.chart != undefined) this.chart.setSize(50);
+    Highcharts.setOptions({
+      //global setting!
+    });
   }
   ngAfterViewInit() {
     if (this.chart != undefined) this.chart.setSize(null);

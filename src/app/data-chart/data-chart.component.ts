@@ -38,7 +38,6 @@ export class DataChartComponent implements OnInit, OnChanges {
   public options: any;
   public optionsG: any;
   constructor() {}
-  ngAfterViewInit() {}
   // 监测@input:data改动! //FAO:simplechanges 写法!
   ngOnChanges(changes: SimpleChanges): void {
     for (const propName in changes) {
@@ -57,7 +56,8 @@ export class DataChartComponent implements OnInit, OnChanges {
                 shift = true;
             this.dataChart.series[0].addPoint(
               [
-                this.data.time == undefined ? time_second : this.data.time,
+                //this.data.time == undefined ? time_second : this.data.time,
+                time_second,
                 this.data.pm25,
               ],
               false,
@@ -66,7 +66,8 @@ export class DataChartComponent implements OnInit, OnChanges {
             );
             this.dataChart.series[1].addPoint(
               [
-                this.data.time == undefined ? time_second : this.data.time,
+                //this.data.time == undefined ? time_second : this.data.time,
+                time_second,
                 this.data.co2,
               ],
               false,
@@ -75,7 +76,8 @@ export class DataChartComponent implements OnInit, OnChanges {
             );
             this.dataChart.series[2].addPoint(
               [
-                this.data.time == undefined ? time_second : this.data.time,
+                //this.data.time == undefined ? time_second : this.data.time,
+                time_second,
                 this.data.temp,
               ],
               false,
@@ -84,7 +86,8 @@ export class DataChartComponent implements OnInit, OnChanges {
             );
             this.dataChart.series[3].addPoint(
               [
-                this.data.time == undefined ? time_second : this.data.time,
+                //this.data.time == undefined ? time_second : this.data.time,
+                time_second,
                 this.data.humi,
               ],
               true, //FAO:repaint!!!!
@@ -152,6 +155,12 @@ export class DataChartComponent implements OnInit, OnChanges {
       },
     };
     this.options = {
+      colors: [
+        "#888888", //pm25
+        "#e64b3f", //co2
+        "#de932e", //temp
+        "#7dcff8", //humi
+      ],
       plotOptions: {
         spline: {
           lineWidth: 4,
@@ -200,13 +209,13 @@ export class DataChartComponent implements OnInit, OnChanges {
           title: {
             text: "PM2.5浓度",
             style: {
-              color: Highcharts.getOptions().colors[0],
+              color: "#888888", //pm25
             },
           },
           labels: {
             format: "{value}",
             style: {
-              color: Highcharts.getOptions().colors[0],
+              color: "#888888", //pm25
             },
           },
           minTickInterval: 1,
@@ -218,13 +227,13 @@ export class DataChartComponent implements OnInit, OnChanges {
           title: {
             text: "二氧化碳浓度(ppm)",
             style: {
-              color: Highcharts.getOptions().colors[1],
+              color: "#e64b3f", //co2
             },
           },
           labels: {
             format: "{value}",
             style: {
-              color: Highcharts.getOptions().colors[1],
+              color: "#e64b3f", //co2
             },
           },
           minTickInterval: 1,
@@ -237,13 +246,13 @@ export class DataChartComponent implements OnInit, OnChanges {
           title: {
             text: "温度(°C)",
             style: {
-              color: Highcharts.getOptions().colors[2],
+              color: "#de932e", //temp
             },
           },
           labels: {
             format: "{value}",
             style: {
-              color: Highcharts.getOptions().colors[2],
+              color: "#de932e", //temp
             },
           },
           minTickInterval: 1,
@@ -257,13 +266,13 @@ export class DataChartComponent implements OnInit, OnChanges {
           title: {
             text: "湿度(%)",
             style: {
-              color: Highcharts.getOptions().colors[3],
+              color: "#7dcff8", //humi
             },
           },
           labels: {
             format: "{value}",
             style: {
-              color: Highcharts.getOptions().colors[3],
+              color: "#7dcff8", //humi
             },
           },
           minTickInterval: 1,

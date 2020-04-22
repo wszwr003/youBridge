@@ -23,15 +23,25 @@ export class MutisensorsViewComponent implements OnInit {
     { device_id: "861011047486233" },
     { device_id: "861011047486209" },
   ];
-  public devices: Device[];
+  public devices: Device[] = [
+    { device_no: "861011047511899" },
+    { device_no: "861011047455360" },
+    { device_no: "861011047485656" },
+    { device_no: "861011047485565" },
+    { device_no: "861011047418186" },
+    { device_no: "861011047485599" },
+    { device_no: "861011047486225" },
+    { device_no: "861011047486134" },
+    { device_no: "861011047486233" },
+    { device_no: "861011047486209" },
+  ];
+  public tick;
   public devicesInit: Device[] = null;
   private observeMQTT = null; //mqtt 实例
-  public tick;
   constructor(
     private myMqttService: MyMqttService,
     private http: HttpService
   ) {}
-
   ngOnInit() {
     //初始化时获取所有设备参数和状态
     this.http
@@ -69,6 +79,8 @@ export class MutisensorsViewComponent implements OnInit {
     this.observeMQTT = this.myMqttService.MQRRService.observe("data").subscribe(
       (message: IMqttMessage) => {
         var tempSensorData: SensorData = JSON.parse(message.payload.toString());
+        var time = new Date();
+        tempSensorData.time = time.toString();
         for (let i = 0; i < this.newestDatas.length; i++) {
           if (this.newestDatas[i].device_id == tempSensorData.device_id) {
             this.newestDatas[i] = tempSensorData;

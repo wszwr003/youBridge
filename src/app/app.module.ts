@@ -48,6 +48,7 @@ import { HttpService } from "./services/http.service";
 import { HttpClientModule } from "@angular/common/http";
 import { MutisensorsViewComponent } from "./mutisensors-view/mutisensors-view.component";
 import { MutisensorCardComponent } from "./mutisensor-card/mutisensor-card.component";
+import { NewGaugeChartComponent } from "./new-gauge-chart/new-gauge-chart.component";
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   // hostname: "127.0.0.1",
@@ -81,6 +82,7 @@ export const HTTP_SERVICE_OPTIONS: any = {
     NewPieChart2Component,
     MutisensorsViewComponent,
     MutisensorCardComponent,
+    NewGaugeChartComponent,
   ],
   imports: [
     BrowserModule,
