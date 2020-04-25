@@ -8,11 +8,18 @@
     fxLayoutGap="10px grid"
   >
     <app-mutisensor-card
-      *ngFor="let device of devicesInit; let i = index"
-      [device]="device"
-      [newestDatas]="newestDatas"
+      *ngFor="let device of _deviceService.devicesInfo; let i = index"
+      [deviceId]="device.device_no"
+      [devices]="_deviceService.devicesInfo"
+      [newestData]="_sensor5in1Service.subSensorData"
       fxFlex="30%"
     ></app-mutisensor-card>
+    <!-- <app-mutisensor-card
+      *ngFor="let device of devicesInit; let i = index"
+      [device]="device"
+      [newestData]="newestDatas"
+      fxFlex="30%"
+    ></app-mutisensor-card> -->
     <p *ngIf="devicesInit == null">连接错误,请检查网络!</p>
   </div>
 </div>

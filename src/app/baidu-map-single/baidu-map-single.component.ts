@@ -20,7 +20,7 @@ import {
   NavigationControlType,
   MapTypeControlType,
 } from "angular2-baidu-map";
-import { GPS } from "../services/sensor-data";
+import { GPS } from "../services/sensor5in1";
 
 @Component({
   selector: "app-baidu-map-single",

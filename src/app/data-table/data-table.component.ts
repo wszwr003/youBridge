@@ -5,7 +5,7 @@ import {
   OnChanges,
   SimpleChanges,
 } from "@angular/core";
-import { SensorData } from "../services/sensor-data";
+import { SensorData } from "../services/sensor5in1";
 
 export interface PeriodicElement {
   id: string;
@@ -78,19 +78,30 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class DataTableComponent implements OnInit, OnChanges {
   displayedColumns: string[] = ["id", "time", "temp", "hum"];
-  @Input() historyMsg: SensorData[] = [];
+  @Input() sensorData: SensorData;
+  sensorDatas: SensorData[] = [];
   dataSource: PeriodicElement[] = ELEMENT_DATA;
+
   constructor() {}
   ngOnInit() {}
   ngOnChanges(changes: SimpleChanges): void {
     for (const propName in changes) {
       if (changes.hasOwnProperty(propName)) {
         switch (propName) {
-          case "historyMsg": {
-            console.log("historyMsg:");
-            console.log(this.historyMsg);
-            for (let i = 0; i < this.historyMsg.length; i++) {
-              const element = this.historyMsg[i];
+          case "sensorData": {
+            if (this.sensorData == undefined) {
+              break;
+            }
+            if (this.sensorDatas.length >= 8) {
+              this.sensorDatas.shift();
+            }
+            console.log("sensorData:");
+            console.log(this.sensorData);
+            console.log(this.sensorDatas);
+            this.sensorDatas.push(this.sensorData);
+
+            for (let i = 0; i < this.sensorDatas.length; i++) {
+              const element = this.sensorDatas[i];
               this.dataSource[i].id = element.device_id.slice(9);
               this.dataSource[i].time = element.time;
               this.dataSource[i].kind = "数据";
@@ -106,6 +117,7 @@ export class DataTableComponent implements OnInit, OnChanges {
               //   ",湿度:" +
               //   element.humi;
             }
+            break;
           }
         }
       }

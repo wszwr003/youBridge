@@ -51,14 +51,14 @@ import { MutisensorCardComponent } from "./mutisensor-card/mutisensor-card.compo
 import { NewGaugeChartComponent } from "./new-gauge-chart/new-gauge-chart.component";
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
-  // hostname: "127.0.0.1",
-  hostname: "116.62.151.59",
+  hostname: "127.0.0.1",
+  // hostname: "116.62.151.59",
   port: 8888,
   path: "/mqtt", //'/mqtt'
 };
 export const HTTP_SERVICE_OPTIONS: any = {
-  // URL: "http://127.0.0.1:4000",
-  URL: "http://116.62.151.59:4000",
+  URL: "http://127.0.0.1:4000",
+  // URL: "http://116.62.151.59:4000",
 };
 @NgModule({
   declarations: [
@@ -108,13 +108,7 @@ export const HTTP_SERVICE_OPTIONS: any = {
     HttpClientModule,
     AppRoutingModule,
   ],
-  providers: [
-    HttpService,
-    MyMqttService,
-    NavService,
-    AuthService,
-    AuthGuardService,
-  ],
+  providers: [NavService, AuthService, AuthGuardService],
   bootstrap: [AppComponent], //TBS:为什么增加http功能后需要加这个才正常?
 })
 export class AppModule {}

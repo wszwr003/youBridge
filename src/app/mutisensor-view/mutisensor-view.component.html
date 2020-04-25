@@ -4,6 +4,80 @@
     class="container"
     fxLayout="row wrap"
     fxLayout.xs="column"
+    fxLayoutAlign="space-around stretch"
+    fxLayoutGap="20px"
+  >
+    <app-mutisensor-card
+      [deviceId]="deviceId"
+      [devices]="_deviceService.devicesInfo"
+      [newestData]="_sensor5in1Service.subSensorData"
+      fxFlex="30%"
+    ></app-mutisensor-card>
+    <!-- <mat-card
+    class="message"
+    fxFlex="calc(30%-20px)"
+    fxFlex.sm="calc(30%-20px)"
+  >
+    <mat-card-header>
+      <mat-card-title>
+        最新数据
+      </mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-icon class="data-icon-voc">filter_list</mat-icon>
+      <div class="data-label-voc">
+        VOC
+      </div>
+      <div class="data-text-voc">
+        {{ newestData.voc_lvl }}
+      </div>
+      <mat-icon class="data-icon-co2">bubble_chart</mat-icon>
+      <div class="data-label-co2">
+        CO2(ppm)
+      </div>
+      <div class="data-text-co2">
+        {{ newestData.co2 }}
+      </div>
+      <mat-icon class="data-icon-pm25">smoking_rooms</mat-icon>
+      <div class="data-label-pm25">
+        PM2.5(μg/m3)
+      </div>
+      <div class="data-text-pm25">
+        {{ newestData.pm25 }}
+      </div>
+      <mat-icon class="data-icon-temp">wb_sunny</mat-icon>
+      <div class="data-label-temp">
+        温度(℃)
+      </div>
+      <div class="data-text-temp">
+        {{ newestData.temp }}
+      </div>
+      <mat-icon class="data-icon-humi">invert_colors</mat-icon>
+      <div class="data-label-humi">
+        湿度(%)
+      </div>
+      <div class="data-text-humi">
+        {{ newestData.humi }}
+      </div>
+    </mat-card-content>
+  </mat-card> -->
+    <mat-card fxFlex="calc(70%-20px)" fxFlex.sm="calc(70%-20px)">
+      <mat-card-header>
+        <mat-card-title>
+          位置
+        </mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <app-baidu-map-single [location]="location"></app-baidu-map-single>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div
+    class="container"
+    fxLayout="row wrap"
+    fxLayout.xs="column"
     fxLayoutGap="20px"
   >
     <mat-card fxFlex="calc(100%-20px)" fxFlex.sm="calc(100%-20px)">
@@ -20,77 +94,6 @@
           [datas]="historyDatas"
           [chartInit]="chartInit"
         ></app-data-chart>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div
-    class="container"
-    fxLayout="row wrap"
-    fxLayout.xs="column"
-    fxLayoutAlign="space-around stretch"
-    fxLayoutGap="20px"
-  >
-    <mat-card
-      class="message"
-      fxFlex="calc(30%-20px)"
-      fxFlex.sm="calc(30%-20px)"
-    >
-      <mat-card-header>
-        <mat-card-title>
-          最新数据
-        </mat-card-title>
-        <mat-card-subtitle></mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <!-- <div class="container" fxLayout="row" fxLayoutAlign="space-around">
-          <app-new-solidgauge-chart [data]="data"> </app-new-solidgauge-chart>
-        </div> -->
-        <mat-icon class="data-icon-voc">filter_list</mat-icon>
-        <div class="data-label-voc">
-          VOC
-        </div>
-        <div class="data-text-voc">
-          {{ newestData.voc_lvl }}
-        </div>
-        <mat-icon class="data-icon-co2">bubble_chart</mat-icon>
-        <div class="data-label-co2">
-          CO2(ppm)
-        </div>
-        <div class="data-text-co2">
-          {{ newestData.co2 }}
-        </div>
-        <mat-icon class="data-icon-pm25">smoking_rooms</mat-icon>
-        <div class="data-label-pm25">
-          PM2.5(μg/m3)
-        </div>
-        <div class="data-text-pm25">
-          {{ newestData.pm25 }}
-        </div>
-        <mat-icon class="data-icon-temp">wb_sunny</mat-icon>
-        <div class="data-label-temp">
-          温度(℃)
-        </div>
-        <div class="data-text-temp">
-          {{ newestData.temp }}
-        </div>
-        <mat-icon class="data-icon-humi">invert_colors</mat-icon>
-        <div class="data-label-humi">
-          湿度(%)
-        </div>
-        <div class="data-text-humi">
-          {{ newestData.humi }}
-        </div>
-      </mat-card-content>
-    </mat-card>
-    <mat-card fxFlex="calc(70%-20px)" fxFlex.sm="calc(70%-20px)">
-      <mat-card-header>
-        <mat-card-title>
-          位置
-        </mat-card-title>
-        <mat-card-subtitle></mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <app-baidu-map-single [location]="location"></app-baidu-map-single>
       </mat-card-content>
     </mat-card>
   </div>

@@ -2,7 +2,7 @@
   <mat-card-header>
     <mat-card-title
       >{{ device.device_no }} | {{ device.location }} |
-      {{ state }}</mat-card-title
+      {{ device.device_state == 1 ? "在线" : "离线" }}</mat-card-title
     >
     <mat-card-subtitle> 最新数据时间:{{ newestData.time }} </mat-card-subtitle>
   </mat-card-header>

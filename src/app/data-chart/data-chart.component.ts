@@ -8,7 +8,7 @@ import {
 } from "@angular/core";
 import * as Highcharts from "highcharts";
 import { ChartInit } from "../mutisensor-view/sensor-chart";
-import { SensorData } from "../services/sensor-data";
+import { SensorData } from "../services/sensor5in1";
 declare var require: any;
 let Boost = require("highcharts/modules/boost");
 let noData = require("highcharts/modules/no-data-to-display");

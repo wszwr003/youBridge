@@ -6,7 +6,7 @@ import {
   OnChanges,
 } from "@angular/core";
 import * as Highcharts from "highcharts";
-import { SensorData } from "../services/sensor-data";
+import { SensorData } from "../services/sensor5in1";
 
 @Component({
   selector: "app-new-gauge-chart",

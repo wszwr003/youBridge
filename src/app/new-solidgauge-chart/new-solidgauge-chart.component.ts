@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, SimpleChanges } from "@angular/core";
 import * as Highcharts from "highcharts";
-import { SensorData } from "../services/sensor-data";
+import { SensorData } from "../services/sensor5in1";
 declare var require: any;
 let SolidGauge = require("highcharts/modules/solid-gauge");
 let More = require("highcharts/highcharts-more");
