@@ -1,14 +1,28 @@
 import { Component, ViewChild, ElementRef } from "@angular/core";
 import { NavItem } from "../services/nav-item";
 import { NavService } from "../services/nav.service";
-import { RouterOutlet } from "@angular/router";
-import { routeTransitionAnimations } from "../route-transition-animations";
+import { trigger, transition, useAnimation } from "@angular/animations";
+import { rotateFlipToLeft, slide } from "ngx-router-animations";
 
 @Component({
   selector: "app-home-layout",
   templateUrl: "./home-layout.component.html",
   styleUrls: ["./home-layout.component.scss"],
-  animations: [routeTransitionAnimations],
+  animations: [
+    trigger("rotateCubeToLeft", [
+      transition(
+        "One <=> Three,Three <=> One,One<=>One,Three<=>Three",
+        useAnimation(slide, {
+          params: {
+            enterTiming: "2",
+            leaveTiming: "2",
+            enterDelay: "0.2",
+            leaveDelay: "0.2",
+          },
+        })
+      ),
+    ]),
+  ],
 })
 export class HomeLayoutComponent {
   screenWidth: number;
@@ -21,12 +35,8 @@ export class HomeLayoutComponent {
       this.screenWidth = window.innerWidth;
     };
   }
-  prepareRoute(outlet: RouterOutlet) {
-    return (
-      outlet &&
-      outlet.activatedRouteData &&
-      outlet.activatedRouteData["animationState"]
-    );
+  getState(outlet) {
+    return outlet.activatedRouteData.state;
   }
 
   ngAfterViewInit() {
