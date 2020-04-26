@@ -2,7 +2,8 @@ import { Component, ViewChild, ElementRef } from "@angular/core";
 import { NavItem } from "../services/nav-item";
 import { NavService } from "../services/nav.service";
 import { trigger, transition, useAnimation } from "@angular/animations";
-import { rotateFlipToLeft, slide } from "ngx-router-animations";
+import { slide } from "ngx-router-animations";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-home-layout",
@@ -11,13 +12,13 @@ import { rotateFlipToLeft, slide } from "ngx-router-animations";
   animations: [
     trigger("rotateCubeToLeft", [
       transition(
-        "One <=> Three,Three <=> One,One<=>One,Three<=>Three",
+        "One <=> Three,Three <=> Two,One<=>Two",
         useAnimation(slide, {
           params: {
-            enterTiming: "2",
-            leaveTiming: "2",
-            enterDelay: "0.2",
-            leaveDelay: "0.2",
+            enterTiming: "3",
+            leaveTiming: "3",
+            enterDelay: "0",
+            leaveDelay: "0",
           },
         })
       ),
@@ -27,13 +28,19 @@ import { rotateFlipToLeft, slide } from "ngx-router-animations";
 export class HomeLayoutComponent {
   screenWidth: number;
   @ViewChild("sidenav", null) sidenav: ElementRef;
-  constructor(private navService: NavService) {
+  constructor(private navService: NavService, private router: Router) {
     // set screenWidth on page load
     this.screenWidth = window.innerWidth;
     window.onresize = () => {
       // set screenWidth on screen size change
       this.screenWidth = window.innerWidth;
     };
+    // setInterval(() => {
+    //   this.router.navigate(["/sys"]);
+    // }, 5000);
+    // setInterval(() => {
+    //   this.router.navigate(["/devices/env", "861011047486233"]);
+    // }, 10000);
   }
   getState(outlet) {
     return outlet.activatedRouteData.state;

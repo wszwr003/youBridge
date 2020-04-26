@@ -6,8 +6,8 @@
   <mat-sidenav-container class="container">
     <mat-sidenav
       #sidenav
-      [opened]="screenWidth > 875"
-      [mode]="screenWidth > 875 ? 'side' : 'over'"
+      [opened]="screenWidth > 9875"
+      [mode]="screenWidth > 9875 ? 'side' : 'over'"
       class="sidenav"
       style="background-color: rgb(43, 63, 83);"
     >
@@ -22,10 +22,6 @@
       <div class="router-wrapper" [@rotateCubeToLeft]="getState(o)">
         <router-outlet #o="outlet"> </router-outlet>
       </div>
-      <div fxLayout fxLayoutAlign="center center">
-        <p>版权所有© 浙江光维通信技术有限公司</p>
-      </div>
-      <div #msglog></div>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </ng-container>

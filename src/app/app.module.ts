@@ -16,6 +16,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatCardModule } from "@angular/material/card";
 import { MatTableModule } from "@angular/material/table";
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 
 import { ReactiveFormsModule } from "@angular/forms";
 import { BaiduMapModule } from "angular2-baidu-map";
@@ -99,6 +100,7 @@ export const HTTP_SERVICE_OPTIONS: any = {
     MatTableModule,
     MatInputModule,
     MatFormFieldModule,
+    MatSlideToggleModule,
     FormsModule,
     MqttModule.forRoot(MQTT_SERVICE_OPTIONS),
     BaiduMapModule.forRoot({ ak: "FpVG0ppOSI7TwBYGhty65bxe88fqD38v" }),

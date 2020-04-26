@@ -12,9 +12,7 @@ export class OverViewComponent implements OnInit, OnDestroy, OnChanges {
   constructor(
     private _deviceService: DeviceService,
     private _sensor5in1Service: Sensor5in1Service
-  ) {
-    _deviceService.deviceNum;
-  }
+  ) {}
   ngOnChanges(changes: import("@angular/core").SimpleChanges): void {
     console.log("overview changes in");
     for (const propName in changes) {

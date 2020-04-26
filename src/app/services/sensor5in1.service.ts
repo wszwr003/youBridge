@@ -31,11 +31,11 @@ export class Sensor5in1Service implements OnDestroy {
       .observe(this.dataTopic)
       .subscribe((message: IMqttMessage) => {
         this.subSensorData = JSON.parse(message.payload.toString());
-        console.log(">>>>Sensor5in1Service>>>>");
-        console.log("subSensorData:", this.subSensorData);
-        console.log("<<<<Sensor5in1Service<<<<");
+        // console.log(">>>>Sensor5in1Service>>>>");
+        // console.log("subSensorData:", this.subSensorData);
+        // console.log("<<<<Sensor5in1Service<<<<");
       });
-    console.log("mqtt data subscribe!");
+    console.log("mqtt data subscribe start!");
     ////Test API
     // setInterval(() => {
     //   this.getNewestSensorData(this.testDeviceId).subscribe((data) => {
@@ -52,7 +52,7 @@ export class Sensor5in1Service implements OnDestroy {
   }
 
   ngOnDestroy(): void {
-    console.log("mqtt data unsbuscribe!");
+    console.log("mqtt data unsbuscribe stop!");
     this.subscription.unsubscribe();
   }
 

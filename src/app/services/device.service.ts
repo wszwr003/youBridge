@@ -25,6 +25,7 @@ export class DeviceService implements OnDestroy {
   };
 
   constructor(private _httpClient: HttpClient) {
+    console.log("get devices interval start!");
     this.intervalTick = setInterval(() => {
       this.getAllDeviceInf().subscribe((devices: Array<Device>) => {
         this.deviceNum = devices.length;
@@ -45,23 +46,24 @@ export class DeviceService implements OnDestroy {
         this.offLineNum = offline;
         this.faultNum = fault;
       });
-      console.log(">>>>DeviceService>>>>");
-      console.log(
-        "deviceNum:",
-        this.deviceNum,
-        ",online:",
-        this.onLineNum,
-        ",offline:",
-        this.offLineNum,
-        ",fault:",
-        this.faultNum
-      );
-      console.log("devicesInfo:", this.devicesInfo);
-      console.log("<<<<DeviceService<<<<");
+      // console.log(">>>>DeviceService>>>>");
+      // console.log(
+      //   "deviceNum:",
+      //   this.deviceNum,
+      //   ",online:",
+      //   this.onLineNum,
+      //   ",offline:",
+      //   this.offLineNum,
+      //   ",fault:",
+      //   this.faultNum
+      // );
+      // console.log("devicesInfo:", this.devicesInfo);
+      // console.log("<<<<DeviceService<<<<");
     }, this.intervalTime);
   }
 
   ngOnDestroy(): void {
+    console.log("get devices interval stop!");
     clearInterval(this.intervalTick);
   }
 

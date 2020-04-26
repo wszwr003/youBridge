@@ -31,6 +31,7 @@ export class DataChartComponent implements OnInit, OnChanges {
     dateFormat: null,
     seriesName: null,
   };
+  @Input() deviceId: string;
   @Input() data: SensorData;
   @Input() datas: SensorData[];
   private chartPoints = 60; //chart最多数据点设置
@@ -44,7 +45,9 @@ export class DataChartComponent implements OnInit, OnChanges {
       if (changes.hasOwnProperty(propName)) {
         switch (propName) {
           case "data": {
-            console.log("line chart data change", this.data, "data-end");
+            // console.log("line chart data change", this.data, "data-end");
+            if (this.data == undefined) break;
+            if (this.deviceId != this.data.device_id) break;
             if (this.data == null || this.dataChart == null) {
               return;
             }
@@ -97,11 +100,13 @@ export class DataChartComponent implements OnInit, OnChanges {
             break; //FAO: 不能丢!!
           }
           case "datas": {
-            console.log(
-              "line chart history datas change",
-              this.datas,
-              "datas-end"
-            );
+            // console.log(
+            //   "line chart history datas change",
+            //   this.datas,
+            //   "datas-end"
+            // );
+            if (this.dataChart == undefined) break;
+
             this.dataChart.series[0].setData([]);
             this.dataChart.series[1].setData([]);
             this.dataChart.series[2].setData([]);
@@ -175,12 +180,12 @@ export class DataChartComponent implements OnInit, OnChanges {
         },
         series: {
           marker: {},
-          enableMouseTracking: false,
+          enableMouseTracking: true,
         },
       },
       chart: {
-        type: this.chartInit.chartType,
-        height: this.chartInit.chartHeight,
+        type: "spline",
+        height: 390,
       },
       title: {
         text: "",
@@ -207,7 +212,8 @@ export class DataChartComponent implements OnInit, OnChanges {
           gridLineWidth: 1,
           type: "Data",
           title: {
-            text: "PM2.5浓度",
+            // text: "PM2.5浓度(μg/m3)",
+            text: "",
             style: {
               color: "#888888", //pm25
             },
@@ -225,7 +231,8 @@ export class DataChartComponent implements OnInit, OnChanges {
           gridLineWidth: 1,
           type: "Data",
           title: {
-            text: "二氧化碳浓度(ppm)",
+            // text: "二氧化碳浓度(ppm)",
+            text: "",
             style: {
               color: "#e64b3f", //co2
             },
@@ -244,7 +251,8 @@ export class DataChartComponent implements OnInit, OnChanges {
           gridLineWidth: 1,
           type: "Data",
           title: {
-            text: "温度(°C)",
+            // text: "温度(°C)",
+            text: "",
             style: {
               color: "#de932e", //temp
             },
@@ -264,7 +272,8 @@ export class DataChartComponent implements OnInit, OnChanges {
           gridLineWidth: 1,
           type: "Data",
           title: {
-            text: "湿度(%)",
+            // text: "湿度(%)",
+            text: "",
             style: {
               color: "#7dcff8", //humi
             },
@@ -282,7 +291,7 @@ export class DataChartComponent implements OnInit, OnChanges {
       ],
       series: [
         {
-          name: "PM2.5浓度",
+          name: "PM2.5浓度(μg/m3)",
           turboThreshold: 50000,
           yAxis: 0,
           data: [
@@ -290,7 +299,7 @@ export class DataChartComponent implements OnInit, OnChanges {
           ],
         },
         {
-          name: "二氧化碳浓度",
+          name: "二氧化碳浓度(ppm)",
           turboThreshold: 50000,
           yAxis: 1,
           data: [
@@ -298,7 +307,7 @@ export class DataChartComponent implements OnInit, OnChanges {
           ],
         },
         {
-          name: "温度",
+          name: "温度(℃)",
           turboThreshold: 50000,
           yAxis: 2,
           data: [
@@ -306,7 +315,7 @@ export class DataChartComponent implements OnInit, OnChanges {
           ],
         },
         {
-          name: "湿度",
+          name: "湿度(%)",
           turboThreshold: 50000,
           yAxis: 3,
           data: [

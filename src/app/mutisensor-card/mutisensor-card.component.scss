@@ -2,7 +2,7 @@
   flex: 1 1 auto;
 }
 .unit {
-  font-size: 15px;
+  font-size: 20px;
   color: #aaaaaa;
 }
 
@@ -14,134 +14,134 @@
   display: inline;
   position: absolute;
   top: 150px;
-  left: 030px;
-  font-size: 100px;
+  left: 20px;
+  font-size: 150px;
   font-weight: bolder;
   color: #00bea0;
 }
 .data-label-voc {
   display: inline;
   position: absolute;
-  top: 135px;
-  left: 125px;
-  font-size: 15px;
+  top: 150px;
+  left: 160px;
+  font-size: 20px;
   font-weight: light;
   color: #aaaaaa;
 }
 .data-text-voc {
   display: inline;
   position: absolute;
-  top: 150px;
-  left: 120px;
-  font-size: 70px;
+  top: 160px;
+  left: 150px;
+  font-size: 100px;
   font-weight: bolder;
   color: #000000;
 }
 .data-icon-co2 {
   display: inline;
   position: absolute;
-  top: 60px;
-  left: 250px;
-  font-size: 55px;
+  top: 60+10px;
+  left: 290px;
+  font-size: 80px;
   font-weight: bolder;
   color: #e64b3f;
 }
 .data-label-co2 {
   display: inline;
   position: absolute;
-  top: 65px;
-  left: 325px;
-  font-size: 15px;
+  top: 65+10px;
+  left: 375px;
+  font-size: 20px;
   font-weight: light;
   color: #aaaaaa;
 }
 .data-text-co2 {
   display: inline;
   position: absolute;
-  top: 80px;
-  left: 320px;
-  font-size: 30px;
+  top: 80+10px;
+  left: 370px;
+  font-size: 50px;
   font-weight: bolder;
   color: #000000;
 }
 .data-icon-temp {
   display: inline;
   position: absolute;
-  top: 60+65px;
-  left: 250px;
-  font-size: 55px;
+  top: 60+85px;
+  left: 290px;
+  font-size: 80px;
   font-weight: bolder;
   color: #de932e;
 }
 .data-label-temp {
   display: inline;
   position: absolute;
-  top: 65+65px;
-  left: 325px;
-  font-size: 15px;
+  top: 65+85px;
+  left: 375px;
+  font-size: 20px;
   font-weight: light;
   color: #aaaaaa;
 }
 .data-text-temp {
   display: inline;
   position: absolute;
-  top: 80+65px;
-  left: 320px;
-  font-size: 30px;
+  top: 80+85px;
+  left: 370px;
+  font-size: 50px;
   font-weight: bolder;
   color: #000000;
 }
 .data-icon-pm25 {
   display: inline;
   position: absolute;
-  top: 60+130px;
-  left: 250px;
-  font-size: 55px;
+  top: 60+160px;
+  left: 290px;
+  font-size: 80px;
   font-weight: bolder;
   color: #888888;
 }
 .data-label-pm25 {
   display: inline;
   position: absolute;
-  top: 65+130px;
-  left: 325px;
-  font-size: 15px;
+  top: 65+160px;
+  left: 375px;
+  font-size: 20px;
   font-weight: light;
   color: #aaaaaa;
 }
 .data-text-pm25 {
   display: inline;
   position: absolute;
-  top: 80+130px;
-  left: 320px;
-  font-size: 30px;
+  top: 80+160px;
+  left: 370px;
+  font-size: 50px;
   font-weight: bolder;
   color: #000000;
 }
 .data-icon-humi {
   display: inline;
   position: absolute;
-  top: 60+195px;
-  left: 250px;
-  font-size: 55px;
+  top: 60+235px;
+  left: 290px;
+  font-size: 80px;
   font-weight: bolder;
   color: #7dcff8;
 }
 .data-label-humi {
   display: inline;
   position: absolute;
-  top: 65+195px;
-  left: 325px;
-  font-size: 15px;
+  top: 65+235px;
+  left: 375px;
+  font-size: 20px;
   font-weight: light;
   color: #aaaaaa;
 }
 .data-text-humi {
   display: inline;
   position: absolute;
-  top: 80+195px;
-  left: 320px;
-  font-size: 30px;
+  top: 80+235px;
+  left: 370px;
+  font-size: 50px;
   font-weight: bolder;
   color: #000000;
 }

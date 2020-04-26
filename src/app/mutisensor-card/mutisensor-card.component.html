@@ -10,6 +10,7 @@
 <!-- <div *ngIf="device != undefined"> -->
 <mat-card
   [routerLink]="['/devices/env', device == null ? '' : device.device_no]"
+  style="height: 430px;"
 >
   <mat-card-header>
     <mat-card-title
@@ -19,56 +20,35 @@
         device == null ? "离线" : device.device_state == 1 ? "在线" : "离线"
       }}</mat-card-title
     >
-    <mat-card-subtitle>
-      最新数据时间: {{ newestData == null ? "无数据" : newestData.time }}
-    </mat-card-subtitle>
+    <mat-card-subtitle> 最新数据时间: {{ timeString }} </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <div fxLayout="row" fxLayoutAlign="space-around">
-      <!-- <app-new-gauge-chart
-          [newestData]="[newestData]"
-          fxFlex="calc(50%-20px)"
-          ></app-new-gauge-chart> -->
-      <div fxFlex="calc(50%-20px)" style="height: 240px;">
-        <mat-icon class="data-icon-voc">filter_list</mat-icon>
-        <div class="data-label-voc">
-          空气质量
-        </div>
-        <div class="data-text-voc">{{ vocString }}</div>
-        <mat-icon class="data-icon-co2">bubble_chart</mat-icon>
-        <div class="data-label-co2">
-          CO2
-        </div>
-        <div class="data-text-co2">
-          {{ newestData == null ? "无数据" : newestData.co2
-          }}<a class="unit">ppm</a>
-        </div>
-        <mat-icon class="data-icon-pm25">grain</mat-icon>
-        <div class="data-label-pm25">
-          PM2.5
-        </div>
-        <div class="data-text-pm25">
-          {{ newestData == null ? "无数据" : newestData.pm25
-          }}<a class="unit">μg/m3</a>
-        </div>
-        <mat-icon class="data-icon-temp">wb_sunny</mat-icon>
-        <div class="data-label-temp">
-          温度
-        </div>
-        <div class="data-text-temp">
-          {{ newestData == null ? "无数据" : newestData.temp
-          }}<a class="unit">℃</a>
-        </div>
-        <mat-icon class="data-icon-humi">invert_colors</mat-icon>
-        <div class="data-label-humi">
-          湿度
-        </div>
-        <div class="data-text-humi">
-          {{ newestData == null ? "无数据" : newestData.humi
-          }}<a class="unit">%</a>
-        </div>
-      </div>
+    <mat-icon class="data-icon-voc">filter_list</mat-icon>
+    <div class="data-label-voc">
+      空气质量
     </div>
+    <div class="data-text-voc">{{ vocString }}</div>
+    <mat-icon class="data-icon-co2">bubble_chart</mat-icon>
+    <div class="data-label-co2">
+      CO2
+    </div>
+    <div class="data-text-co2">{{ co2String }}<a class="unit">ppm</a></div>
+    <mat-icon class="data-icon-pm25">grain</mat-icon>
+    <div class="data-label-pm25">
+      PM2.5
+    </div>
+    <div class="data-text-pm25">{{ pm25String }}<a class="unit">μg/m3</a></div>
+    <mat-icon class="data-icon-temp">wb_sunny</mat-icon>
+    <div class="data-label-temp">
+      温度
+    </div>
+    <div class="data-text-temp">{{ tempString }}<a class="unit">℃</a></div>
+    <mat-icon class="data-icon-humi">invert_colors</mat-icon>
+    <div class="data-label-humi">
+      湿度
+    </div>
+    <div class="data-text-humi">{{ humiString }}<a class="unit">%</a></div>
   </mat-card-content>
 </mat-card>
+
 <!-- </div> -->

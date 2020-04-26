@@ -50,7 +50,7 @@ export class BaiduMapSingleComponent implements OnInit, OnChanges {
     marker.setAnimation(Animation.BMAP_ANIMATION_BOUNCE);
   }
   constructor() {
-    console.log("map-construct");
+    // console.log("map-construct");
     this.controlOpts = {
       anchor: ControlAnchor.BMAP_ANCHOR_TOP_LEFT,
       type: NavigationControlType.BMAP_NAVIGATION_CONTROL_LARGE,
@@ -91,13 +91,13 @@ export class BaiduMapSingleComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log("map-change");
+    // console.log("map-change");
 
     for (const propName in changes) {
       if (changes.hasOwnProperty(propName)) {
         switch (propName) {
           case "location": {
-            if (this.location.lat != undefined) {
+            if (this.location != undefined) {
               console.log("!!!!****:", this.location.lat, this.location.lng);
               this.marker.point.lat = this.location.lat;
               this.marker.point.lng = this.location.lng;
@@ -137,6 +137,6 @@ export class BaiduMapSingleComponent implements OnInit, OnChanges {
     }
   }
   ngOnInit() {
-    console.log("map-init");
+    // console.log("map-init");
   }
 }

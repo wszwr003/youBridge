@@ -49,7 +49,6 @@ export class SideMenuComponent implements OnInit {
   }
   onItemSelected(item: NavItem) {
     if (!item.children || !item.children.length) {
-      console.log(item.route);
       this.router.navigate([item.route]);
       //this.router.navigate(["/devices/env", "861011047486233"]);
       //this.navService.closeNav();

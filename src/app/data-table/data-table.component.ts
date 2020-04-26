@@ -95,9 +95,9 @@ export class DataTableComponent implements OnInit, OnChanges {
             if (this.sensorDatas.length >= 8) {
               this.sensorDatas.shift();
             }
-            console.log("sensorData:");
-            console.log(this.sensorData);
-            console.log(this.sensorDatas);
+            // console.log("sensorData:");
+            // console.log(this.sensorData);
+            // console.log(this.sensorDatas);
             this.sensorDatas.push(this.sensorData);
 
             for (let i = 0; i < this.sensorDatas.length; i++) {

@@ -2,7 +2,7 @@
   <span class="view-name">总览</span>
   <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutGap="20px">
     <div fxLayout="column" fxFlex="calc(50%-20px)" fxLayoutGap="20px">
-      <div fxLayout="row" fxLayoutGap="20px">
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="20px">
         <mat-card fxFlex="calc(33%-20px)">
           <mat-card-header>
             <!-- <div mat-card-avatar class="example-header-image"></div> -->
@@ -86,66 +86,14 @@
       [deviceId]="device_id"
       [devices]="_deviceService.devicesInfo"
       [newestData]="_sensor5in1Service.subSensorData"
-      fxFlex="30%"
+      fxFlex="calc(35%-20px)"
     ></app-mutisensor-card>
-    <!-- <mat-card class="message" fxFlex="calc(35%-20px)">
-      <mat-card-header>
-        <mat-card-title
-          >监控设备最新数据(多功能传感器:{{ device_id }})</mat-card-title
-        >
-        <mat-card-subtitle></mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-
-        <div
-          class="container"
-          fxLayout="row"
-          fxLayout.xs="column"
-          fxLayoutGap="20px"
-          fxLayoutAlign="space-around"
-        >
-          <mat-icon class="data-icon-voc">filter_list</mat-icon>
-          <div class="data-label-voc">
-            VOC
-          </div>
-          <div class="data-text-voc">
-            {{ data.voc_lvl }}
-          </div>
-
-          <mat-icon class="data-icon-co2">bubble_chart</mat-icon>
-          <div class="data-label-co2">
-            CO2(ppm)
-          </div>
-          <div class="data-text-co2">
-            {{ data.co2 }}
-          </div>
-          <mat-icon class="data-icon-pm25">smoking_rooms</mat-icon>
-          <div class="data-label-pm25">
-            PM2.5(μg/m3)
-          </div>
-          <div class="data-text-pm25">
-            {{ data.pm25 }}
-          </div>
-          <mat-icon class="data-icon-temp">wb_sunny</mat-icon>
-          <div class="data-label-temp">
-            温度(℃)
-          </div>
-          <div class="data-text-temp">
-            {{ data.temp }}
-          </div>
-          <mat-icon class="data-icon-humi">invert_colors</mat-icon>
-          <div class="data-label-humi">
-            湿度(%)
-          </div>
-          <div class="data-text-humi">
-            {{ data.humi }}
-          </div>
-        </div>
-      </mat-card-content>
-    </mat-card> -->
     <app-data-table
       [sensorData]="_sensor5in1Service.subSensorData"
       fxFlex="calc(15%-20px)"
     ></app-data-table>
   </div>
+</div>
+<div fxLayout fxLayoutAlign="center center">
+  <p>版权所有© 浙江光维通信技术有限公司</p>
 </div>

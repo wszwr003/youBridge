@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { DeviceService } from "../services/device.service";
 import { Sensor5in1Service } from "../services/sensor5in1.service";
+import { SensorData } from "../services/sensor5in1";
 @Component({
   selector: "app-mutisensor-view",
   templateUrl: "./mutisensor-view.component.html",
@@ -9,6 +10,7 @@ import { Sensor5in1Service } from "../services/sensor5in1.service";
 })
 export class MutisensorViewComponent implements OnInit {
   public deviceId;
+  public historyDatas;
   constructor(
     private route: ActivatedRoute,
     private _deviceService: DeviceService,
@@ -22,6 +24,12 @@ export class MutisensorViewComponent implements OnInit {
     //需要放到订阅中处理每次载入子界面才会调用!!!!!!!
     this.route.paramMap.subscribe((params) => {
       this.deviceId = params.get("deviceId");
+      this.historyDatas = this._sensor5in1Service
+        .getSensorDatas({ device_id: this.deviceId })
+        .subscribe((datas: SensorData[]) => {
+          this.historyDatas = datas;
+          // console.log("!!historyDatas:", datas);
+        });
     });
   }
 
