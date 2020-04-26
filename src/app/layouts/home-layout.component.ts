@@ -1,11 +1,14 @@
 import { Component, ViewChild, ElementRef } from "@angular/core";
 import { NavItem } from "../services/nav-item";
 import { NavService } from "../services/nav.service";
+import { RouterOutlet } from "@angular/router";
+import { routeTransitionAnimations } from "../route-transition-animations";
 
 @Component({
   selector: "app-home-layout",
   templateUrl: "./home-layout.component.html",
   styleUrls: ["./home-layout.component.scss"],
+  animations: [routeTransitionAnimations],
 })
 export class HomeLayoutComponent {
   screenWidth: number;
@@ -17,6 +20,13 @@ export class HomeLayoutComponent {
       // set screenWidth on screen size change
       this.screenWidth = window.innerWidth;
     };
+  }
+  prepareRoute(outlet: RouterOutlet) {
+    return (
+      outlet &&
+      outlet.activatedRouteData &&
+      outlet.activatedRouteData["animationState"]
+    );
   }
 
   ngAfterViewInit() {

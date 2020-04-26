@@ -36,7 +36,6 @@ import { HomeLayoutComponent } from "./layouts/home-layout.component";
 import { LoginLayoutComponent } from "./layouts/login-layout.component";
 import { LoginPageComponent } from "./login-page/login-page.component";
 
-import { MyMqttService } from "./services/my-mqtt.service";
 import { NavService } from "./services/nav.service";
 import { AuthService } from "./services/auth.service";
 import { AuthGuardService } from "./services/auth-guard.service";
@@ -44,7 +43,6 @@ import { NewLineChartComponent } from "./new-line-chart/new-line-chart.component
 import { NewPieChartComponent } from "./new-pie-chart/new-pie-chart.component";
 import { NewSolidgaugeChartComponent } from "./new-solidgauge-chart/new-solidgauge-chart.component";
 import { NewPieChart2Component } from "./new-pie-chart2/new-pie-chart2.component";
-import { HttpService } from "./services/http.service";
 import { HttpClientModule } from "@angular/common/http";
 import { MutisensorsViewComponent } from "./mutisensors-view/mutisensors-view.component";
 import { MutisensorCardComponent } from "./mutisensor-card/mutisensor-card.component";
@@ -107,6 +105,7 @@ export const HTTP_SERVICE_OPTIONS: any = {
     HighchartsChartModule,
     HttpClientModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
   ],
   providers: [NavService, AuthService, AuthGuardService],
   bootstrap: [AppComponent], //TBS:为什么增加http功能后需要加这个才正常?

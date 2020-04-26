@@ -1,17 +1,34 @@
-<mat-card [routerLink]="['/devices/env', device.device_no]">
+<!-- <div *ngIf="device == undefined">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title></mat-card-title>
+      <mat-card-subtitle> </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content> </mat-card-content>
+  </mat-card>
+</div> -->
+<!-- <div *ngIf="device != undefined"> -->
+<mat-card
+  [routerLink]="['/devices/env', device == null ? '' : device.device_no]"
+>
   <mat-card-header>
     <mat-card-title
-      >{{ device.device_no }} | {{ device.location }} |
-      {{ device.device_state == 1 ? "在线" : "离线" }}</mat-card-title
+      >{{ device == null ? "未知设备" : device.device_no }} |
+      {{ device == null ? "未知位置" : device.location }} |
+      {{
+        device == null ? "离线" : device.device_state == 1 ? "在线" : "离线"
+      }}</mat-card-title
     >
-    <mat-card-subtitle> 最新数据时间:{{ newestData.time }} </mat-card-subtitle>
+    <mat-card-subtitle>
+      最新数据时间: {{ newestData == null ? "无数据" : newestData.time }}
+    </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <div fxLayout="row" fxLayoutAlign="space-around">
       <!-- <app-new-gauge-chart
-        [newestData]="[newestData]"
-        fxFlex="calc(50%-20px)"
-      ></app-new-gauge-chart> -->
+          [newestData]="[newestData]"
+          fxFlex="calc(50%-20px)"
+          ></app-new-gauge-chart> -->
       <div fxFlex="calc(50%-20px)" style="height: 240px;">
         <mat-icon class="data-icon-voc">filter_list</mat-icon>
         <div class="data-label-voc">
@@ -54,3 +71,4 @@
     </div>
   </mat-card-content>
 </mat-card>
+<!-- </div> -->

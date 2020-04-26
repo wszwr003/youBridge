@@ -29,14 +29,17 @@ const routes: Routes = [
       {
         path: "sys",
         component: OverViewComponent,
+        data: { animationState: "One" },
       },
       {
         path: "devices/env",
         component: MutisensorsViewComponent,
+        data: { animationState: "Two" },
       },
       {
         path: "devices/env/:deviceId",
         component: MutisensorViewComponent,
+        data: { animationState: "Three" },
       },
     ],
   },
