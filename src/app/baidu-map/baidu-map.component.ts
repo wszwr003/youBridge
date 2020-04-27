@@ -109,7 +109,7 @@ export class BaiduMapComponent implements OnInit {
     };
     this.marker = {
       options: {
-        title: "861011047418186",
+        title: "861011047486134",
       },
       point: {
         lat: 31.168783,
@@ -186,7 +186,7 @@ export class BaiduMapComponent implements OnInit {
       },
       {
         options: {
-          title: "861011047486134",
+          title: "861011047418186",
         },
         point: {
           lat: 31.168783,

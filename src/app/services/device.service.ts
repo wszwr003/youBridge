@@ -2,7 +2,7 @@ import { Injectable, OnDestroy } from "@angular/core";
 import { Device } from "./device";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { setInterval } from 'timers';
+import { setInterval } from "timers";
 
 @Injectable({
   providedIn: "root",
@@ -18,8 +18,8 @@ export class DeviceService implements OnDestroy {
   private intervalTime = 10000;
   private devicesUrl = "/device/all/info";
   private HTTP_SERVICE_OPTIONS: any = {
-    URL: "http://127.0.0.1:4000",
-    // URL: "http://116.62.151.59:4000",
+    // URL: "http://127.0.0.1:4000",
+    URL: "http://116.62.151.59:4000",
   };
   private httpOptions = {
     headers: new HttpHeaders({ "Content-Type": "application/json" }),

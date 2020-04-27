@@ -2,7 +2,7 @@ import { Component, Input, OnChanges, SimpleChanges } from "@angular/core";
 import { Device } from "../services/device";
 import { SensorData } from "../services/sensor5in1";
 import { Sensor5in1Service } from "../services/sensor5in1.service";
-import { setTimeout } from 'timers';
+import { setTimeout } from "timers";
 
 @Component({
   selector: "app-mutisensor-card",
@@ -10,7 +10,7 @@ import { setTimeout } from 'timers';
   styleUrls: ["./mutisensor-card.component.scss"],
 })
 export class MutisensorCardComponent implements OnChanges {
-  @Input() deviceId: string = "861011047418186";
+  @Input() deviceId: string = "861011047486134";
   @Input() devices: Device[];
   @Input() newestData: SensorData = null;
   public initMyData: SensorData = null;

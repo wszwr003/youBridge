@@ -3,10 +3,11 @@
   <app-top-bar class="header" (sideMenuButton)="sidenav.toggle()">
   </app-top-bar>
 
+  <!-- [opened]="screenWidth > 875" -->
   <mat-sidenav-container class="container">
     <mat-sidenav
       #sidenav
-      [opened]="screenWidth > 875"
+      closed
       [mode]="screenWidth > 875 ? 'side' : 'over'"
       class="sidenav"
       style="background-color: rgb(43, 63, 83);"
@@ -19,9 +20,10 @@
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content autosize>
-      <div class="router-wrapper" [@rotateCubeToLeft]="getState(o)">
-        <router-outlet #o="outlet"> </router-outlet>
-      </div>
+      <!-- <div class="router-wrapper" [@rotateCubeToLeft]="getState(o)"> -->
+      <!-- <router-outlet #o="outlet"> </router-outlet> -->
+      <router-outlet> </router-outlet>
+      <!-- </div> -->
     </mat-sidenav-content>
   </mat-sidenav-container>
 </ng-container>
