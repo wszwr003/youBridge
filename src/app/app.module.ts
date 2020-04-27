@@ -48,6 +48,10 @@ import { HttpClientModule } from "@angular/common/http";
 import { MutisensorsViewComponent } from "./mutisensors-view/mutisensors-view.component";
 import { MutisensorCardComponent } from "./mutisensor-card/mutisensor-card.component";
 import { NewGaugeChartComponent } from "./new-gauge-chart/new-gauge-chart.component";
+import { NewPieChartliveComponent } from "./new-pie-chartlive/new-pie-chartlive.component";
+import { NewPieChartdeviceComponent } from "./new-pie-chartdevice/new-pie-chartdevice.component";
+import { TestViewComponent } from "./test-view/test-view.component";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   hostname: "127.0.0.1",
@@ -82,6 +86,9 @@ export const HTTP_SERVICE_OPTIONS: any = {
     MutisensorsViewComponent,
     MutisensorCardComponent,
     NewGaugeChartComponent,
+    NewPieChartliveComponent,
+    NewPieChartdeviceComponent,
+    TestViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -101,6 +108,7 @@ export const HTTP_SERVICE_OPTIONS: any = {
     MatInputModule,
     MatFormFieldModule,
     MatSlideToggleModule,
+    MatProgressSpinnerModule,
     FormsModule,
     MqttModule.forRoot(MQTT_SERVICE_OPTIONS),
     BaiduMapModule.forRoot({ ak: "FpVG0ppOSI7TwBYGhty65bxe88fqD38v" }),

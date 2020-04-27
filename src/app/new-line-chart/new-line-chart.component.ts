@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input, SimpleChanges } from "@angular/core";
 import * as Highcharts from "highcharts";
 
 @Component({
@@ -9,6 +9,7 @@ import * as Highcharts from "highcharts";
 export class NewLineChartComponent implements OnInit {
   private dataChart: Highcharts.Chart = null;
   public options: any;
+  @Input() num;
 
   constructor() {}
 
@@ -58,17 +59,17 @@ export class NewLineChartComponent implements OnInit {
       series: [
         {
           name: "5IN1传感器",
-          data: [2, 5, 10],
+          data: [0, 0, 0],
           color: "#00BEA0",
         },
         {
           name: "空调",
-          data: [2, 2, 3],
+          data: [0, 0, 0],
           color: "#0A96DC",
         },
         {
           name: "空气净化器",
-          data: [0, 1, 2],
+          data: [0, 0, 0],
           color: "#435C73",
         },
         // {
@@ -122,10 +123,68 @@ export class NewLineChartComponent implements OnInit {
       },
     };
 
-    this.dataChart = Highcharts.chart("container", this.options);
+    this.dataChart = Highcharts.chart("container3", this.options);
     this.dataChart.setSize(750);
   }
   ngAfterViewInit() {
     this.dataChart.setSize(null);
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    setTimeout(() => {
+      for (const propName in changes) {
+        if (changes.hasOwnProperty(propName)) {
+          if (
+            this.num == undefined ||
+            this.num < 0 ||
+            this.dataChart == undefined
+          ) {
+            break;
+          }
+          this.dataChart.series[0].setData(
+            [
+              {
+                y: 2,
+              },
+              {
+                y: 3,
+              },
+              {
+                y: 10,
+              },
+            ],
+            false
+          );
+          this.dataChart.series[1].setData(
+            [
+              {
+                y: 1,
+              },
+              {
+                y: 3,
+              },
+              {
+                y: 3,
+              },
+            ],
+            false
+          );
+          this.dataChart.series[2].setData(
+            [
+              {
+                y: 1,
+              },
+              {
+                y: 1,
+              },
+              {
+                y: 2,
+              },
+            ],
+            true
+          );
+          break;
+        }
+      }
+    }, 1500);
   }
 }

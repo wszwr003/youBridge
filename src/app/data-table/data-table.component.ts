@@ -79,6 +79,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class DataTableComponent implements OnInit, OnChanges {
   displayedColumns: string[] = ["id", "time", "temp", "hum"];
   @Input() sensorData: SensorData;
+  @Input() deviceState;
   sensorDatas: SensorData[] = [];
   dataSource: PeriodicElement[] = ELEMENT_DATA;
 
@@ -103,7 +104,11 @@ export class DataTableComponent implements OnInit, OnChanges {
             for (let i = 0; i < this.sensorDatas.length; i++) {
               const element = this.sensorDatas[i];
               this.dataSource[i].id = element.device_id.slice(9);
-              this.dataSource[i].time = element.time;
+              var unixTimestamp = new Date(
+                element.time == undefined ? new Date() : element.time
+              );
+              this.dataSource[i].time = unixTimestamp.toLocaleString();
+              //this.dataSource[i].time = element.time.toString();
               this.dataSource[i].kind = "数据";
               // this.dataSource[i].para =
               //   "VOC:" +
@@ -117,6 +122,9 @@ export class DataTableComponent implements OnInit, OnChanges {
               //   ",湿度:" +
               //   element.humi;
             }
+            break;
+          }
+          case "sensorState": {
             break;
           }
         }

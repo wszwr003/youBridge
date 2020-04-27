@@ -10,7 +10,8 @@ import { SensorData } from "../services/sensor5in1";
 })
 export class MutisensorViewComponent implements OnInit {
   public deviceId;
-  public historyDatas;
+  public historyDatas = null;
+
   constructor(
     private route: ActivatedRoute,
     private _deviceService: DeviceService,

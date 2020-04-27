@@ -106,45 +106,46 @@ export class DataChartComponent implements OnInit, OnChanges {
             //   "datas-end"
             // );
             if (this.dataChart == undefined) break;
+            setTimeout(() => {
+              this.dataChart.series[0].setData([]);
+              this.dataChart.series[1].setData([]);
+              this.dataChart.series[2].setData([]);
+              this.dataChart.series[3].setData([]);
 
-            this.dataChart.series[0].setData([]);
-            this.dataChart.series[1].setData([]);
-            this.dataChart.series[2].setData([]);
-            this.dataChart.series[3].setData([]);
-
-            for (let index = this.datas.length - 1; index >= 0; index--) {
-              var element = this.datas[index];
-              var time = new Date(element.time).getTime();
-              var time_second = time - (time % 1000);
-              var shift = false; //chart是否平移
-              for (var i = 0; i < 4; i++)
-                if (this.dataChart.series[i].data.length >= this.chartPoints)
-                  shift = true;
-              this.dataChart.series[0].addPoint(
-                [time_second, element.pm25],
-                false,
-                shift,
-                false
-              );
-              this.dataChart.series[1].addPoint(
-                [time_second, element.co2],
-                false,
-                shift,
-                false
-              );
-              this.dataChart.series[2].addPoint(
-                [time_second, element.temp],
-                false,
-                shift,
-                false
-              );
-              this.dataChart.series[3].addPoint(
-                [time_second, element.humi],
-                true, //FAO:repaint!!!!
-                shift,
-                false
-              );
-            }
+              for (let index = this.datas.length - 1; index >= 0; index--) {
+                var element = this.datas[index];
+                var time = new Date(element.time).getTime();
+                var time_second = time - (time % 1000);
+                var shift = false; //chart是否平移
+                for (var i = 0; i < 4; i++)
+                  if (this.dataChart.series[i].data.length >= this.chartPoints)
+                    shift = true;
+                this.dataChart.series[0].addPoint(
+                  [time_second, element.pm25],
+                  false,
+                  shift,
+                  false
+                );
+                this.dataChart.series[1].addPoint(
+                  [time_second, element.co2],
+                  false,
+                  shift,
+                  false
+                );
+                this.dataChart.series[2].addPoint(
+                  [time_second, element.temp],
+                  false,
+                  shift,
+                  false
+                );
+                this.dataChart.series[3].addPoint(
+                  [time_second, element.humi],
+                  true, //FAO:repaint!!!!
+                  shift,
+                  false
+                );
+              }
+            }, 1500);
             break; //FAO: 不能丢!!
           }
         }

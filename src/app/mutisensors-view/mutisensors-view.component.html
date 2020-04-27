@@ -1,14 +1,17 @@
 <div mat-app-background basic-container>
-  <span class="view-name">设备/环境传感设备</span>
+  <span class="view-name" style="height: 40px; color: rgb(230, 230, 230);"
+    >..</span
+  >
   <div
     class="container"
     fxLayout="row warp"
     fxLayout.xs="column"
     fxLayoutAlign="space-around center"
     fxLayoutGap="10px grid"
+    style="margin: 20px;"
   >
     <app-mutisensor-card
-      *ngFor="let device of _deviceService.devicesInfo; let i = index"
+      *ngFor="let device of devicesInfo"
       [deviceId]="device.device_no"
       [devices]="_deviceService.devicesInfo"
       [newestData]="_sensor5in1Service.subSensorData"
@@ -20,6 +23,9 @@
       [newestData]="newestDatas"
       fxFlex="30%"
     ></app-mutisensor-card> -->
-    <p *ngIf="devicesInit == null">连接错误,请检查网络!</p>
   </div>
+</div>
+<div fxLayout fxLayoutAlign="center center">
+  <p *ngIf="devicesInfo == null">载入中...</p>
+  <p *ngIf="devicesInfo != null">版权所有© 浙江光维通信技术有限公司</p>
 </div>

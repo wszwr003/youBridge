@@ -2,7 +2,7 @@ import { Component, ViewChild, ElementRef } from "@angular/core";
 import { NavItem } from "../services/nav-item";
 import { NavService } from "../services/nav.service";
 import { trigger, transition, useAnimation } from "@angular/animations";
-import { slide } from "ngx-router-animations";
+import { rotateFlipToRight } from "ngx-router-animations";
 import { Router } from "@angular/router";
 
 @Component({
@@ -13,10 +13,10 @@ import { Router } from "@angular/router";
     trigger("rotateCubeToLeft", [
       transition(
         "One <=> Three,Three <=> Two,One<=>Two",
-        useAnimation(slide, {
+        useAnimation(rotateFlipToRight, {
           params: {
-            enterTiming: "3",
-            leaveTiming: "3",
+            enterTiming: "0.5",
+            leaveTiming: "0.5",
             enterDelay: "0",
             leaveDelay: "0",
           },
@@ -35,12 +35,6 @@ export class HomeLayoutComponent {
       // set screenWidth on screen size change
       this.screenWidth = window.innerWidth;
     };
-    // setInterval(() => {
-    //   this.router.navigate(["/sys"]);
-    // }, 5000);
-    // setInterval(() => {
-    //   this.router.navigate(["/devices/env", "861011047486233"]);
-    // }, 10000);
   }
   getState(outlet) {
     return outlet.activatedRouteData.state;
@@ -63,7 +57,7 @@ export class HomeLayoutComponent {
         {
           displayName: "环境传感设备",
           //iconName: "blur_on",
-          route: "devices/env",
+          route: "devices",
           children: [
             {
               displayName: "传感器(511899)",
@@ -120,12 +114,12 @@ export class HomeLayoutComponent {
         {
           displayName: "空调",
           //iconName: "wb_sunny",
-          route: "devfestfl/speakers/michael-prentice",
+          route: "devices/aircon",
         },
         {
           displayName: "空气净化器",
           //iconName: "cached",
-          route: "devfestfl/speakers/michael-prentice",
+          route: "devices/airpur",
         },
         // {
         //   displayName: "光时域反射仪",
@@ -169,7 +163,7 @@ export class HomeLayoutComponent {
         {
           displayName: "浙江光维设备组",
           //iconName: "settings_input_component",
-          route: "group/group1",
+          route: "group/group2",
           children: [
             {
               displayName: "传感器(511899)",
@@ -223,39 +217,39 @@ export class HomeLayoutComponent {
         {
           displayName: "用户1",
           iconName: "person",
-          route: "user/person",
+          route: "user/person1",
         },
         {
           displayName: "用户2",
           iconName: "person",
-          route: "user/person",
+          route: "user/person2",
         },
         {
           displayName: "用户3",
           iconName: "person",
-          route: "user/person",
+          route: "user/person3",
         },
         {
           displayName: "用户4",
           iconName: "person",
-          route: "user/person",
+          route: "user/person4",
         },
       ],
     },
     {
       displayName: "数据分析",
       iconName: "bar_chart",
-      route: "group",
+      route: "dataanalyze",
     },
     {
       displayName: "日志分析",
       iconName: "assignment",
-      route: "group",
+      route: "loganalyze",
     },
     {
       displayName: "用户行为分析",
       iconName: "assignment_ind",
-      route: "group",
+      route: "useranalyze",
     },
   ];
 }

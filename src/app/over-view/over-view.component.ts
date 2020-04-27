@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnChanges, OnInit } from "@angular/core";
 import { DeviceService } from "../services/device.service";
 import { Sensor5in1Service } from "../services/sensor5in1.service";
+import { SensorData } from "../services/sensor5in1";
 
 @Component({
   selector: "app-over-view",

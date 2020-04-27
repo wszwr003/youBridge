@@ -26,6 +26,25 @@ export class DeviceService implements OnDestroy {
 
   constructor(private _httpClient: HttpClient) {
     console.log("get devices interval start!");
+    this.getAllDeviceInf().subscribe((devices: Array<Device>) => {
+      this.deviceNum = devices.length;
+      this.devicesInfo = devices;
+      var online = 0;
+      var offline = 0;
+      var fault = 0;
+      devices.forEach((element) => {
+        if (element.device_state == 1) {
+          online++;
+        } else if (element.device_state == 0) {
+          offline++;
+        } else if (element.device_state == -1) {
+          fault++;
+        }
+      });
+      this.onLineNum = online;
+      this.offLineNum = offline;
+      this.faultNum = fault;
+    });
     this.intervalTick = setInterval(() => {
       this.getAllDeviceInf().subscribe((devices: Array<Device>) => {
         this.deviceNum = devices.length;
@@ -67,7 +86,7 @@ export class DeviceService implements OnDestroy {
     clearInterval(this.intervalTick);
   }
 
-  getAllDeviceInf(): Observable<Object> {
+  public getAllDeviceInf(): Observable<Object> {
     const url = this.HTTP_SERVICE_OPTIONS.URL + this.devicesUrl;
     return this._httpClient.post(url, null, this.httpOptions);
   }

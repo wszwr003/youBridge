@@ -48,13 +48,16 @@ export class SideMenuComponent implements OnInit {
     });
   }
   onItemSelected(item: NavItem) {
+    console.log(item.route);
+
+    this.router.navigate([item.route]);
     if (!item.children || !item.children.length) {
-      this.router.navigate([item.route]);
       //this.router.navigate(["/devices/env", "861011047486233"]);
       //this.navService.closeNav();
     }
     if (item.children && item.children.length) {
       this.expanded = !this.expanded;
+      // this.router.navigate([item.route]);
     }
   }
 }

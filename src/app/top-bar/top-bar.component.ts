@@ -11,13 +11,15 @@ import { Router } from "@angular/router";
 export class TopBarComponent implements OnInit {
   @Output() sideMenuButton = new EventEmitter(); //output component
   screenWidth: number;
-  public checked = false;
+  private secondInterval = 90;
+  public checked = true;
   public intervalTick;
   public timeoutTick;
   emailFormControl = new FormControl("", [
     Validators.required,
     Validators.email,
   ]);
+
   constructor(private router: Router) {
     // set screenWidth on page load
     this.screenWidth = window.innerWidth;
@@ -25,6 +27,9 @@ export class TopBarComponent implements OnInit {
       // set screenWidth on screen size change
       this.screenWidth = window.innerWidth;
     };
+    if (this.checked) {
+      this.viewChange();
+    }
   }
   notify(event) {
     if (event.checked == true) {
@@ -35,13 +40,22 @@ export class TopBarComponent implements OnInit {
     }
   }
   viewChange() {
-    this.intervalTick = setInterval(() => {
-      console.log(this.checked);
+    this.router.navigate(["/sys"]);
+    this.timeoutTick = setTimeout(() => {
+      this.router.navigate(["/devices"]);
+    }, this.secondInterval * 1000);
+    this.timeoutTick = setTimeout(() => {
       this.router.navigate(["/devices/env", "861011047418186"]);
+    }, this.secondInterval * 2000);
+    this.intervalTick = setInterval(() => {
+      this.router.navigate(["/sys"]);
       this.timeoutTick = setTimeout(() => {
-        this.router.navigate(["/sys"]);
-      }, 5000);
-    }, 10000);
+        this.router.navigate(["/devices"]);
+      }, this.secondInterval * 1000);
+      this.timeoutTick = setTimeout(() => {
+        this.router.navigate(["/devices/env", "861011047418186"]);
+      }, this.secondInterval * 2000);
+    }, this.secondInterval * 3000);
   }
   ngOnInit() {}
 }

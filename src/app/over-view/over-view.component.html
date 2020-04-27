@@ -10,7 +10,11 @@
             <mat-card-subtitle> </mat-card-subtitle>
           </mat-card-header>
           <mat-card-content class="summary-text"
-            >{{ _deviceService.deviceNum + 5 }}
+            >{{
+              _deviceService.deviceNum == -1
+                ? "..."
+                : _deviceService.deviceNum + 5
+            }}
           </mat-card-content>
         </mat-card>
         <mat-card fxFlex="calc(33%-20px)">
@@ -19,7 +23,9 @@
             <mat-card-title>设备组数</mat-card-title>
             <mat-card-subtitle> </mat-card-subtitle>
           </mat-card-header>
-          <mat-card-content class="summary-text">2</mat-card-content>
+          <mat-card-content class="summary-text">{{
+            _deviceService.deviceNum == -1 ? "..." : "2"
+          }}</mat-card-content>
         </mat-card>
         <mat-card fxFlex="calc(33%-20px)">
           <mat-card-header>
@@ -27,27 +33,46 @@
             <mat-card-title>用户数</mat-card-title>
             <mat-card-subtitle> </mat-card-subtitle>
           </mat-card-header>
-          <mat-card-content class="summary-text">4 </mat-card-content>
+          <mat-card-content class="summary-text">{{
+            _deviceService.deviceNum == -1 ? "..." : "4"
+          }}</mat-card-content>
         </mat-card>
       </div>
-      <mat-card>
+      <mat-card class="pie-chart">
         <mat-card-header>
           <!-- <div mat-card-avatar class="example-header-image"></div> -->
           <mat-card-title>设备概况</mat-card-title>
           <mat-card-subtitle>
-            设备类型:3 在线设备:{{ _deviceService.onLineNum }} 离线设备:{{
-              _deviceService.offLineNum
+            设备类型:{{
+              _deviceService.deviceNum == -1 ? "读取中" : "3"
             }}
-            异常设备:{{ _deviceService.faultNum + 5 }}
+            在线设备:{{
+              _deviceService.onLineNum == -1
+                ? "读取中"
+                : _deviceService.onLineNum
+            }}
+            离线设备:{{
+              _deviceService.offLineNum == -1
+                ? "读取中"
+                : _deviceService.offLineNum
+            }}
+            异常设备:{{
+              _deviceService.faultNum == -1
+                ? "读取中"
+                : _deviceService.faultNum + 5
+            }}
           </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content overflow="hidden">
-          <div fxLayout="row" fxLayoutAlign="space-around">
-            <app-new-pie-chart fxFlex="calc(50%-20px)"></app-new-pie-chart>
-            <app-new-pie-chart2
-              [online]="online"
-              fxFlex="calc(50%-20px)"
-            ></app-new-pie-chart2>
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-around">
+            <app-new-pie-chartdevice
+              [num]="_deviceService.deviceNum + 5"
+            ></app-new-pie-chartdevice>
+            <app-new-pie-chartlive
+              [online]="_deviceService.onLineNum"
+              [offline]="_deviceService.offLineNum"
+              [fault]="_deviceService.faultNum + 5"
+            ></app-new-pie-chartlive>
           </div>
         </mat-card-content>
       </mat-card>
@@ -78,7 +103,10 @@
         <mat-card-subtitle></mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <app-new-line-chart fxFlex="calc(100px)"></app-new-line-chart>
+        <app-new-line-chart
+          [num]="_deviceService.deviceNum + 5"
+          fxFlex="calc(100px)"
+        ></app-new-line-chart>
         <!-- <app-new-colume-chart fxFlex="calc(50%-20px)"></app-new-colume-chart> -->
       </mat-card-content>
     </mat-card>
@@ -89,6 +117,7 @@
       fxFlex="calc(35%-20px)"
     ></app-mutisensor-card>
     <app-data-table
+      [deviceState]=""
       [sensorData]="_sensor5in1Service.subSensorData"
       fxFlex="calc(15%-20px)"
     ></app-data-table>

@@ -10,7 +10,7 @@ export interface SensorData {
   lat?: number;
   lon?: number;
   configure?: string;
-  time?: string;
+  time?: number;
 }
 
 export interface DeviceState {
