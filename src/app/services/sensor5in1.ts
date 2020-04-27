@@ -16,7 +16,6 @@ export interface SensorData {
 export interface DeviceState {
   device_id: string;
   state: boolean;
-  timer?: NodeJS.Timer;
 }
 export interface GPS {
   deviceId: string;

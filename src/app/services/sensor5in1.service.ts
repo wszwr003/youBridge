@@ -3,6 +3,7 @@ import { Observable, Subscription } from "rxjs";
 import { MqttService, IMqttMessage } from "ngx-mqtt";
 import { SensorData } from "./sensor5in1";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { setInterval } from 'timers';
 
 @Injectable({
   providedIn: "root",

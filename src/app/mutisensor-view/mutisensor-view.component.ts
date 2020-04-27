@@ -14,8 +14,8 @@ export class MutisensorViewComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private _deviceService: DeviceService,
-    private _sensor5in1Service: Sensor5in1Service
+    public _deviceService: DeviceService,
+    public _sensor5in1Service: Sensor5in1Service
   ) {}
 
   ngOnInit() {

@@ -11,8 +11,8 @@ import { Device } from "../services/device";
 export class MutisensorsViewComponent implements OnInit {
   public devicesInfo = null;
   constructor(
-    private _deviceService: DeviceService,
-    private _sensor5in1Service: Sensor5in1Service
+    public _deviceService: DeviceService,
+    public _sensor5in1Service: Sensor5in1Service
   ) {}
   ngOnInit() {
     this._deviceService

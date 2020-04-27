@@ -1,5 +1,7 @@
 import { Component, OnInit, SimpleChanges, Input } from "@angular/core";
 import * as Highcharts from "highcharts";
+import { setTimeout } from 'timers';
+
 @Component({
   selector: "app-new-pie-chartlive",
   templateUrl: "./new-pie-chartlive.component.html",

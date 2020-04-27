@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, SimpleChanges } from "@angular/core";
 import * as Highcharts from "highcharts";
+import { setTimeout } from 'timers';
 
 @Component({
   selector: "app-new-line-chart",

@@ -11,8 +11,8 @@ import { SensorData } from "../services/sensor5in1";
 export class OverViewComponent implements OnInit, OnDestroy, OnChanges {
   public device_id = "861011047418186";
   constructor(
-    private _deviceService: DeviceService,
-    private _sensor5in1Service: Sensor5in1Service
+    public _deviceService: DeviceService,
+    public _sensor5in1Service: Sensor5in1Service
   ) {}
   ngOnChanges(changes: import("@angular/core").SimpleChanges): void {
     console.log("overview changes in");

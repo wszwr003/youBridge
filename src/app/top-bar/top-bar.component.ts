@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { Output, EventEmitter } from "@angular/core"; //output component
 import { FormControl, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+import { setTimeout } from "timers";
+import { setInterval } from "timers";
 
 @Component({
   selector: "app-top-bar",
