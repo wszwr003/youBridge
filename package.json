@@ -5,7 +5,8 @@
     "ng": "ng",
     "start": "ng serve --open",
     "build": "ng build --prod",
-    "test": "ng test",
+    "build-test":"ng build --watch",
+    "test": "lite-server --baseDir='../cloudAngular/dist/cloudAngular'",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
