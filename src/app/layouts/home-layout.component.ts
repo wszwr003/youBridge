@@ -25,7 +25,7 @@ import { rotateFlipToRight } from "ngx-router-animations";
   ],
 })
 export class HomeLayoutComponent {
-  screenWidth: number; //当前屏幕宽度
+  public screenWidth: number; //当前屏幕宽度
   @ViewChild("sidenav", null) sidenav: ElementRef;
 
   constructor(private navService: NavService) {
@@ -117,12 +117,12 @@ export class HomeLayoutComponent {
         {
           displayName: "空调",
           //iconName: "wb_sunny",
-          route: "devices/aircon",
+          route: "test",
         },
         {
           displayName: "空气净化器",
           //iconName: "cached",
-          route: "devices/airpur",
+          route: "test",
         },
         // {
         //   displayName: "光时域反射仪",
@@ -149,7 +149,7 @@ export class HomeLayoutComponent {
         {
           displayName: "上海光维设备组",
           //iconName: "settings_input_component",
-          route: "group/group1",
+          route: "group/shanghai",
           children: [
             {
               displayName: "传感器(418186)",
@@ -166,7 +166,7 @@ export class HomeLayoutComponent {
         {
           displayName: "浙江光维设备组",
           //iconName: "settings_input_component",
-          route: "group/group2",
+          route: "group/zhejiang",
           children: [
             {
               displayName: "传感器(511899)",
@@ -215,44 +215,44 @@ export class HomeLayoutComponent {
     {
       displayName: "用户管理",
       iconName: "group",
-      route: "user",
+      route: "test",
       children: [
         {
           displayName: "用户1",
           iconName: "person",
-          route: "user/person1",
+          route: "test",
         },
         {
           displayName: "用户2",
           iconName: "person",
-          route: "user/person2",
+          route: "test",
         },
         {
           displayName: "用户3",
           iconName: "person",
-          route: "user/person3",
+          route: "test",
         },
         {
           displayName: "用户4",
           iconName: "person",
-          route: "user/person4",
+          route: "test",
         },
       ],
     },
     {
       displayName: "数据分析",
       iconName: "bar_chart",
-      route: "dataanalyze",
+      route: "test",
     },
     {
       displayName: "日志分析",
       iconName: "assignment",
-      route: "loganalyze",
+      route: "test",
     },
     {
       displayName: "用户行为分析",
       iconName: "assignment_ind",
-      route: "useranalyze",
+      route: "test",
     },
   ];
 }

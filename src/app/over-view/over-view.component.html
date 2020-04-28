@@ -44,7 +44,7 @@
           <mat-card-title>设备概况</mat-card-title>
           <mat-card-subtitle>
             设备类型:{{
-              _deviceService.deviceNum == -1 ? "读取中" : "3"
+              _deviceService.deviceNum == -1 ? "读取中" : 3
             }}
             在线设备:{{
               _deviceService.onLineNum == -1
@@ -56,7 +56,7 @@
                 ? "读取中"
                 : _deviceService.offLineNum
             }}
-            异常设备:{{
+            未启用设备:{{
               _deviceService.faultNum == -1
                 ? "读取中"
                 : _deviceService.faultNum + 5

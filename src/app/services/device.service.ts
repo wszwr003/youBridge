@@ -2,7 +2,6 @@ import { Injectable, OnDestroy } from "@angular/core";
 import { Device } from "./device";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { setInterval } from "timers";
 
 @Injectable({
   providedIn: "root",

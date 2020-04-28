@@ -8,7 +8,6 @@ import {
 import { Device } from "../services/device";
 import { SensorData } from "../services/sensor5in1";
 import { Sensor5in1Service } from "../services/sensor5in1.service";
-import { setTimeout } from "timers";
 import { Subscription } from "rxjs";
 
 @Component({

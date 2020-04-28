@@ -14,7 +14,8 @@
 >
   <mat-card-header>
     <mat-card-title class="title-left">
-      {{ device == null ? "未知设备" : device.device_no }} |
+      {{ device == null ? "未知设备" : "传感器(" + deviceId.slice(9) + ")" }}
+      |
       {{ device == null ? "未知位置" : device.location }}
     </mat-card-title>
 
@@ -34,10 +35,14 @@
         color="warn"
         class="title-right"
         [diameter]="20"
-        style="display: inline; position: relative; right: 0px; top: 3px;"
+        style="display: inline; position: relative; right: 0px; top: 1px;"
       ></mat-spinner>
     </mat-card-title>
-    <mat-card-subtitle> 最新数据时间: {{ timeString }} </mat-card-subtitle>
+    <mat-card-subtitle style="position: relative; top: 10px;">
+      <a style="position: relative; top: 3px;"
+        >最新数据时间: {{ timeString }}</a
+      >
+    </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <div fxLayout="row" fxLayout.xs="column">

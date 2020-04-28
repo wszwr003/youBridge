@@ -2,8 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import { Output, EventEmitter } from "@angular/core"; //output component
 import { FormControl, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { setTimeout } from "timers";
-import { setInterval } from "timers";
 
 @Component({
   selector: "app-top-bar",
@@ -14,7 +12,7 @@ export class TopBarComponent implements OnInit {
   @Output() sideMenuButton = new EventEmitter(); //output component
   screenWidth: number;
   private secondInterval = 90;
-  public checked = true;
+  public checked = false;
   public intervalTick;
   public timeoutTick;
   emailFormControl = new FormControl("", [

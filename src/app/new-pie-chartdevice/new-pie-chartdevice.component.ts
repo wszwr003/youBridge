@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, SimpleChanges } from "@angular/core";
 import * as Highcharts from "highcharts";
-import { setTimeout } from "timers";
 
 @Component({
   selector: "app-new-pie-chartdevice",
@@ -15,6 +14,7 @@ export class NewPieChartdeviceComponent implements OnInit {
       enabled: false,
     },
     chart: {
+      backgroundColor: "#eeeeee",
       type: "pie",
       height: 250,
       width: 300,

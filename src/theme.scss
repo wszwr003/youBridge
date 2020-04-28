@@ -17,7 +17,7 @@ $my-color-blue: (
   A200: #dde6f3,
   A400: #6992c9,
   A700: #38649d,
-  M100: #ededed,
+  M100: #f0f0f0,
   M700: #182c45,
   9000: #00bea0,
   contrast: (
@@ -42,7 +42,7 @@ $my-color-blue: (
 );
 // 自定义颜色
 $my-app-primary: mat-palette($my-color-blue, M700);
-$my-app-accent: mat-palette($my-color-blue, 50);
+$my-app-accent: mat-palette($my-color-blue, M100);
 $my-app-warn: mat-palette($my-color-blue, 9000);
 
 // 利用自定义颜色组装自定义主题

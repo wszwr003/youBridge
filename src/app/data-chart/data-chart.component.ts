@@ -9,7 +9,6 @@ import {
 import * as Highcharts from "highcharts";
 import { ChartInit } from "../mutisensor-view/sensor-chart";
 import { SensorData } from "../services/sensor5in1";
-import { setTimeout } from 'timers';
 
 declare var require: any;
 let Boost = require("highcharts/modules/boost");
@@ -187,6 +186,7 @@ export class DataChartComponent implements OnInit, OnChanges {
         },
       },
       chart: {
+        backgroundColor: "#eeeeee",
         type: "spline",
         height: 390,
       },

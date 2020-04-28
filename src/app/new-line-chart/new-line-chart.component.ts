@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, SimpleChanges } from "@angular/core";
 import * as Highcharts from "highcharts";
-import { setTimeout } from 'timers';
 
 @Component({
   selector: "app-new-line-chart",
@@ -18,6 +17,7 @@ export class NewLineChartComponent implements OnInit {
     //FAO:放到此处初始化,如果在声明的时候初始化,会出现INPUT尚未传值的情况.
     this.options = {
       chart: {
+        backgroundColor: "#eeeeee",
         type: "column",
         options3d: {
           enabled: true,
