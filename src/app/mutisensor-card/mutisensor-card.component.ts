@@ -1,15 +1,22 @@
-import { Component, Input, OnChanges, SimpleChanges } from "@angular/core";
+import {
+  Component,
+  Input,
+  OnChanges,
+  SimpleChanges,
+  OnDestroy,
+} from "@angular/core";
 import { Device } from "../services/device";
 import { SensorData } from "../services/sensor5in1";
 import { Sensor5in1Service } from "../services/sensor5in1.service";
 import { setTimeout } from "timers";
+import { Subscription } from "rxjs";
 
 @Component({
   selector: "app-mutisensor-card",
   templateUrl: "./mutisensor-card.component.html",
   styleUrls: ["./mutisensor-card.component.scss"],
 })
-export class MutisensorCardComponent implements OnChanges {
+export class MutisensorCardComponent implements OnChanges, OnDestroy {
   @Input() deviceId: string = "861011047486134";
   @Input() devices: Device[];
   @Input() newestData: SensorData = null;
@@ -20,18 +27,25 @@ export class MutisensorCardComponent implements OnChanges {
   public tempString = "...";
   public humiString = "...";
   public timeString = "读取中";
-
+  public subscription: Subscription;
   public device: Device = null;
   public state: string = "离线";
   constructor(private _sensor5in1Service: Sensor5in1Service) {}
+  ngOnDestroy(): void {
+    try {
+      this.subscription.unsubscribe();
+    } catch {}
+  }
   ngOnChanges(changes: SimpleChanges): void {
     for (const propName in changes) {
       if (changes.hasOwnProperty(propName)) {
         switch (propName) {
           case "deviceId": {
             console.log("deviceId");
-
-            this._sensor5in1Service
+            try {
+              this.subscription.unsubscribe();
+            } catch {}
+            this.subscription = this._sensor5in1Service
               .getNewestSensorData({ device_id: this.deviceId })
               .subscribe((data: SensorData[]) => {
                 this.initMyData = data[0];

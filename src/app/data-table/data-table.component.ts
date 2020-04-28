@@ -79,7 +79,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class DataTableComponent implements OnInit, OnChanges {
   displayedColumns: string[] = ["id", "time", "temp", "hum"];
   @Input() sensorData: SensorData;
-  @Input() deviceState;
   sensorDatas: SensorData[] = [];
   dataSource: PeriodicElement[] = ELEMENT_DATA;
 
@@ -122,9 +121,6 @@ export class DataTableComponent implements OnInit, OnChanges {
               //   ",湿度:" +
               //   element.humi;
             }
-            break;
-          }
-          case "sensorState": {
             break;
           }
         }

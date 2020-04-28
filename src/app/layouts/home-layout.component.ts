@@ -3,7 +3,6 @@ import { NavItem } from "../services/nav-item";
 import { NavService } from "../services/nav.service";
 import { trigger, transition, useAnimation } from "@angular/animations";
 import { rotateFlipToRight } from "ngx-router-animations";
-import { Router } from "@angular/router";
 
 @Component({
   selector: "app-home-layout",
@@ -26,16 +25,19 @@ import { Router } from "@angular/router";
   ],
 })
 export class HomeLayoutComponent {
-  screenWidth: number;
+  screenWidth: number; //当前屏幕宽度
   @ViewChild("sidenav", null) sidenav: ElementRef;
-  constructor(private navService: NavService, private router: Router) {
-    // set screenWidth on page load
-    this.screenWidth = window.innerWidth;
+
+  constructor(private navService: NavService) {
+    this.screenWidth = window.innerWidth; //获取当前屏幕宽度
     window.onresize = () => {
-      // set screenWidth on screen size change
+      //TBS:本函数未起作用
+      //web窗口宽度resize回调函数
+      console.log("resize");
       this.screenWidth = window.innerWidth;
     };
   }
+
   getState(outlet) {
     return outlet.activatedRouteData.state;
   }
@@ -43,7 +45,8 @@ export class HomeLayoutComponent {
   ngAfterViewInit() {
     this.navService.appDrawer = this.sidenav;
   }
-  navItems: NavItem[] = [
+
+  public navItems: NavItem[] = [
     {
       displayName: "总览",
       iconName: "view_quilt",
