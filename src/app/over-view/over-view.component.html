@@ -1,6 +1,11 @@
 <div mat-app-background basic-container>
   <span class="view-name">总览</span>
-  <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutGap="20px">
+  <div
+    class="container"
+    fxLayout="row"
+    fxLayout.lt-md="column"
+    fxLayoutGap="20px"
+  >
     <div fxLayout="column" fxFlex="calc(50%-20px)" fxLayoutGap="20px">
       <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="20px">
         <mat-card fxFlex="calc(33%-20px)">
@@ -17,26 +22,33 @@
             }}
           </mat-card-content>
         </mat-card>
-        <mat-card fxFlex="calc(33%-20px)">
-          <mat-card-header>
-            <!-- <div mat-card-avatar class="example-header-image"></div> -->
-            <mat-card-title>设备组数</mat-card-title>
-            <mat-card-subtitle> </mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content class="summary-text">{{
-            _deviceService.deviceNum == -1 ? "..." : "2"
-          }}</mat-card-content>
-        </mat-card>
-        <mat-card fxFlex="calc(33%-20px)">
-          <mat-card-header>
-            <!-- <div mat-card-avatar class="example-header-image"></div> -->
-            <mat-card-title>用户数</mat-card-title>
-            <mat-card-subtitle> </mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content class="summary-text">{{
-            _deviceService.deviceNum == -1 ? "..." : "4"
-          }}</mat-card-content>
-        </mat-card>
+        <div
+          fxFlex="calc(66%-20px)"
+          fxLayout="row"
+          fxLayoutGap="20px"
+          fxLayoutAlign="space-around"
+        >
+          <mat-card fxFlex="calc(50%-20px)">
+            <mat-card-header>
+              <!-- <div mat-card-avatar class="example-header-image"></div> -->
+              <mat-card-title>设备组数</mat-card-title>
+              <mat-card-subtitle> </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content class="summary-text">{{
+              _deviceService.deviceNum == -1 ? "..." : "2"
+            }}</mat-card-content>
+          </mat-card>
+          <mat-card fxFlex="calc(50%-20px)">
+            <mat-card-header>
+              <!-- <div mat-card-avatar class="example-header-image"></div> -->
+              <mat-card-title>用户数</mat-card-title>
+              <mat-card-subtitle> </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content class="summary-text">{{
+              _deviceService.deviceNum == -1 ? "..." : "4"
+            }}</mat-card-content>
+          </mat-card>
+        </div>
       </div>
       <mat-card class="pie-chart">
         <mat-card-header>
@@ -92,7 +104,7 @@
   <div
     class="container"
     fxLayout="row"
-    fxLayout.xs="column"
+    fxLayout.lt-md="column"
     fxLayoutGap="20px"
     fxLayoutAlign="space-around"
   >
@@ -110,16 +122,24 @@
         <!-- <app-new-colume-chart fxFlex="calc(50%-20px)"></app-new-colume-chart> -->
       </mat-card-content>
     </mat-card>
-    <app-mutisensor-card
-      [deviceId]="device_id"
-      [devices]="_deviceService.devicesInfo"
-      [newestData]="_sensor5in1Service.subSensorData"
-      fxFlex="calc(35%-20px)"
-    ></app-mutisensor-card>
-    <app-data-table
-      [sensorData]="_sensor5in1Service.subSensorData"
-      fxFlex="calc(15%-20px)"
-    ></app-data-table>
+    <div
+      fxFlex="calc(50%-20px)"
+      fxLayout="row"
+      fxLayout.xs="column"
+      fxLayoutGap="20px"
+      fxLayoutAlign="space-around"
+    >
+      <app-mutisensor-card
+        [deviceId]="device_id"
+        [devices]="_deviceService.devicesInfo"
+        [newestData]="_sensor5in1Service.subSensorData"
+        fxFlex="calc(70%-20px)"
+      ></app-mutisensor-card>
+      <app-data-table
+        [sensorData]="_sensor5in1Service.subSensorData"
+        fxFlex="calc(30%-20px)"
+      ></app-data-table>
+    </div>
   </div>
 </div>
 <div fxLayout fxLayoutAlign="center center">

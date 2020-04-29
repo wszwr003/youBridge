@@ -98,7 +98,7 @@ export class BaiduMapSingleComponent implements OnInit, OnChanges {
         switch (propName) {
           case "location": {
             if (this.location != undefined) {
-              console.log("!!!!****:", this.location.lat, this.location.lng);
+              // console.log("!!!!****:", this.location.lat, this.location.lng);
               this.marker.point.lat = this.location.lat;
               this.marker.point.lng = this.location.lng;
               this.options.centerAndZoom.lat = this.location.lat;

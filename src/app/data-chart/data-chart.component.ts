@@ -326,6 +326,110 @@ export class DataChartComponent implements OnInit, OnChanges {
           ],
         },
       ],
+      responsive: {
+        rules: [
+          {
+            condition: {
+              maxWidth: 599,
+            },
+            chartOptions: {
+              plotOptions: {
+                spline: {
+                  lineWidth: 2,
+                  states: {
+                    hover: {
+                      lineWidth: 3,
+                    },
+                  },
+                  marker: {
+                    enabled: true,
+                  },
+                },
+              },
+              yAxis: [
+                {
+                  lineWidth: 0, //去掉x轴线
+                  tickWidth: 0, //去掉刻度
+                  labels: {
+                    enabled: false,
+                  }, //去掉刻度数字
+                },
+                {
+                  lineWidth: 0, //去掉x轴线
+                  tickWidth: 0, //去掉刻度
+                  labels: {
+                    enabled: false,
+                  }, //去掉刻度数字
+                },
+                {
+                  lineWidth: 0, //去掉x轴线
+                  tickWidth: 0, //去掉刻度
+                  labels: {
+                    enabled: false,
+                  }, //去掉刻度数字
+                },
+                {
+                  lineWidth: 0, //去掉x轴线
+                  tickWidth: 0, //去掉刻度
+                  labels: {
+                    enabled: false,
+                  }, //去掉刻度数字
+                },
+              ],
+            },
+          },
+          {
+            condition: {
+              minWidth: 600,
+            },
+            chartOptions: {
+              plotOptions: {
+                spline: {
+                  lineWidth: 2,
+                  states: {
+                    hover: {
+                      lineWidth: 3,
+                    },
+                  },
+                  marker: {
+                    enabled: false,
+                  },
+                },
+              },
+              yAxis: [
+                {
+                  lineWidth: 0, //去掉x轴线
+                  tickWidth: 0, //去掉刻度
+                  labels: {
+                    enabled: true,
+                  }, //去掉刻度数字
+                },
+                {
+                  lineWidth: 0, //去掉x轴线
+                  tickWidth: 0, //去掉刻度
+                  labels: {
+                    enabled: true,
+                  }, //去掉刻度数字
+                },
+                {
+                  lineWidth: 0, //去掉x轴线
+                  tickWidth: 0, //去掉刻度
+                  labels: {
+                    enabled: true,
+                  }, //去掉刻度数字
+                },
+                {
+                  lineWidth: 0, //去掉x轴线
+                  tickWidth: 0, //去掉刻度
+                  labels: {
+                    enabled: true,
+                  }, //去掉刻度数字
+                },
+              ],
+            },
+          },
+        ],
+      },
     };
 
     Highcharts.setOptions(this.optionsG);
