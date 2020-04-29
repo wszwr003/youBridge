@@ -98,6 +98,25 @@ export class MutisensorCardComponent implements OnChanges, OnDestroy {
               for (let i = 0; i < this.devices.length; i++) {
                 const device = this.devices[i];
                 if (device.device_no == this.deviceId) {
+                  if (device.location == "sh1" || device.location == "sh2") {
+                    device.location = "光维上海总部";
+                  } else if (device.location == "hn1") {
+                    device.location = "一楼前台";
+                  } else if (device.location == "hn2") {
+                    device.location = "二楼30M2仓外";
+                  } else if (device.location == "hn3") {
+                    device.location = "三楼会议室";
+                  } else if (device.location == "hn4") {
+                    device.location = "三楼测试部";
+                  } else if (device.location == "hn5") {
+                    device.location = "三楼实验室一";
+                  } else if (device.location == "hn6") {
+                    device.location = "三楼实验室二";
+                  } else if (device.location == "hn7") {
+                    device.location = "三楼环境实验室";
+                  } else if (device.location == "hn8") {
+                    device.location = "四楼展厅";
+                  }
                   this.device = device;
                 }
               }

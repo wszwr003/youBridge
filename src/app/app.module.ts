@@ -54,8 +54,8 @@ import { TestViewComponent } from "./test-view/test-view.component";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
-  hostname: "127.0.0.1",
-  // hostname: "116.62.151.59",
+  // hostname: "127.0.0.1",
+  hostname: "116.62.151.59",
   port: 8888,
   path: "/mqtt", //'/mqtt'
 };

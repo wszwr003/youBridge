@@ -44,6 +44,7 @@
       </mat-menu>
     </button>
     <mat-slide-toggle
+      *ngIf="screenWidth > 600"
       color="warn"
       [checked]="checked"
       (change)="notify($event)"

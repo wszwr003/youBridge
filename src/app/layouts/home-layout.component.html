@@ -2,13 +2,13 @@
   <!-- <app-progress-bar class="progress"></app-progress-bar> -->
   <app-top-bar class="header" (sideMenuButton)="sidenav.toggle()">
   </app-top-bar>
-
   <!-- [opened]="screenWidth > 875" -->
-  <mat-sidenav-container class="container">
+  <!-- //取消menu遮罩:[hasBackdrop]="false" -->
+  <mat-sidenav-container [hasBackdrop]="false" class="container">
     <mat-sidenav
       #sidenav
       [opened]="screenWidth > 2875"
-      [mode]="screenWidth > 875 ? 'side' : 'over'"
+      [mode]="screenWidth > 2875 ? 'side' : 'over'"
       class="sidenav"
       style="background-color: rgb(43, 63, 83);"
     >

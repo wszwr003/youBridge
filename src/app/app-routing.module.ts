@@ -29,14 +29,19 @@ const routes: Routes = [
         data: { state: "Two" },
       },
       {
+        path: "group",
+        component: MutisensorsViewComponent,
+        data: { state: "Two" },
+      },
+      {
         path: "devices/env",
         component: MutisensorsViewComponent,
         data: { state: "Two" },
       },
       {
-        path: "group/:group",
-        component: MutisensorsViewComponent,
-        data: { state: "Two" },
+        path: "group/env/:deviceId",
+        component: MutisensorViewComponent,
+        data: { state: "Three" },
       },
       {
         path: "devices/env/:deviceId",
