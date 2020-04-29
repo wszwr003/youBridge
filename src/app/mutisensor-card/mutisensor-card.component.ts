@@ -29,7 +29,16 @@ export class MutisensorCardComponent implements OnChanges, OnDestroy {
   public subscription: Subscription;
   public device: Device = null;
   public state: string = "离线";
-  constructor(private _sensor5in1Service: Sensor5in1Service) {}
+  public screenWidth;
+  constructor(private _sensor5in1Service: Sensor5in1Service) {
+    this.screenWidth = window.innerWidth; //获取当前屏幕宽度
+    window.onresize = () => {
+      //TBS:本函数未起作用
+      //web窗口宽度resize回调函数
+      console.log("resize");
+      this.screenWidth = window.innerWidth;
+    };
+  }
   ngOnDestroy(): void {
     try {
       this.subscription.unsubscribe();

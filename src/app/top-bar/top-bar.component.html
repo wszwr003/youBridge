@@ -13,11 +13,7 @@
     <span class="header-name" *ngIf="screenWidth > 600">Grandway IOT</span>
   </mat-toolbar>
   <mat-toolbar class="topbar" color="accent" fxFlex="100%">
-    <button
-      mat-icon-button
-      (click)="sideMenuButton.emit()"
-      matTooltip="侧边菜单"
-    >
+    <button mat-icon-button (click)="sideMenuButton.emit()">
       <mat-icon>menu</mat-icon>
       <!-- <span class="header-name">光维物联网云平台</span> -->
     </button>

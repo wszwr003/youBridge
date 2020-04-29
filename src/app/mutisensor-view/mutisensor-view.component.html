@@ -36,9 +36,10 @@
       [deviceId]="deviceId"
       [devices]="_deviceService.devicesInfo"
       [newestData]="_sensor5in1Service.subSensorData"
-      fxFlex="35%"
+      fxFlex="calc(35%-20px)"
+      fxFlex.sm="calc(50%-20px)"
     ></app-mutisensor-card>
-    <mat-card fxFlex="calc(65%-20px)" fxFlex.sm="calc(65%-20px)">
+    <mat-card fxFlex="calc(65%-20px)" fxFlex.sm="calc(50%-20px)">
       <mat-card-header>
         <mat-card-title class="title">
           位置

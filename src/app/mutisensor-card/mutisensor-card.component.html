@@ -10,7 +10,6 @@
 <!-- <div *ngIf="device != undefined"> -->
 <mat-card
   [routerLink]="['/devices/env', device == null ? '' : device.device_no]"
-  style="height: 430px;"
 >
   <mat-card-header>
     <mat-card-title class="title-left">
@@ -45,45 +44,82 @@
     </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <div fxLayout="row" fxLayout.xs="column">
+    <div fxLayout="row warp" fxLayoutAlign="space-around start">
       <div
-        fxFlex="calc(50%)"
+        class="airdiv"
+        fxFlex="calc(40%)"
         fxFlex.xs="calc(100%)"
-        style="background-color: rosybrown;"
+        [ngStyle]="
+          screenWidth < 600 ? { height: '120px' } : { height: '360px' }
+        "
       >
-        <mat-icon class="data-icon-voc">filter_list</mat-icon>
-        <div class="data-label-voc">
+        <mat-icon
+          class="data-icon-voc"
+          [ngStyle]="
+            screenWidth < 600
+              ? { top: '-20px', left: '-10px' }
+              : { top: '20px', left: '20px' }
+          "
+          >filter_list</mat-icon
+        >
+        <div
+          class="data-label-voc"
+          [ngStyle]="
+            screenWidth < 600
+              ? { top: '-142px', left: '127px' }
+              : { top: '-10px', left: '50px' }
+          "
+        >
           空气质量
         </div>
-        <div class="data-text-voc">{{ vocString }}</div>
+        <div
+          class="data-text-voc"
+          [ngStyle]="
+            screenWidth < 600
+              ? { top: '-170px', left: '130px' }
+              : { top: '-25px', left: '55px' }
+          "
+        >
+          {{ vocString }}
+        </div>
       </div>
-      <div
-        fxFlex="calc(50%)"
-        fxFlex.xs="calc(100%)"
-        style="background-color: royalblue;"
-      >
-        <mat-icon class="data-icon-co2">bubble_chart</mat-icon>
-        <div class="data-label-co2">
-          CO2
+      <div fxFlex="calc(60%)" fxFlex.xs="calc(100%)" fxLayout="row warp">
+        <div fxFlex="calc(50%)">
+          <mat-icon class="data-icon-co2">bubble_chart</mat-icon>
+          <div class="data-label-co2">
+            CO2
+          </div>
+          <div class="data-text-co2">
+            {{ co2String }}<a class="unit">ppm</a>
+          </div>
         </div>
-        <div class="data-text-co2">{{ co2String }}<a class="unit">ppm</a></div>
-        <mat-icon class="data-icon-pm25">grain</mat-icon>
-        <div class="data-label-pm25">
-          PM2.5
+        <div fxFlex="calc(50%)">
+          <mat-icon class="data-icon-pm25">grain</mat-icon>
+          <div class="data-label-pm25">
+            PM2.5
+          </div>
+          <div class="data-text-pm25">
+            {{ pm25String }}<a class="unit">μg/m3</a>
+          </div>
         </div>
-        <div class="data-text-pm25">
-          {{ pm25String }}<a class="unit">μg/m3</a>
+        <div fxFlex="calc(50%)">
+          <mat-icon class="data-icon-temp">wb_sunny</mat-icon>
+          <div class="data-label-temp">
+            温度
+          </div>
+          <div class="data-text-temp">
+            {{ tempString }}<a class="unit">℃</a>
+          </div>
         </div>
-        <mat-icon class="data-icon-temp">wb_sunny</mat-icon>
-        <div class="data-label-temp">
-          温度
+        <div fxFlex="calc(50%)">
+          <mat-icon class="data-icon-humi">invert_colors</mat-icon>
+          <div class="data-label-humi">
+            湿度
+          </div>
+          <div class="data-text-humi">
+            {{ humiString }}<a class="unit">%</a>
+          </div>
         </div>
-        <div class="data-text-temp">{{ tempString }}<a class="unit">℃</a></div>
-        <mat-icon class="data-icon-humi">invert_colors</mat-icon>
-        <div class="data-label-humi">
-          湿度
-        </div>
-        <div class="data-text-humi">{{ humiString }}<a class="unit">%</a></div>
       </div>
     </div>
   </mat-card-content>

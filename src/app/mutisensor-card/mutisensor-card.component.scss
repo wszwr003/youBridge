@@ -22,139 +22,119 @@
 .mat-card {
   overflow: hidden;
 }
+
 //以下为newest card 里面的布局,有待优化修改
 .data-icon-voc {
-  display: inline;
-  position: absolute;
-  top: 170px;
-  left: 20px;
+  position: relative;
   font-size: 150px;
-  font-weight: bolder;
+  font-weight: light;
   color: #00bea0;
 }
 .data-label-voc {
-  display: inline;
-  position: absolute;
-  top: 170px;
-  left: 160px;
+  position: relative;
   font-size: 20px;
-  font-weight: light;
+  font-weight: bold;
   color: #aaaaaa;
 }
 .data-text-voc {
-  display: inline;
-  position: absolute;
-  top: 180px;
-  left: 150px;
+  position: relative;
   font-size: 100px;
-  font-weight: bolder;
+  font-weight: light;
   color: rgb(40, 63, 82);
 }
 .data-icon-co2 {
-  display: inline;
-  position: absolute;
+  // position: absolute;
   top: 60+30px;
   left: 290px;
   font-size: 80px;
-  font-weight: bolder;
+  font-weight: light;
   color: #e64b3f;
 }
 .data-label-co2 {
-  display: inline;
-  position: absolute;
+  // position: absolute;
   top: 65+30px;
   left: 375px;
   font-size: 20px;
-  font-weight: light;
+  font-weight: bold;
   color: #aaaaaa;
 }
 .data-text-co2 {
-  display: inline;
-  position: absolute;
+  // position: absolute;
   top: 80+30px;
   left: 370px;
   font-size: 50px;
-  font-weight: bolder;
+  font-weight: light;
   color: rgb(40, 63, 82);
 }
 .data-icon-temp {
-  display: inline;
-  position: absolute;
+  // position: absolute;
   top: 60+105px;
   left: 290px;
   font-size: 80px;
-  font-weight: bolder;
+  font-weight: light;
   color: #de932e;
 }
 .data-label-temp {
-  display: inline;
-  position: absolute;
+  // position: absolute;
   top: 65+105px;
   left: 375px;
   font-size: 20px;
-  font-weight: light;
+  font-weight: bold;
   color: #aaaaaa;
 }
 .data-text-temp {
-  display: inline;
-  position: absolute;
+  // position: absolute;
   top: 80+105px;
   left: 370px;
   font-size: 50px;
-  font-weight: bolder;
+  font-weight: light;
   color: rgb(40, 63, 82);
 }
 .data-icon-pm25 {
-  display: inline;
-  position: absolute;
+  // position: absolute;
   top: 60+180px;
   left: 290px;
   font-size: 80px;
-  font-weight: bolder;
+  font-weight: light;
   color: #888888;
 }
 .data-label-pm25 {
-  display: inline;
-  position: absolute;
+  // position: absolute;
   top: 65+180px;
   left: 375px;
   font-size: 20px;
-  font-weight: light;
+  font-weight: bold;
   color: #aaaaaa;
 }
 .data-text-pm25 {
-  display: inline;
-  position: absolute;
+  // position: absolute;
   top: 80+180px;
   left: 370px;
   font-size: 50px;
-  font-weight: bolder;
+  font-weight: light;
   color: rgb(40, 63, 82);
 }
 .data-icon-humi {
-  display: inline;
-  position: absolute;
+  // position: absolute;
   top: 60+255px;
   left: 290px;
   font-size: 80px;
-  font-weight: bolder;
+  font-weight: light;
   color: #7dcff8;
 }
 .data-label-humi {
-  display: inline;
-  position: absolute;
+  // position: absolute;
   top: 65+255px;
   left: 375px;
   font-size: 20px;
-  font-weight: light;
+  font-weight: bold;
   color: #aaaaaa;
 }
 .data-text-humi {
-  display: inline;
-  position: absolute;
+  // position: absolute;
   top: 80+255px;
   left: 370px;
   font-size: 50px;
-  font-weight: bolder;
+  font-weight: light;
   color: rgb(40, 63, 82);
 }

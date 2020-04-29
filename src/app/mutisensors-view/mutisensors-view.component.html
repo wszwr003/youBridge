@@ -1,28 +1,21 @@
 <div mat-app-background basic-container>
-  <span class="view-name" style="height: 40px; color: rgb(230, 230, 230);"
-    >..</span
-  >
-  <div
-    class="container"
-    fxLayout="row warp"
-    fxLayout.xs="column"
-    fxLayoutAlign="space-around center"
-    fxLayoutGap="10px grid"
-    style="margin: 20px;"
-  >
-    <app-mutisensor-card
-      *ngFor="let device of devicesInfo"
-      [deviceId]="device.device_no"
-      [devices]="_deviceService.devicesInfo"
-      [newestData]="_sensor5in1Service.subSensorData"
-      fxFlex="30%"
-    ></app-mutisensor-card>
-    <!-- <app-mutisensor-card
-      *ngFor="let device of devicesInit; let i = index"
-      [device]="device"
-      [newestData]="newestDatas"
-      fxFlex="30%"
-    ></app-mutisensor-card> -->
+  <span class="view-name">设备管理</span>
+
+  <!-- FAO TBS!!!!grid -->
+  <div class="container">
+    <div fxLayout="row warp" fxLayoutGap="20px grid" fxLayoutAlign="center">
+      <app-mutisensor-card
+        *ngFor="let device of devicesInfo"
+        [deviceId]="device.device_no"
+        [devices]="_deviceService.devicesInfo"
+        [newestData]="_sensor5in1Service.subSensorData"
+        fxFlex="450px"
+        fxFlex.lg="450px"
+        fxFlex.md="450px"
+        fxFlex.sm="calc(80%-20px)"
+        fxFlex.xs="calc(80%-20px)"
+      ></app-mutisensor-card>
+    </div>
   </div>
 </div>
 <div fxLayout fxLayoutAlign="center center">
