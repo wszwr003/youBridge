@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { DeviceService } from "../services/device.service";
 import { Sensor5in1Service } from "../services/sensor5in1.service";
-import { SensorData } from "../services/sensor5in1";
+import { SensorData, LOCATIONS } from "../services/sensor5in1";
 @Component({
   selector: "app-mutisensor-view",
   templateUrl: "./mutisensor-view.component.html",
@@ -11,7 +11,7 @@ import { SensorData } from "../services/sensor5in1";
 export class MutisensorViewComponent implements OnInit {
   public deviceId;
   public historyDatas = null;
-
+  public location;
   constructor(
     private route: ActivatedRoute,
     public _deviceService: DeviceService,
@@ -31,6 +31,11 @@ export class MutisensorViewComponent implements OnInit {
           this.historyDatas = datas;
           // console.log("!!historyDatas:", datas);
         });
+      LOCATIONS.forEach((element) => {
+        if (element.deviceId == this.deviceId) {
+          this.location = element;
+        }
+      });
     });
   }
 
