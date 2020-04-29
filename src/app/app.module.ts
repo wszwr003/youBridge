@@ -52,6 +52,7 @@ import { NewPieChartliveComponent } from "./new-pie-chartlive/new-pie-chartlive.
 import { NewPieChartdeviceComponent } from "./new-pie-chartdevice/new-pie-chartdevice.component";
 import { TestViewComponent } from "./test-view/test-view.component";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   // hostname: "127.0.0.1",
@@ -105,6 +106,7 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     MatFormFieldModule,
     MatSlideToggleModule,
     MatProgressSpinnerModule,
+    MatTooltipModule,
     FormsModule,
     MqttModule.forRoot(MQTT_SERVICE_OPTIONS),
     BaiduMapModule.forRoot({ ak: "FpVG0ppOSI7TwBYGhty65bxe88fqD38v" }),

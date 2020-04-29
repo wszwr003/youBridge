@@ -104,9 +104,13 @@ export class DataTableComponent implements OnInit, OnChanges {
               const element = this.sensorDatas[i];
               this.dataSource[i].id = element.device_id.slice(9);
               var unixTimestamp = new Date(
-                element.time == undefined ? new Date() : element.time
+                element.time == undefined ? new Date() : element.time * 1000
               );
               this.dataSource[i].time = unixTimestamp.toLocaleString();
+              // console.log("data-table:");
+              // console.log(element.time);
+              // console.log(this.dataSource[i].time);
+
               //this.dataSource[i].time = element.time.toString();
               this.dataSource[i].kind = "数据";
               // this.dataSource[i].para =

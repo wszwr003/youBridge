@@ -13,7 +13,11 @@
     <span class="header-name" *ngIf="screenWidth > 600">Grandway IOT</span>
   </mat-toolbar>
   <mat-toolbar class="topbar" color="accent" fxFlex="100%">
-    <button mat-icon-button (click)="sideMenuButton.emit()">
+    <button
+      mat-icon-button
+      (click)="sideMenuButton.emit()"
+      matTooltip="侧边菜单"
+    >
       <mat-icon>menu</mat-icon>
       <!-- <span class="header-name">光维物联网云平台</span> -->
     </button>
@@ -24,7 +28,12 @@
       </mat-form-field>
     </form> -->
     <span class="spacer"></span>
-    <button class="user-name" mat-button [matMenuTriggerFor]="usermenu">
+    <button
+      class="user-name"
+      mat-button
+      [matMenuTriggerFor]="usermenu"
+      matTooltip="账号管理(建设中...)"
+    >
       <mat-icon>how_to_reg</mat-icon>
       grandway
       <mat-menu #usermenu="matMenu">
@@ -34,7 +43,11 @@
       </mat-menu>
     </button>
 
-    <button mat-button [matMenuTriggerFor]="settingmenu">
+    <button
+      mat-button
+      [matMenuTriggerFor]="settingmenu"
+      matTooltip="设置(建设中...)"
+    >
       <mat-icon>settings</mat-icon>
       <mat-menu #settingmenu="matMenu">
         <button mat-menu-item>用户账号设置</button>
@@ -44,6 +57,7 @@
       </mat-menu>
     </button>
     <mat-slide-toggle
+      matTooltip="展示模式"
       *ngIf="screenWidth > 600"
       color="warn"
       [checked]="checked"
