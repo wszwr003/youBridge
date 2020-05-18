@@ -9,7 +9,7 @@ import { SensorData } from "../services/sensor5in1";
   styleUrls: ["./over-view.component.scss"],
 })
 export class OverViewComponent implements OnInit, OnDestroy, OnChanges {
-  public device_id = "861011047486134";
+  public device_id = "861011047485599";
   constructor(
     public _deviceService: DeviceService,
     public _sensor5in1Service: Sensor5in1Service

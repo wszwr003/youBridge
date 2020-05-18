@@ -65,12 +65,12 @@ export class HomeLayoutComponent {
             {
               displayName: "传感器(光维上海总部)",
               //iconName: "",
-              route: "devices/env/861011047418186",
+              route: "devices/env/861011047485599",
             },
             {
               displayName: "传感器(光维上海总部)",
               //iconName: "",
-              route: "devices/env/861011047486134",
+              route: "devices/env/861011047486209",
             },
             {
               displayName: "传感器(一楼前台)",
@@ -85,7 +85,7 @@ export class HomeLayoutComponent {
             {
               displayName: "传感器(三楼会议室)",
               //iconName: "",
-              route: "devices/env/861011047485599",
+              route: "devices/env/861011047418186",
             },
             {
               displayName: "传感器(三楼测试部)",
@@ -95,7 +95,7 @@ export class HomeLayoutComponent {
             {
               displayName: "传感器(三楼实验室一)",
               //iconName: "",
-              route: "devices/env/861011047486209",
+              route: "devices/env/861011047486134",
             },
             {
               displayName: "传感器(三楼实验室二)",
@@ -154,12 +154,12 @@ export class HomeLayoutComponent {
             {
               displayName: "传感器(光维上海总部)",
               //iconName: "",
-              route: "group/env/861011047418186",
+              route: "group/env/861011047486209",
             },
             {
               displayName: "传感器(光维上海总部)",
               //iconName: "",
-              route: "group/env/861011047486134",
+              route: "group/env/861011047485599",
             },
           ],
         },
@@ -181,7 +181,7 @@ export class HomeLayoutComponent {
             {
               displayName: "传感器(三楼会议室)",
               //iconName: "",
-              route: "group/env/861011047485599",
+              route: "group/env/861011047486134",
             },
             {
               displayName: "传感器(三楼测试部)",
@@ -191,7 +191,7 @@ export class HomeLayoutComponent {
             {
               displayName: "传感器(三楼实验室一)",
               //iconName: "",
-              route: "group/env/861011047486209",
+              route: "group/env/861011047418186",
             },
             {
               displayName: "传感器(三楼实验室二)",

@@ -45,7 +45,7 @@ export class TopBarComponent implements OnInit {
       this.router.navigate(["/devices"]);
     }, this.secondInterval * 1000);
     this.timeoutTick = setTimeout(() => {
-      this.router.navigate(["/devices/env", "861011047486134"]);
+      this.router.navigate(["/devices/env", "861011047485599"]);
     }, this.secondInterval * 2000);
     this.intervalTick = setInterval(() => {
       this.router.navigate(["/sys"]);
@@ -53,7 +53,7 @@ export class TopBarComponent implements OnInit {
         this.router.navigate(["/devices"]);
       }, this.secondInterval * 1000);
       this.timeoutTick = setTimeout(() => {
-        this.router.navigate(["/devices/env", "861011047486134"]);
+        this.router.navigate(["/devices/env", "861011047485599"]);
       }, this.secondInterval * 2000);
     }, this.secondInterval * 3000);
   }

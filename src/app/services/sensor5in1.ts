@@ -49,14 +49,13 @@ export const LOCATIONS: GPS[] = [
     locString: "地址：海宁市科技绿洲6号楼",
   },
   {
-    deviceId: "861011047418186", //上海
-
+    deviceId: "861011047485599", //上海
     lat: 31.168783,
     lng: 121.403351,
     locString: "地址：上海徐汇区田州路99号",
   },
   {
-    deviceId: "861011047485599",
+    deviceId: "861011047418186",
 
     lat: 30.5761,
     lng: 120.678724,
@@ -70,7 +69,7 @@ export const LOCATIONS: GPS[] = [
     locString: "地址：海宁市科技绿洲6号楼",
   },
   {
-    deviceId: "861011047486134", //上海
+    deviceId: "861011047486209", //上海
 
     lat: 31.168783,
     lng: 121.403351,
@@ -84,7 +83,7 @@ export const LOCATIONS: GPS[] = [
     locString: "地址：海宁市科技绿洲6号楼",
   },
   {
-    deviceId: "861011047486209",
+    deviceId: "861011047486134",
     lat: 30.5761,
     lng: 120.678724,
     locString: "地址：海宁市科技绿洲6号楼",

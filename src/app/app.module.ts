@@ -53,6 +53,7 @@ import { NewPieChartdeviceComponent } from "./new-pie-chartdevice/new-pie-chartd
 import { TestViewComponent } from "./test-view/test-view.component";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { RepairViewComponent } from './repair-view/repair-view.component';
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   // hostname: "127.0.0.1",
@@ -86,6 +87,7 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     NewPieChartliveComponent,
     NewPieChartdeviceComponent,
     TestViewComponent,
+    RepairViewComponent,
   ],
   imports: [
     BrowserModule,

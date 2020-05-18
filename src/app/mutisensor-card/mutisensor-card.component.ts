@@ -16,7 +16,7 @@ import { Subscription } from "rxjs";
   styleUrls: ["./mutisensor-card.component.scss"],
 })
 export class MutisensorCardComponent implements OnChanges, OnDestroy {
-  @Input() deviceId: string = "861011047486134";
+  @Input() deviceId: string = "861011047485599";
   @Input() devices: Device[];
   @Input() newestData: SensorData = null;
   public initMyData: SensorData = null;
@@ -86,8 +86,12 @@ export class MutisensorCardComponent implements OnChanges, OnDestroy {
             if (this.newestData.device_id != this.deviceId) break;
             if (this.newestData.voc_lvl == 0) this.vocString = "优";
             else if (this.newestData.voc_lvl == 1) this.vocString = "良";
-            else if (this.newestData.voc_lvl == 2) this.vocString = "差";
-            else this.vocString = "error";
+            else if (
+              this.newestData.voc_lvl == 2 ||
+              this.newestData.voc_lvl == 3
+            )
+              this.vocString = "差";
+            else this.vocString = "...";
             this.co2String = this.newestData.co2.toString();
             this.pm25String = this.newestData.pm25.toString();
             this.tempString = this.newestData.temp.toString();
