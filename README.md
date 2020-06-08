@@ -1,5 +1,7 @@
 # CloudAngular
 
+云平台前端
+
 ## project setup
 
 - step 1 download the source code
