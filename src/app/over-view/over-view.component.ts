@@ -9,13 +9,11 @@ import { SensorData } from "../services/sensor5in1";
   styleUrls: ["./over-view.component.scss"],
 })
 export class OverViewComponent implements OnInit, OnDestroy, OnChanges {
-  public device_id = "861011047485599";
+  public device_id = "861011047418186";
   constructor(
     public _deviceService: DeviceService,
     public _sensor5in1Service: Sensor5in1Service
-  ) {
-
-  }
+  ) {}
   ngOnChanges(changes: import("@angular/core").SimpleChanges): void {
     console.log("overview changes in");
     for (const propName in changes) {

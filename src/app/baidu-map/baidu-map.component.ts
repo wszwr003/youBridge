@@ -109,11 +109,11 @@ export class BaiduMapComponent implements OnInit {
     };
     this.marker = {
       options: {
-        title: "861011047485599",
+        title: "861011047418186",
       },
       point: {
-        lat: 31.168783,
-        lng: 121.403351,
+        lat: 30.5761, //   - ^  +  V
+        lng: 120.678624, // - >  +  <
       },
     };
     this.markers = [
@@ -204,18 +204,18 @@ export class BaiduMapComponent implements OnInit {
       },
       {
         options: {
-          title: "861011047418186",
+          title: "861011047485599",
         },
         point: {
-          lat: 30.5761, //   - ^  +  V
-          lng: 120.678624, // - >  +  <
+          lat: 31.168783,
+          lng: 121.403351,
         },
       },
     ];
     this.options = {
       centerAndZoom: {
-        lat: 31.168783,
-        lng: 121.403351,
+        lat: 30.5761, //   - ^  +  V
+        lng: 120.678624, // - >  +  <
         zoom: 18,
       },
       mapType: MapTypeEnum.BMAP_NORMAL_MAP,

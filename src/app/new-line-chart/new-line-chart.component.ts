@@ -43,7 +43,7 @@ export class NewLineChartComponent implements OnInit {
       },
 
       xAxis: {
-        categories: ["2020年2月", "2020年3月", "2020年4月"],
+        categories: ["2020年5月", "2020年6月", "2020年7月"],
         labels: {
           x: -10,
         },
