@@ -4,10 +4,10 @@
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <img
           src="../../assets/logo.png"
-          style="max-width: 10%; min-width: 10%;"
+          style="max-width: 10%; min-width: 10%"
         />
         <br />
-        <a style="font-size: 25px;">光维物联网云平台</a>
+        <a style="font-size: 25px">植物生长环境监控平台</a>
         <mat-form-field class="full-width-input">
           <input
             matInput
@@ -15,9 +15,9 @@
             formControlName="userName"
             required
           />
-          <mat-error *ngIf="isFieldInvalid('userName')">
+          <!-- <mat-error *ngIf="isFieldInvalid('userName')">
             请输入管理员账户
-          </mat-error>
+          </mat-error> -->
         </mat-form-field>
         <mat-form-field class="full-width-input">
           <input
@@ -27,13 +27,14 @@
             formControlName="password"
             required
           />
-          <mat-error *ngIf="isFieldInvalid('userName')">
-            请输入密码
-          </mat-error>
+          <!-- <mat-error *ngIf="isFieldInvalid('password')"> 请输入密码 </mat-error> -->
         </mat-form-field>
         <br />
         <button mat-raised-button color="primary" type="submit">登录</button>
       </form>
     </mat-card-content>
   </mat-card>
+  <div fxLayout fxLayoutAlign="center center">
+    <p>版权所有© 浙江清华长三角研究院</p>
+  </div>
 </div>

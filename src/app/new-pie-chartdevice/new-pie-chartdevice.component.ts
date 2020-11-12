@@ -50,11 +50,11 @@ export class NewPieChartdeviceComponent implements OnInit {
       {
         name: "设备数量",
         data: [
-          { name: "5IN1传感器", y: 0, color: "#00BEA0" },
-          { name: "空调", y: 0, color: "#0A96DC" },
-          { name: "空气净化器", y: 0, color: "#435C73" },
+          { name: "超声波清洗机", y: 0, color: "#00BEA0" },
+          { name: "真空烘干机", y: 0, color: "#0A96DC" },
+          { name: "紫外灯", y: 0, color: "#435C73" },
+          { name: "粉碎机", y: 0, color: "#7360BB" },
           { name: "其他", y: 1, color: "#C0C4C8" },
-          // { name: "OTDR", y: 15, color: "#7360BB" },
           // { name: "小仪器仪表", y: 6, color: "#E64B3F" },
         ],
       },
@@ -87,10 +87,11 @@ export class NewPieChartdeviceComponent implements OnInit {
           console.log("!!!!!!!!!!!!!!!!!!!", this.num, this.dataChart);
           this.dataChart.series[0].setData(
             [
-              { name: "5IN1传感器", y: 10, color: "#00BEA0" },
-              { name: "空调", y: 3, color: "#0A96DC" },
-              { name: "空气净化器", y: 2, color: "#435C73" },
-              { name: "其他", y: 0, color: "#C0C4C8" },
+              { name: "超声波清洗机", y: 3, color: "#00BEA0" },
+              { name: "真空烘干机", y: 3, color: "#0A96DC" },
+              { name: "紫外灯", y: 5, color: "#435C73" },
+              { name: "粉碎机", y: 2, color: "#7360BB" },
+              { name: "其他", y: 1, color: "#C0C4C8" },
             ],
             true
           );

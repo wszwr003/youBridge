@@ -43,7 +43,15 @@ export class NewLineChartComponent implements OnInit {
       },
 
       xAxis: {
-        categories: ["2020年5月", "2020年6月", "2020年7月"],
+        categories: [
+          "2020年11月3日",
+          "2020年11月4日",
+          "2020年11月5日",
+          "2020年11月6日",
+          "2020年11月7日",
+          "2020年11月8日",
+          "2020年11月9日",
+        ],
         labels: {
           x: -10,
         },
@@ -54,24 +62,29 @@ export class NewLineChartComponent implements OnInit {
       yAxis: {
         allowDecimals: false,
         title: {
-          text: "数量",
+          text: "耗电量(kW·h)",
         },
       },
       series: [
         {
-          name: "5IN1传感器",
-          data: [0, 0, 0],
+          name: "超声波清洗机",
+          data: [12, 21, 15, 14, 9, 10, 19],
           color: "#00BEA0",
         },
         {
-          name: "空调",
-          data: [0, 0, 0],
+          name: "真空烘干机",
+          data: [4, 3, 5, 4, 4, 5, 2],
           color: "#0A96DC",
         },
         {
-          name: "空气净化器",
-          data: [0, 0, 0],
+          name: "紫外灯",
+          data: [3, 4, 3, 2, 3, 2, 2],
           color: "#435C73",
+        },
+        {
+          name: "粉碎机",
+          data: [12, 14, 10, 18, 0, 0, 12],
+          color: "#7360BB",
         },
         // {
         //   name: "OTDR",
@@ -131,61 +144,117 @@ export class NewLineChartComponent implements OnInit {
     this.dataChart.setSize(null);
   }
   ngOnChanges(changes: SimpleChanges): void {
-    setTimeout(() => {
-      for (const propName in changes) {
-        if (changes.hasOwnProperty(propName)) {
-          if (
-            this.num == undefined ||
-            this.num < 0 ||
-            this.dataChart == undefined
-          ) {
-            break;
-          }
-          this.dataChart.series[0].setData(
-            [
-              {
-                y: 2,
-              },
-              {
-                y: 3,
-              },
-              {
-                y: 10,
-              },
-            ],
-            false
-          );
-          this.dataChart.series[1].setData(
-            [
-              {
-                y: 1,
-              },
-              {
-                y: 3,
-              },
-              {
-                y: 3,
-              },
-            ],
-            false
-          );
-          this.dataChart.series[2].setData(
-            [
-              {
-                y: 1,
-              },
-              {
-                y: 1,
-              },
-              {
-                y: 2,
-              },
-            ],
-            true
-          );
-          break;
-        }
-      }
-    }, 1500);
+    // setTimeout(() => {
+    //   for (const propName in changes) {
+    //     if (changes.hasOwnProperty(propName)) {
+    //       if (
+    //         this.num == undefined ||
+    //         this.num < 0 ||
+    //         this.dataChart == undefined
+    //       ) {
+    //         break;
+    //       }
+    //       this.dataChart.series[0].setData(
+    //         [
+    //           {
+    //             y: 2,
+    //           },
+    //           {
+    //             y: 3,
+    //           },
+    //           {
+    //             y: 10,
+    //           },
+    //         ],
+    //         false
+    //       );
+    //       this.dataChart.series[1].setData(
+    //         [
+    //           {
+    //             y: 1,
+    //           },
+    //           {
+    //             y: 3,
+    //           },
+    //           {
+    //             y: 3,
+    //           },
+    //         ],
+    //         false
+    //       );
+    //       this.dataChart.series[2].setData(
+    //         [
+    //           {
+    //             y: 1,
+    //           },
+    //           {
+    //             y: 3,
+    //           },
+    //           {
+    //             y: 3,
+    //           },
+    //         ],
+    //         false
+    //       );
+    //       this.dataChart.series[3].setData(
+    //         [
+    //           {
+    //             y: 1,
+    //           },
+    //           {
+    //             y: 3,
+    //           },
+    //           {
+    //             y: 3,
+    //           },
+    //         ],
+    //         false
+    //       );
+    //       this.dataChart.series[4].setData(
+    //         [
+    //           {
+    //             y: 1,
+    //           },
+    //           {
+    //             y: 3,
+    //           },
+    //           {
+    //             y: 3,
+    //           },
+    //         ],
+    //         false
+    //       );
+    //       this.dataChart.series[5].setData(
+    //         [
+    //           {
+    //             y: 1,
+    //           },
+    //           {
+    //             y: 3,
+    //           },
+    //           {
+    //             y: 3,
+    //           },
+    //         ],
+    //         false
+    //       );
+    //       this.dataChart.series[6].setData(
+    //         [
+    //           {
+    //             y: 1,
+    //           },
+    //           {
+    //             y: 1,
+    //           },
+    //           {
+    //             y: 2,
+    //           },
+    //         ],
+    //         true
+    //       );
+    //       break;
+    //     }
+    //   }
+    // }, 1500);
   }
 }

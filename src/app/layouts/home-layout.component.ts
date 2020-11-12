@@ -48,9 +48,34 @@ export class HomeLayoutComponent {
 
   public navItems: NavItem[] = [
     {
-      displayName: "总览",
-      iconName: "view_quilt",
-      route: "sys",
+      displayName: "植物生长环境平台",
+      iconName: "spa",
+      route: "plant",
+    },
+    {
+      displayName: "人居环境监控平台",
+      iconName: "accessibility",
+      route: "env",
+    },
+    {
+      displayName: "小龙虾资源处理平台",
+      iconName: "build",
+      route: "lobster",
+    },
+    {
+      displayName: "实时监控",
+      iconName: "video_library",
+      route: "livevideo",
+    },
+    {
+      displayName: "流程展示",
+      iconName: "view_carousel",
+      route: "gallery",
+    },
+    {
+      displayName: "历史数据",
+      iconName: "history",
+      route: "test",
     },
     {
       displayName: "设备管理",
@@ -63,52 +88,52 @@ export class HomeLayoutComponent {
           route: "devices",
           children: [
             {
-              displayName: "传感器(光维上海总部)",
+              displayName: "传感器1",
               //iconName: "",
               route: "devices/env/861011047485599",
             },
             {
-              displayName: "传感器(光维上海总部)",
+              displayName: "传感器2",
               //iconName: "",
               route: "devices/env/861011047486209",
             },
             {
-              displayName: "传感器(一楼前台)",
+              displayName: "传感器3",
               //iconName: "",
               route: "devices/env/861011047486233",
             },
             {
-              displayName: "传感器(二楼30M2仓外)",
+              displayName: "传感器4",
               //iconName: "",
               route: "devices/env/861011047455360",
             },
             {
-              displayName: "传感器(三楼会议室)",
+              displayName: "传感器5",
               //iconName: "",
               route: "devices/env/861011047418186",
             },
             {
-              displayName: "传感器(三楼测试部)",
+              displayName: "传感器6",
               //iconName: "",
               route: "devices/env/861011047485565",
             },
             {
-              displayName: "传感器(三楼实验室一)",
+              displayName: "传感器7",
               //iconName: "",
               route: "devices/env/861011047486134",
             },
             {
-              displayName: "传感器(三楼实验室二)",
+              displayName: "传感器8",
               //iconName: "",
               route: "devices/env/861011047485656",
             },
             {
-              displayName: "传感器(三楼实验室三)",
+              displayName: "传感器9",
               //iconName: "",
               route: "devices/env/861011047511899",
             },
             {
-              displayName: "传感器(四楼展厅)",
+              displayName: "传感器10",
               //iconName: "",
               route: "devices/env/861011047486225",
             },
@@ -123,92 +148,6 @@ export class HomeLayoutComponent {
           displayName: "空气净化器",
           //iconName: "cached",
           route: "test",
-        },
-        // {
-        //   displayName: "光时域反射仪",
-        //   //iconName: "sync_alt",
-        //   route: "devfestfl/speakers/michael-prentice",
-        // },
-        // {
-        //   displayName: "小仪器仪表",
-        //   //iconName: "widgets",
-        //   route: "devfestfl/speakers/michael-prentice",
-        // },
-        // {
-        //   displayName: "熔接机",
-        //   //iconName: "settings_input_component",
-        //   route: "devfestfl/speakers/michael-prentice",
-        // },
-      ],
-    },
-    {
-      displayName: "设备组管理",
-      iconName: "list_alt",
-      route: "group",
-      children: [
-        {
-          displayName: "上海光维设备组",
-          //iconName: "settings_input_component",
-          route: "group",
-          children: [
-            {
-              displayName: "传感器(光维上海总部)",
-              //iconName: "",
-              route: "group/env/861011047486209",
-            },
-            {
-              displayName: "传感器(光维上海总部)",
-              //iconName: "",
-              route: "group/env/861011047485599",
-            },
-          ],
-        },
-        {
-          displayName: "浙江光维设备组",
-          //iconName: "settings_input_component",
-          route: "group",
-          children: [
-            {
-              displayName: "传感器(一楼前台)",
-              //iconName: "",
-              route: "group/env/861011047486233",
-            },
-            {
-              displayName: "传感器(二楼30M2仓外)",
-              //iconName: "",
-              route: "group/env/861011047455360",
-            },
-            {
-              displayName: "传感器(三楼会议室)",
-              //iconName: "",
-              route: "group/env/861011047486134",
-            },
-            {
-              displayName: "传感器(三楼测试部)",
-              //iconName: "",
-              route: "group/env/861011047485565",
-            },
-            {
-              displayName: "传感器(三楼实验室一)",
-              //iconName: "",
-              route: "group/env/861011047418186",
-            },
-            {
-              displayName: "传感器(三楼实验室二)",
-              //iconName: "",
-              route: "group/env/861011047485656",
-            },
-            {
-              displayName: "传感器(三楼实验室三)",
-              //iconName: "",
-              route: "group/env/861011047511899",
-            },
-            {
-              displayName: "传感器(四楼展厅)",
-              //iconName: "",
-              route: "group/env/861011047486225",
-            },
-          ],
         },
       ],
     },
@@ -238,21 +177,6 @@ export class HomeLayoutComponent {
           route: "test",
         },
       ],
-    },
-    {
-      displayName: "数据分析",
-      iconName: "bar_chart",
-      route: "test",
-    },
-    {
-      displayName: "日志分析",
-      iconName: "assignment",
-      route: "test",
-    },
-    {
-      displayName: "用户行为分析",
-      iconName: "assignment_ind",
-      route: "test",
     },
   ];
 }

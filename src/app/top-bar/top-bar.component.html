@@ -5,12 +5,9 @@
     [fxFlex]="screenWidth > 600 ? '260px' : '45px'"
   >
     <button mat-icon-button disabled>
-      <img
-        src="../../assets/logo.png"
-        style="max-width: 90%; min-width: 90%;"
-      />
+      <img src="../../assets/logo.png" style="max-width: 90%; min-width: 90%" />
     </button>
-    <span class="header-name" *ngIf="screenWidth > 600">Grandway IOT</span>
+    <span class="header-name" *ngIf="screenWidth > 600">植物生长环境平台</span>
   </mat-toolbar>
   <mat-toolbar class="topbar" color="accent" fxFlex="100%">
     <button mat-icon-button (click)="sideMenuButton.emit()">

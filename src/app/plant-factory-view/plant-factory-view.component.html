@@ -1,0 +1,96 @@
+<div mat-app-background basic-container>
+  <span class="view-name">植物生长环境总览</span>
+  <div
+    class="container"
+    fxLayout="row"
+    fxLayout.lt-md="column"
+    fxLayoutGap="20px"
+  >
+    <div fxLayout="column" fxFlex="calc(50%-20px)" fxLayoutGap="20px">
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="20px">
+        <div
+          fxFlex="calc(66%-20px)"
+          fxLayout="row"
+          fxLayoutGap="20px"
+          fxLayoutAlign="space-around"
+        >
+          <mat-card fxFlex="calc(50%-20px)">
+            <mat-card-header>
+              <!-- <div mat-card-avatar class="example-header-image"></div> -->
+              <mat-card-title>电磁阀1</mat-card-title>
+              <mat-card-subtitle> </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content class="summary-text">{{
+              "已关闭"
+            }}</mat-card-content>
+          </mat-card>
+          <mat-card fxFlex="calc(50%-20px)">
+            <mat-card-header>
+              <!-- <div mat-card-avatar class="example-header-image"></div> -->
+              <mat-card-title>电磁阀2</mat-card-title>
+              <mat-card-subtitle> </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content class="summary-text">{{
+              "已关闭"
+            }}</mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+      <app-mutisensor-card
+        [deviceId]="device_id"
+        [devices]="_deviceService.devicesInfo"
+        [newestData]="_sensor5in1Service.subSensorData"
+      ></app-mutisensor-card>
+    </div>
+    <!-- TODO:baidu地图显示问题 -->
+    <mat-card fxFlex="calc(50%-20px)">
+      <mat-card-header>
+        <!-- <div mat-card-avatar class="example-header-image"></div> -->
+        <mat-card-title>实时监控</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <app-live-video></app-live-video>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div
+    class="container"
+    fxLayout="row"
+    fxLayout.lt-md="column"
+    fxLayoutGap="20px"
+    fxLayoutAlign="space-around stretch"
+  >
+    <mat-card class="control" fxFlex="calc(70%-20px)">
+      <mat-card-header>
+        <!-- <div mat-card-avatar class="example-header-image"></div> -->
+        <mat-card-title>实时曲线</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <app-data-chart
+          [deviceId]="device_id"
+          [data]="_sensor5in1Service.subSensorData"
+          [datas]="historyDatas"
+          [chartInit]=""
+        ></app-data-chart>
+        <!-- <app-new-colume-chart fxFlex="calc(50%-20px)"></app-new-colume-chart> -->
+      </mat-card-content>
+    </mat-card>
+    <div
+      fxFlex="calc(30%-20px)"
+      fxLayout="row"
+      fxLayout.xs="column"
+      fxLayoutGap="20px"
+      fxLayoutAlign="space-around stretch"
+    >
+      <app-data-table
+        [sensorData]="_sensor5in1Service.subSensorData"
+        fxFlex="calc(100%-20px)"
+      ></app-data-table>
+    </div>
+  </div>
+</div>
+<div fxLayout fxLayoutAlign="center center">
+  <p>版权所有© 浙江清华长三角研究院</p>
+</div>

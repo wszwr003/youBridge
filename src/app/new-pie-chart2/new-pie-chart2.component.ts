@@ -40,8 +40,8 @@ export class NewPieChart2Component implements OnInit {
       {
         name: "设备数量",
         data: [
-          { name: "在线设备", y: 8, color: "#55FF00" },
-          { name: "离线设备", y: 2, color: "#C0C4C8" },
+          { name: "运行中设备", y: 8, color: "#55FF00" },
+          { name: "未运行设备", y: 2, color: "#C0C4C8" },
           { name: "未启用设备", y: 5, color: "#435C73" },
         ],
       },

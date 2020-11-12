@@ -46,8 +46,8 @@ export class NewPieChartliveComponent implements OnInit {
       {
         name: "设备数量",
         data: [
-          { name: "在线设备", y: 0, color: "#55FF00" },
-          { name: "未启用设备", y: 0, color: "#435C73" },
+          { name: "运行中设备", y: 0, color: "#55FF00" },
+          { name: "未运行设备", y: 0, color: "#435C73" },
           { name: "离线设备", y: 1, color: "#C0C4C8" },
         ],
       },
@@ -77,8 +77,8 @@ export class NewPieChartliveComponent implements OnInit {
           }
           this.dataChart.series[0].setData(
             [
-              { name: "在线设备", y: this.online, color: "#55FF00" },
-              { name: "离线设备", y: this.offline, color: "#C0C4C8" },
+              { name: "运行中设备", y: this.online, color: "#55FF00" },
+              { name: "未运行设备", y: this.offline, color: "#C0C4C8" },
               { name: "未启用设备", y: 5, color: "#435C73" },
             ],
             true

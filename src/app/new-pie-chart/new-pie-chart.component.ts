@@ -48,10 +48,10 @@ export class NewPieChartComponent implements OnInit {
       {
         name: "设备数量",
         data: [
-          { name: "5IN1传感器", y: 10, color: "#00BEA0" },
-          { name: "空调", y: 3, color: "#0A96DC" },
-          { name: "空气净化器", y: 2, color: "#435C73" },
-          
+          { name: "空调", y: 10, color: "#00BEA0" },
+          { name: "新风机", y: 3, color: "#0A96DC" },
+          { name: "研磨机", y: 2, color: "#435C73" },
+
           // { name: "OTDR", y: 3, color: "#7360BB" },
           // { name: "熔接机", y: 3, color: "#C0C4C8" },
           // { name: "小仪器仪表", y: 6, color: "#E64B3F" },
@@ -61,5 +61,4 @@ export class NewPieChartComponent implements OnInit {
   };
   constructor() {}
   ngOnInit() {}
-  
 }

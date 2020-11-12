@@ -18,7 +18,6 @@ let More = require("highcharts/highcharts-more");
 Boost(Highcharts);
 noData(Highcharts);
 More(Highcharts);
-noData(Highcharts);
 @Component({
   selector: "app-data-chart",
   templateUrl: "./data-chart.component.html",

@@ -27,7 +27,7 @@ import { NavItem } from "../services/nav-item";
   ],
 })
 export class SideMenuComponent implements OnInit {
-  expanded: boolean;
+  expanded: boolean = true;
   @HostBinding("attr.aria-expanded") ariaExpanded = this.expanded;
   @Input() item: NavItem;
   @Input() depth: number;

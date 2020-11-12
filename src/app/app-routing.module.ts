@@ -8,11 +8,15 @@ import { LoginLayoutComponent } from "./layouts/login-layout.component";
 import { AuthGuardService } from "./services/auth-guard.service";
 import { MutisensorsViewComponent } from "./mutisensors-view/mutisensors-view.component";
 import { TestViewComponent } from "./test-view/test-view.component";
+import { PlantFactoryViewComponent } from "./plant-factory-view/plant-factory-view.component";
+import { LiveVideoViewComponent } from "./live-video-view/live-video-view.component";
+import { PhotoGalleryViewComponent } from "./photo-gallery-view/photo-gallery-view.component";
+import { LobsterResourceViewComponent } from "./lobster-resource-view/lobster-resource-view.component";
 const routes: Routes = [
   {
     path: "",
     component: HomeLayoutComponent,
-    canActivate: [AuthGuardService],
+    // canActivate: [AuthGuardService],
     children: [
       {
         path: "test",
@@ -24,13 +28,28 @@ const routes: Routes = [
         data: { state: "One" },
       },
       {
-        path: "devices",
-        component: MutisensorsViewComponent,
+        path: "plant",
+        component: PlantFactoryViewComponent,
+        data: { state: "One" },
+      },
+      {
+        path: "env",
+        component: OverViewComponent,
+        data: { state: "One" },
+      },
+      {
+        path: "lobster",
+        component: LobsterResourceViewComponent,
+        data: { state: "One" },
+      },
+      {
+        path: "livevideo",
+        component: LiveVideoViewComponent,
         data: { state: "Two" },
       },
       {
-        path: "group",
-        component: MutisensorsViewComponent,
+        path: "gallery",
+        component: PhotoGalleryViewComponent,
         data: { state: "Two" },
       },
       {
