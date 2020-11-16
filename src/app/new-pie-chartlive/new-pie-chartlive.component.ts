@@ -18,7 +18,7 @@ export class NewPieChartliveComponent implements OnInit {
     chart: {
       backgroundColor: "#eeeeee",
       type: "pie",
-      height: 250,
+      height: 350,
       width: 300,
       options3d: {
         enabled: true,

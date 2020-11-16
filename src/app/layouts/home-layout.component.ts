@@ -48,17 +48,17 @@ export class HomeLayoutComponent {
 
   public navItems: NavItem[] = [
     {
-      displayName: "植物生长环境平台",
+      displayName: "植物生长环境子平台",
       iconName: "spa",
       route: "plant",
     },
     {
-      displayName: "人居环境监控平台",
+      displayName: "人居环境监控子平台",
       iconName: "accessibility",
       route: "env",
     },
     {
-      displayName: "小龙虾资源处理平台",
+      displayName: "小龙虾资源处理子平台",
       iconName: "build",
       route: "lobster",
     },
@@ -75,108 +75,17 @@ export class HomeLayoutComponent {
     {
       displayName: "历史数据",
       iconName: "history",
-      route: "test",
+      route: "history",
     },
     {
       displayName: "设备管理",
       iconName: "list",
-      route: "devices",
-      children: [
-        {
-          displayName: "环境传感设备",
-          //iconName: "blur_on",
-          route: "devices",
-          children: [
-            {
-              displayName: "传感器1",
-              //iconName: "",
-              route: "devices/env/861011047485599",
-            },
-            {
-              displayName: "传感器2",
-              //iconName: "",
-              route: "devices/env/861011047486209",
-            },
-            {
-              displayName: "传感器3",
-              //iconName: "",
-              route: "devices/env/861011047486233",
-            },
-            {
-              displayName: "传感器4",
-              //iconName: "",
-              route: "devices/env/861011047455360",
-            },
-            {
-              displayName: "传感器5",
-              //iconName: "",
-              route: "devices/env/861011047418186",
-            },
-            {
-              displayName: "传感器6",
-              //iconName: "",
-              route: "devices/env/861011047485565",
-            },
-            {
-              displayName: "传感器7",
-              //iconName: "",
-              route: "devices/env/861011047486134",
-            },
-            {
-              displayName: "传感器8",
-              //iconName: "",
-              route: "devices/env/861011047485656",
-            },
-            {
-              displayName: "传感器9",
-              //iconName: "",
-              route: "devices/env/861011047511899",
-            },
-            {
-              displayName: "传感器10",
-              //iconName: "",
-              route: "devices/env/861011047486225",
-            },
-          ],
-        },
-        {
-          displayName: "空调",
-          //iconName: "wb_sunny",
-          route: "test",
-        },
-        {
-          displayName: "空气净化器",
-          //iconName: "cached",
-          route: "test",
-        },
-      ],
+      route: "history",
     },
     {
       displayName: "用户管理",
       iconName: "group",
-      route: "test",
-      children: [
-        {
-          displayName: "用户1",
-          iconName: "person",
-          route: "test",
-        },
-        {
-          displayName: "用户2",
-          iconName: "person",
-          route: "test",
-        },
-        {
-          displayName: "用户3",
-          iconName: "person",
-          route: "test",
-        },
-        {
-          displayName: "用户4",
-          iconName: "person",
-          route: "test",
-        },
-      ],
+      route: "history",
     },
   ];
 }

@@ -52,14 +52,16 @@ import { NewPieChartliveComponent } from "./new-pie-chartlive/new-pie-chartlive.
 import { NewPieChartdeviceComponent } from "./new-pie-chartdevice/new-pie-chartdevice.component";
 import { TestViewComponent } from "./test-view/test-view.component";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
-import {MatTooltipModule} from '@angular/material/tooltip';
-import { RepairViewComponent } from './repair-view/repair-view.component';
-import { LiveVideoComponent } from './live-video/live-video.component';
-import { PlantFactoryViewComponent } from './plant-factory-view/plant-factory-view.component';
-import { LiveVideoViewComponent } from './live-video-view/live-video-view.component';
-import { PhotoGalleryComponent } from './photo-gallery/photo-gallery.component';
-import { PhotoGalleryViewComponent } from './photo-gallery-view/photo-gallery-view.component';
-import { LobsterResourceViewComponent } from './lobster-resource-view/lobster-resource-view.component';
+import { MatTooltipModule } from "@angular/material/tooltip";
+import { LiveVideoComponent } from "./live-video/live-video.component";
+import { PlantFactoryViewComponent } from "./plant-factory-view/plant-factory-view.component";
+import { LiveVideoViewComponent } from "./live-video-view/live-video-view.component";
+import { PhotoGalleryComponent } from "./photo-gallery/photo-gallery.component";
+import { PhotoGalleryViewComponent } from "./photo-gallery-view/photo-gallery-view.component";
+import { LobsterResourceViewComponent } from "./lobster-resource-view/lobster-resource-view.component";
+import { AirsensorCardComponent } from "./airsensor-card/airsensor-card.component";
+import { DustsensorCardComponent } from "./dustsensor-card/dustsensor-card.component";
+import { HistoryViewComponent } from './history-view/history-view.component';
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   // hostname: "127.0.0.1",
@@ -93,13 +95,15 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     NewPieChartliveComponent,
     NewPieChartdeviceComponent,
     TestViewComponent,
-    RepairViewComponent,
     LiveVideoComponent,
     PlantFactoryViewComponent,
     LiveVideoViewComponent,
     PhotoGalleryComponent,
     PhotoGalleryViewComponent,
     LobsterResourceViewComponent,
+    AirsensorCardComponent,
+    DustsensorCardComponent,
+    HistoryViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -123,7 +127,7 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     MatTooltipModule,
     FormsModule,
     MqttModule.forRoot(MQTT_SERVICE_OPTIONS),
-    BaiduMapModule.forRoot({ ak: "FpVG0ppOSI7TwBYGhty65bxe88fqD38v" }),
+    BaiduMapModule.forRoot({ ak: "YCnnACvK3BtUHdCbVanZFsFUazer9Shj" }),
     HighchartsChartModule,
     HttpClientModule,
     AppRoutingModule,

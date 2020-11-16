@@ -36,11 +36,13 @@
           </mat-card>
         </div>
       </div>
-      <app-mutisensor-card
+      <app-dustsensor-card></app-dustsensor-card>
+
+      <!-- <app-mutisensor-card
         [deviceId]="device_id"
         [devices]="_deviceService.devicesInfo"
         [newestData]="_sensor5in1Service.subSensorData"
-      ></app-mutisensor-card>
+      ></app-mutisensor-card> -->
     </div>
     <!-- TODO:baidu地图显示问题 -->
     <mat-card fxFlex="calc(50%-20px)">
@@ -50,7 +52,9 @@
         <mat-card-subtitle></mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <app-live-video></app-live-video>
+        <div fxLayoutAlign="center center">
+          <app-live-video></app-live-video>
+        </div>
       </mat-card-content>
     </mat-card>
   </div>

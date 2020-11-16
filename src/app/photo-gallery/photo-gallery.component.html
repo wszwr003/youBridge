@@ -20,10 +20,10 @@
       *ngFor="let image of sliderImages; let i = index"
       [ngClass]="{ active: i == 0 }"
     >
-      <img class="d-block w-100" [src]="image[0]" />
+      <img class="d-block" width="100%" height="1000px" [src]="image[0]" />
       <div class="carousel-caption d-none d-md-block">
-        <h5>{{ image[1] }}</h5>
-        <p>{{ image[2] }}</p>
+        <h1>{{ image[1] }}</h1>
+        <h3>{{ image[2] }}</h3>
       </div>
     </div>
     <!-- <div

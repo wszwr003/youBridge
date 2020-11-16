@@ -1,0 +1,96 @@
+<!-- <div *ngIf="device == undefined">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title></mat-card-title>
+      <mat-card-subtitle> </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content> </mat-card-content>
+  </mat-card>
+</div> -->
+<!-- <div *ngIf="device != undefined"> -->
+<mat-card
+  [routerLink]="['/devices/env', device == null ? '' : device.device_no]"
+  style="height: 550px"
+>
+  <mat-card-header>
+    <mat-card-title class="title-left">实时环境数据</mat-card-title>
+    <mat-card-title class="title-right"
+      >title
+      <a style="display: inline; position: relative; right: 0px"> </a>
+      <mat-icon
+        *ngIf="device == null ? true : device.device_state == 0 ? true : false"
+        style="display: inline; position: relative; top: 5px"
+        >error</mat-icon
+      >
+      <mat-spinner
+        *ngIf="device == null ? false : device.device_state == 1 ? true : false"
+        color="warn"
+        class="title-right"
+        [diameter]="20"
+        style="display: inline; position: relative; right: 0px; top: 1px"
+      ></mat-spinner>
+    </mat-card-title>
+    <mat-card-subtitle style="position: relative; top: 10px">
+      <a style="position: relative; top: 3px">最新数据时间:</a>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div fxLayout="row warp" fxLayoutAlign="space-around start">
+      <div fxFlex="calc(33%)" fxFlex.xs="calc(50%)">
+        <mat-icon class="data-icon" style="color: #e64b3f">wb_sunny</mat-icon>
+        <div class="data-label">温度</div>
+        <div class="data-value">...<a class="unit">℃</a></div>
+      </div>
+      <div fxFlex="calc(33%)" fxFlex.xs="calc(50%)">
+        <mat-icon class="data-icon" style="color: #0699e2">opacity</mat-icon>
+        <div class="data-label">湿度</div>
+        <div class="data-value">...<a class="unit">%</a></div>
+      </div>
+      <div fxFlex="calc(33%)" fxFlex.xs="calc(50%)">
+        <mat-icon class="data-icon" style="color: #888888">grain</mat-icon>
+        <div class="data-label">PM2.5</div>
+        <div class="data-value">...<a class="unit">℃</a></div>
+      </div>
+      <div fxFlex="calc(33%)" fxFlex.xs="calc(50%)">
+        <mat-icon class="data-icon" style="color: #444444"
+          >scatter_plot</mat-icon
+        >
+        <div class="data-label">PM10</div>
+        <div class="data-value">...<a class="unit">%</a></div>
+      </div>
+      <div fxFlex="calc(33%)" fxFlex.xs="calc(50%)">
+        <mat-icon class="data-icon" style="color: rgb(28, 170, 28)"
+          >filter_list</mat-icon
+        >
+        <div class="data-label">VOC</div>
+        <div class="data-value">...<a class="unit">ppm</a></div>
+      </div>
+      <div fxFlex="calc(33%)" fxFlex.xs="calc(50%)">
+        <mat-icon class="data-icon" style="color: rgb(250, 112, 0)"
+          >hearing</mat-icon
+        >
+        <div class="data-label">噪声</div>
+        <div class="data-value">...<a class="unit">dB</a></div>
+      </div>
+      <div fxFlex="calc(33%)" fxFlex.xs="calc(50%)">
+        <mat-icon class="data-icon">bubble_chart</mat-icon>
+        <div class="data-label">H<sub>2</sub>S</div>
+        <div class="data-value">...<a class="unit">ppm</a></div>
+      </div>
+      <div fxFlex="calc(33%)" fxFlex.xs="calc(50%)">
+        <mat-icon class="data-icon" style="color: rgb(252, 208, 88)"
+          >wb_incandescent</mat-icon
+        >
+        <div class="data-label">光照</div>
+        <div class="data-value">...<a class="unit">lx </a></div>
+      </div>
+      <div fxFlex="calc(33%)" fxFlex.xs="calc(50%)">
+        <mat-icon class="data-icon" style="color: lightskyblue">toys</mat-icon>
+        <div class="data-label">风速</div>
+        <div class="data-value">...<a class="unit">m/s</a></div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<!-- </div> -->

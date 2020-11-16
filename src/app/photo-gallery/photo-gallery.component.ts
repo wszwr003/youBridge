@@ -11,18 +11,28 @@ export class PhotoGalleryComponent implements OnInit {
   public sliderImages = [
     [
       "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(131).jpg",
-      "green1",
-      "mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(131)",
+      "一、超声波清洗",
+      "使用超声波清洗龙虾壳。",
     ],
     [
       "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(132).jpg",
-      "green2",
-      "mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(132)",
+      "二、真空烘干",
+      "对清洗后的龙虾壳进行烘干。",
     ],
     [
       "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(118).jpg",
-      "green3",
-      "mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(118)",
+      "三、紫外线杀菌",
+      "使用紫外线杀死残留细菌。",
+    ],
+    [
+      "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(131).jpg",
+      "四、粗粉碎",
+      "对龙虾壳进行粗粉碎。",
+    ],
+    [
+      "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(132).jpg",
+      "五、细粉碎",
+      "对龙虾壳进行精细粉碎。",
     ],
   ];
   public sliderVideos = [

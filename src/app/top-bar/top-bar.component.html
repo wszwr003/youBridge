@@ -2,12 +2,12 @@
   <mat-toolbar
     class="topbar"
     [color]="screenWidth > 600 ? 'primary' : 'accent'"
-    [fxFlex]="screenWidth > 600 ? '260px' : '45px'"
+    [fxFlex]="screenWidth > 600 ? '300px' : '45px'"
   >
     <button mat-icon-button disabled>
       <img src="../../assets/logo.png" style="max-width: 90%; min-width: 90%" />
     </button>
-    <span class="header-name" *ngIf="screenWidth > 600">植物生长环境平台</span>
+    <span class="header-name" *ngIf="screenWidth > 600">物联网监控云平台</span>
   </mat-toolbar>
   <mat-toolbar class="topbar" color="accent" fxFlex="100%">
     <button mat-icon-button (click)="sideMenuButton.emit()">
@@ -28,7 +28,7 @@
       matTooltip="账号管理(建设中...)"
     >
       <mat-icon>how_to_reg</mat-icon>
-      grandway
+      admin
       <mat-menu #usermenu="matMenu">
         <button mat-menu-item>管理员账号</button>
         <button mat-menu-item>设备</button>

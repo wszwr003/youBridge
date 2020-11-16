@@ -1,0 +1,51 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.title-left {
+  color: rgb(40, 63, 82);
+  display: inline;
+  font-weight: light;
+  font-size: 15px;
+}
+.title-right {
+  color: rgb(40, 63, 82);
+  display: inline;
+  float: right;
+  font-weight: light;
+  font-size: 15px;
+}
+
+.mat-card {
+  overflow: hidden;
+}
+
+.data-icon {
+  position: relative;
+  top: 10px;
+  left: 0px;
+  font-size: 80px;
+  font-weight: light;
+}
+.data-label {
+  position: relative;
+  top: -75px;
+  left: 90px;
+  font-size: 25px;
+  font-weight: bold;
+  color: #aaaaaa;
+}
+.data-value {
+  // position: absolute;
+  position: relative;
+
+  top: -75px;
+  left: 90px;
+  font-size: 50px;
+  font-weight: light;
+  color: rgb(40, 63, 82);
+}
+.unit {
+  font-size: 25px;
+  color: #aaaaaa;
+}

@@ -17,9 +17,9 @@ export class AuthService {
 
   login(user: User): boolean {
     if (user.userName !== "" && user.password !== "") {
-      if (user.userName == "youqiao001" && user.password == "123456") {
+      if (user.userName == "admin" && user.password == "admin") {
         this.loggedIn.next(true);
-        this.router.navigate(["/sys"]);
+        this.router.navigate(["/plant"]);
         return true;
       }
     }

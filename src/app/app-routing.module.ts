@@ -12,21 +12,13 @@ import { PlantFactoryViewComponent } from "./plant-factory-view/plant-factory-vi
 import { LiveVideoViewComponent } from "./live-video-view/live-video-view.component";
 import { PhotoGalleryViewComponent } from "./photo-gallery-view/photo-gallery-view.component";
 import { LobsterResourceViewComponent } from "./lobster-resource-view/lobster-resource-view.component";
+import { HistoryViewComponent } from "./history-view/history-view.component";
 const routes: Routes = [
   {
     path: "",
     component: HomeLayoutComponent,
-    // canActivate: [AuthGuardService],
+    canActivate: [AuthGuardService],
     children: [
-      {
-        path: "test",
-        component: TestViewComponent,
-      },
-      {
-        path: "sys",
-        component: OverViewComponent,
-        data: { state: "One" },
-      },
       {
         path: "plant",
         component: PlantFactoryViewComponent,
@@ -35,17 +27,17 @@ const routes: Routes = [
       {
         path: "env",
         component: OverViewComponent,
-        data: { state: "One" },
+        data: { state: "Two" },
       },
       {
         path: "lobster",
         component: LobsterResourceViewComponent,
-        data: { state: "One" },
+        data: { state: "Three" },
       },
       {
         path: "livevideo",
         component: LiveVideoViewComponent,
-        data: { state: "Two" },
+        data: { state: "One" },
       },
       {
         path: "gallery",
@@ -53,19 +45,28 @@ const routes: Routes = [
         data: { state: "Two" },
       },
       {
+        path: "history",
+        component: HistoryViewComponent,
+        data: { state: "Three" },
+      },
+      {
         path: "devices/env",
         component: MutisensorsViewComponent,
-        data: { state: "Two" },
+        data: { state: "One" },
       },
       {
         path: "group/env/:deviceId",
         component: MutisensorViewComponent,
-        data: { state: "Three" },
+        data: { state: "Two" },
       },
       {
         path: "devices/env/:deviceId",
         component: MutisensorViewComponent,
         data: { state: "Three" },
+      },
+      {
+        path: "test",
+        component: TestViewComponent,
       },
     ],
   },

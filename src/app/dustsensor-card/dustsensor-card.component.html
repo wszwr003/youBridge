@@ -1,0 +1,135 @@
+<!-- <div *ngIf="device == undefined">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title></mat-card-title>
+      <mat-card-subtitle> </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content> </mat-card-content>
+  </mat-card>
+</div> -->
+<!-- <div *ngIf="device != undefined"> -->
+<mat-card
+  [routerLink]="['/devices/env', device == null ? '' : device.device_no]"
+>
+  <mat-card-header>
+    <mat-card-title class="title-left">实时植物生长环境</mat-card-title>
+    <mat-card-title class="title-right"
+      >title
+      <a style="display: inline; position: relative; right: 0px"> </a>
+      <mat-icon
+        *ngIf="device == null ? true : device.device_state == 0 ? true : false"
+        style="display: inline; position: relative; top: 5px"
+        >error</mat-icon
+      >
+      <mat-spinner
+        *ngIf="device == null ? false : device.device_state == 1 ? true : false"
+        color="warn"
+        class="title-right"
+        [diameter]="20"
+        style="display: inline; position: relative; right: 0px; top: 1px"
+      ></mat-spinner>
+    </mat-card-title>
+    <mat-card-subtitle style="position: relative; top: 10px">
+      <a style="position: relative; top: 3px">最新数据时间:</a>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div fxLayout="row warp" fxLayoutAlign="space-around start">
+      <div
+        fxFlex="calc(25%)"
+        fxFlex.lt-md="calc(100%)"
+        fxFlex.lt-lg="calc(50%)"
+        fxFlex.lt-xl="calc(33.3%)"
+      >
+        <mat-icon class="data-icon" style="color: #ffc404">wb_sunny</mat-icon>
+        <div class="data-label">空气温度</div>
+        <div class="data-value">...<a class="unit">℃</a></div>
+      </div>
+      <div
+        fxFlex="calc(25%)"
+        fxFlex.lt-md="calc(100%)"
+        fxFlex.lt-lg="calc(50%)"
+        fxFlex.lt-xl="calc(33.3%)"
+      >
+        <mat-icon class="data-icon" style="color: #7dcff8">opacity</mat-icon>
+        <div class="data-label">空气湿度</div>
+        <div class="data-value">...<a class="unit">%</a></div>
+      </div>
+      <div
+        fxFlex="calc(25%)"
+        fxFlex.lt-md="calc(100%)"
+        fxFlex.lt-lg="calc(50%)"
+        fxFlex.lt-xl="calc(33.3%)"
+      >
+        <mat-icon class="data-icon" style="color: peru">speed </mat-icon>
+        <div class="data-label">土壤温度</div>
+        <div class="data-value">...<a class="unit">℃</a></div>
+      </div>
+      <!-- <div fxFlex="calc(25%)" 
+        fxFlex.lt-md="calc(100%)" 
+        fxFlex.lt-lg="calc(50%)"  
+        fxFlex.lt-xl="calc(33.3%)"
+        >
+        <mat-icon class="data-icon">opacity</mat-icon>
+        <div class="data-label">土壤湿度</div>
+        <div class="data-value">...<a class="unit">%</a></div>
+      </div> -->
+      <div
+        fxFlex="calc(25%)"
+        fxFlex.lt-md="calc(100%)"
+        fxFlex.lt-lg="calc(50%)"
+        fxFlex.lt-xl="calc(33.3%)"
+      >
+        <mat-icon class="data-icon" style="color: red">filter_list </mat-icon>
+        <div class="data-label">水位</div>
+        <div class="data-value">...<a class="unit">cm</a></div>
+      </div>
+      <div
+        fxFlex="calc(25%)"
+        fxFlex.lt-md="calc(100%)"
+        fxFlex.lt-lg="calc(50%)"
+        fxFlex.lt-xl="calc(33.3%)"
+      >
+        <mat-icon class="data-icon">bubble_chart</mat-icon>
+        <div class="data-label">CO<sub>2</sub>浓度</div>
+        <div class="data-value">...<a class="unit">ppm</a></div>
+      </div>
+      <div
+        fxFlex="calc(25%)"
+        fxFlex.lt-md="calc(100%)"
+        fxFlex.lt-lg="calc(50%)"
+        fxFlex.lt-xl="calc(33.3%)"
+      >
+        <mat-icon class="data-icon" style="color: yellow"
+          >wb_incandescent</mat-icon
+        >
+        <div class="data-label">光照</div>
+        <div class="data-value">...<a class="unit">lx</a></div>
+      </div>
+      <div
+        fxFlex="calc(25%)"
+        fxFlex.lt-md="calc(100%)"
+        fxFlex.lt-lg="calc(50%)"
+        fxFlex.lt-xl="calc(33.3%)"
+      >
+        <mat-icon class="data-icon" style="color: purple">line_weight</mat-icon>
+        <div class="data-label">pH值</div>
+        <div class="data-value">...<a class="unit"></a></div>
+      </div>
+      <div
+        fxFlex="calc(25%)"
+        fxFlex.lt-md="calc(100%)"
+        fxFlex.lt-lg="calc(50%)"
+        fxFlex.lt-xl="calc(33.3%)"
+      >
+        <mat-icon class="data-icon" style="color: rgb(109, 109, 109)"
+          >flash_on</mat-icon
+        >
+        <div class="data-label">电导率</div>
+        <div class="data-value">...<a class="unit"></a></div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<!-- </div> -->

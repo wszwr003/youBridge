@@ -187,7 +187,7 @@ export class DataChartComponent implements OnInit, OnChanges {
       chart: {
         backgroundColor: "#eeeeee",
         type: "spline",
-        height: 390,
+        height: 550,
       },
       title: {
         text: "",
