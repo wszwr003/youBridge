@@ -45,7 +45,7 @@ export class DataChartComponent implements OnInit, OnChanges {
       if (changes.hasOwnProperty(propName)) {
         switch (propName) {
           case "data": {
-            // console.log("line chart data change", this.data, "data-end");
+            console.log("line chart data change", this.data, "data-end");
             if (this.data == undefined) break;
             if (this.deviceId != this.data.device_id) break;
             if (this.data == null || this.dataChart == null) {
@@ -54,14 +54,14 @@ export class DataChartComponent implements OnInit, OnChanges {
             var time = new Date().getTime();
             var time_second = time - (time % 1000);
             var shift = false; //chart是否平移
-            for (var i = 0; i < 4; i++)
+            for (var i = 0; i < 8; i++)
               if (this.dataChart.series[i].data.length >= this.chartPoints)
                 shift = true;
             this.dataChart.series[0].addPoint(
               [
                 //this.data.time == undefined ? time_second : this.data.time,
                 time_second,
-                this.data.pm25,
+                this.data.Air_T,
               ],
               false,
               shift,
@@ -71,7 +71,7 @@ export class DataChartComponent implements OnInit, OnChanges {
               [
                 //this.data.time == undefined ? time_second : this.data.time,
                 time_second,
-                this.data.co2,
+                this.data.Air_H,
               ],
               false,
               shift,
@@ -81,7 +81,7 @@ export class DataChartComponent implements OnInit, OnChanges {
               [
                 //this.data.time == undefined ? time_second : this.data.time,
                 time_second,
-                this.data.temp,
+                this.data.Soil_Temperature,
               ],
               false,
               shift,
@@ -91,7 +91,47 @@ export class DataChartComponent implements OnInit, OnChanges {
               [
                 //this.data.time == undefined ? time_second : this.data.time,
                 time_second,
-                this.data.humi,
+                this.data.Water_Height,
+              ],
+              true, //FAO:repaint!!!!
+              shift,
+              false
+            );
+            this.dataChart.series[4].addPoint(
+              [
+                //this.data.time == undefined ? time_second : this.data.time,
+                time_second,
+                this.data.CO2,
+              ],
+              true, //FAO:repaint!!!!
+              shift,
+              false
+            );
+            this.dataChart.series[5].addPoint(
+              [
+                //this.data.time == undefined ? time_second : this.data.time,
+                time_second,
+                this.data.Shine,
+              ],
+              true, //FAO:repaint!!!!
+              shift,
+              false
+            );
+            this.dataChart.series[6].addPoint(
+              [
+                //this.data.time == undefined ? time_second : this.data.time,
+                time_second,
+                this.data.PH,
+              ],
+              true, //FAO:repaint!!!!
+              shift,
+              false
+            );
+            this.dataChart.series[7].addPoint(
+              [
+                //this.data.time == undefined ? time_second : this.data.time,
+                time_second,
+                this.data.Conductivity,
               ],
               true, //FAO:repaint!!!!
               shift,
@@ -162,6 +202,10 @@ export class DataChartComponent implements OnInit, OnChanges {
     };
     this.options = {
       colors: [
+        "#888888", //pm25
+        "#e64b3f", //co2
+        "#de932e", //temp
+        "#7dcff8", //humi
         "#888888", //pm25
         "#e64b3f", //co2
         "#de932e", //temp
@@ -266,6 +310,87 @@ export class DataChartComponent implements OnInit, OnChanges {
             },
           },
           minTickInterval: 1,
+          minRange: 10,
+        },
+        {
+          // Tertiary yAxis
+          gridLineWidth: 1,
+          type: "Data",
+          title: {
+            // text: "湿度(%)",
+            text: "",
+            style: {
+              color: "#7dcff8", //humi
+            },
+          },
+          labels: {
+            format: "{value}",
+            style: {
+              color: "#7dcff8", //humi
+            },
+          },
+          minTickInterval: 1,
+          minRange: 10,
+        },
+        {
+          // Secondary yAxis
+          gridLineWidth: 1,
+          type: "Data",
+          title: {
+            // text: "PM2.5浓度(μg/m3)",
+            text: "",
+            style: {
+              color: "#666666", //pm25
+            },
+          },
+          labels: {
+            format: "{value}",
+            style: {
+              color: "#666666", //pm25
+            },
+          },
+          minTickInterval: 1,
+          minRange: 5,
+          opposite: true,
+        },
+        {
+          gridLineWidth: 1,
+          type: "Data",
+          title: {
+            // text: "二氧化碳浓度(ppm)",
+            text: "",
+            style: {
+              color: "#e64b3f", //co2
+            },
+          },
+          labels: {
+            format: "{value}",
+            style: {
+              color: "#e64b3f", //co2
+            },
+          },
+          minTickInterval: 1,
+          minRange: 5,
+          opposite: true,
+        },
+        {
+          // Primary yAxis
+          gridLineWidth: 1,
+          type: "Data",
+          title: {
+            // text: "温度(°C)",
+            text: "",
+            style: {
+              color: "#de932e", //temp
+            },
+          },
+          labels: {
+            format: "{value}",
+            style: {
+              color: "#de932e", //temp
+            },
+          },
+          minTickInterval: 1,
           minRange: 5,
           opposite: true,
         },
@@ -293,7 +418,7 @@ export class DataChartComponent implements OnInit, OnChanges {
       ],
       series: [
         {
-          name: "PM2.5浓度(μg/m3)",
+          name: "温度(℃)",
           turboThreshold: 50000,
           yAxis: 0,
           data: [
@@ -301,7 +426,7 @@ export class DataChartComponent implements OnInit, OnChanges {
           ],
         },
         {
-          name: "二氧化碳浓度(ppm)",
+          name: "湿度(%)",
           turboThreshold: 50000,
           yAxis: 1,
           data: [
@@ -309,7 +434,7 @@ export class DataChartComponent implements OnInit, OnChanges {
           ],
         },
         {
-          name: "温度(℃)",
+          name: "土壤温度(℃)",
           turboThreshold: 50000,
           yAxis: 2,
           data: [
@@ -317,9 +442,41 @@ export class DataChartComponent implements OnInit, OnChanges {
           ],
         },
         {
-          name: "湿度(%)",
+          name: "水位(cm)",
           turboThreshold: 50000,
           yAxis: 3,
+          data: [
+            // [new Date("2018-01-25 18:38:31").getTime(), 55],
+          ],
+        },
+        {
+          name: "二氧化碳浓度(ppm)",
+          turboThreshold: 50000,
+          yAxis: 4,
+          data: [
+            // [new Date("2018-01-25 18:38:31").getTime(), 555],
+          ],
+        },
+        {
+          name: "光照强度(lx)",
+          turboThreshold: 50000,
+          yAxis: 5,
+          data: [
+            // [new Date("2018-01-25 18:38:31").getTime(), 423],
+          ],
+        },
+        {
+          name: "营养液pH值()",
+          turboThreshold: 50000,
+          yAxis: 6,
+          data: [
+            // [new Date("2018-01-25 18:38:31").getTime(), 18],
+          ],
+        },
+        {
+          name: "营养液电导率()",
+          turboThreshold: 50000,
+          yAxis: 7,
           data: [
             // [new Date("2018-01-25 18:38:31").getTime(), 55],
           ],
@@ -374,6 +531,34 @@ export class DataChartComponent implements OnInit, OnChanges {
                     enabled: false,
                   }, //去掉刻度数字
                 },
+                {
+                  lineWidth: 0, //去掉x轴线
+                  tickWidth: 0, //去掉刻度
+                  labels: {
+                    enabled: false,
+                  }, //去掉刻度数字
+                },
+                {
+                  lineWidth: 0, //去掉x轴线
+                  tickWidth: 0, //去掉刻度
+                  labels: {
+                    enabled: false,
+                  }, //去掉刻度数字
+                },
+                {
+                  lineWidth: 0, //去掉x轴线
+                  tickWidth: 0, //去掉刻度
+                  labels: {
+                    enabled: false,
+                  }, //去掉刻度数字
+                },
+                {
+                  lineWidth: 0, //去掉x轴线
+                  tickWidth: 0, //去掉刻度
+                  labels: {
+                    enabled: false,
+                  }, //去掉刻度数字
+                },
               ],
             },
           },
@@ -396,6 +581,34 @@ export class DataChartComponent implements OnInit, OnChanges {
                 },
               },
               yAxis: [
+                {
+                  lineWidth: 0, //去掉x轴线
+                  tickWidth: 0, //去掉刻度
+                  labels: {
+                    enabled: true,
+                  }, //去掉刻度数字
+                },
+                {
+                  lineWidth: 0, //去掉x轴线
+                  tickWidth: 0, //去掉刻度
+                  labels: {
+                    enabled: true,
+                  }, //去掉刻度数字
+                },
+                {
+                  lineWidth: 0, //去掉x轴线
+                  tickWidth: 0, //去掉刻度
+                  labels: {
+                    enabled: true,
+                  }, //去掉刻度数字
+                },
+                {
+                  lineWidth: 0, //去掉x轴线
+                  tickWidth: 0, //去掉刻度
+                  labels: {
+                    enabled: true,
+                  }, //去掉刻度数字
+                },
                 {
                   lineWidth: 0, //去掉x轴线
                   tickWidth: 0, //去掉刻度

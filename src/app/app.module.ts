@@ -61,11 +61,16 @@ import { PhotoGalleryViewComponent } from "./photo-gallery-view/photo-gallery-vi
 import { LobsterResourceViewComponent } from "./lobster-resource-view/lobster-resource-view.component";
 import { AirsensorCardComponent } from "./airsensor-card/airsensor-card.component";
 import { DustsensorCardComponent } from "./dustsensor-card/dustsensor-card.component";
-import { HistoryViewComponent } from './history-view/history-view.component';
+import { HistoryViewComponent } from "./history-view/history-view.component";
 
+// export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
+//   // hostname: "127.0.0.1",
+//   hostname: "116.62.151.59",
+//   port: 8888,
+//   path: "/mqtt", //'/mqtt'
+// };
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
-  // hostname: "127.0.0.1",
-  hostname: "116.62.151.59",
+  hostname: "47.101.57.243",
   port: 8888,
   path: "/mqtt", //'/mqtt'
 };

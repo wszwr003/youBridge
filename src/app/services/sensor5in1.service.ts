@@ -18,7 +18,7 @@ export class Sensor5in1Service implements OnDestroy {
 
   private HTTP_SERVICE_OPTIONS: any = {
     // URL: "http://127.0.0.1:4000",
-    URL: "http://116.62.151.59:4000",
+    URL: "http://47.101.57.243:4000",
   };
   httpOptions = {
     headers: new HttpHeaders({ "Content-Type": "application/json" }),

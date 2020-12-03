@@ -30,73 +30,68 @@
       ></mat-spinner>
     </mat-card-title>
     <mat-card-subtitle style="position: relative; top: 10px">
-      <a style="position: relative; top: 3px">最新数据时间:</a>
+      <a style="position: relative; top: 3px">最新数据时间:{{ timeString }}</a>
     </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <div fxLayout="row warp" fxLayoutAlign="space-around start">
       <div
         fxFlex="calc(25%)"
-        fxFlex.lt-md="calc(100%)"
         fxFlex.lt-lg="calc(50%)"
         fxFlex.lt-xl="calc(33.3%)"
       >
         <mat-icon class="data-icon" style="color: #ffc404">wb_sunny</mat-icon>
         <div class="data-label">空气温度</div>
-        <div class="data-value">...<a class="unit">℃</a></div>
+        <div class="data-value">{{ Air_T }}<a class="unit">℃</a></div>
       </div>
       <div
         fxFlex="calc(25%)"
-        fxFlex.lt-md="calc(100%)"
         fxFlex.lt-lg="calc(50%)"
         fxFlex.lt-xl="calc(33.3%)"
       >
         <mat-icon class="data-icon" style="color: #7dcff8">opacity</mat-icon>
         <div class="data-label">空气湿度</div>
-        <div class="data-value">...<a class="unit">%</a></div>
+        <div class="data-value">{{ Air_H }}<a class="unit">%</a></div>
       </div>
       <div
         fxFlex="calc(25%)"
-        fxFlex.lt-md="calc(100%)"
         fxFlex.lt-lg="calc(50%)"
         fxFlex.lt-xl="calc(33.3%)"
       >
         <mat-icon class="data-icon" style="color: peru">speed </mat-icon>
         <div class="data-label">土壤温度</div>
-        <div class="data-value">...<a class="unit">℃</a></div>
+        <div class="data-value">
+          {{ Soil_Temperature }}<a class="unit">℃</a>
+        </div>
       </div>
       <!-- <div fxFlex="calc(25%)" 
-        fxFlex.lt-md="calc(100%)" 
         fxFlex.lt-lg="calc(50%)"  
         fxFlex.lt-xl="calc(33.3%)"
         >
         <mat-icon class="data-icon">opacity</mat-icon>
         <div class="data-label">土壤湿度</div>
-        <div class="data-value">...<a class="unit">%</a></div>
+        <div class="data-value">{{}}<a class="unit">%</a></div>
       </div> -->
       <div
         fxFlex="calc(25%)"
-        fxFlex.lt-md="calc(100%)"
         fxFlex.lt-lg="calc(50%)"
         fxFlex.lt-xl="calc(33.3%)"
       >
         <mat-icon class="data-icon" style="color: red">filter_list </mat-icon>
         <div class="data-label">水位</div>
-        <div class="data-value">...<a class="unit">cm</a></div>
+        <div class="data-value">{{ Water_Height }}<a class="unit">cm</a></div>
       </div>
       <div
         fxFlex="calc(25%)"
-        fxFlex.lt-md="calc(100%)"
         fxFlex.lt-lg="calc(50%)"
         fxFlex.lt-xl="calc(33.3%)"
       >
         <mat-icon class="data-icon">bubble_chart</mat-icon>
         <div class="data-label">CO<sub>2</sub>浓度</div>
-        <div class="data-value">...<a class="unit">ppm</a></div>
+        <div class="data-value">{{ CO2 }}<a class="unit">ppm</a></div>
       </div>
       <div
         fxFlex="calc(25%)"
-        fxFlex.lt-md="calc(100%)"
         fxFlex.lt-lg="calc(50%)"
         fxFlex.lt-xl="calc(33.3%)"
       >
@@ -104,21 +99,19 @@
           >wb_incandescent</mat-icon
         >
         <div class="data-label">光照</div>
-        <div class="data-value">...<a class="unit">lx</a></div>
+        <div class="data-value">{{ Shine }}<a class="unit">lx</a></div>
       </div>
       <div
         fxFlex="calc(25%)"
-        fxFlex.lt-md="calc(100%)"
         fxFlex.lt-lg="calc(50%)"
         fxFlex.lt-xl="calc(33.3%)"
       >
         <mat-icon class="data-icon" style="color: purple">line_weight</mat-icon>
         <div class="data-label">pH值</div>
-        <div class="data-value">...<a class="unit"></a></div>
+        <div class="data-value">{{ PH }}<a class="unit"></a></div>
       </div>
       <div
         fxFlex="calc(25%)"
-        fxFlex.lt-md="calc(100%)"
         fxFlex.lt-lg="calc(50%)"
         fxFlex.lt-xl="calc(33.3%)"
       >
@@ -126,7 +119,7 @@
           >flash_on</mat-icon
         >
         <div class="data-label">电导率</div>
-        <div class="data-value">...<a class="unit"></a></div>
+        <div class="data-value">{{ Conductivity }}<a class="unit"></a></div>
       </div>
     </div>
   </mat-card-content>

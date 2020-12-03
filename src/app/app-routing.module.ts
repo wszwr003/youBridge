@@ -17,8 +17,13 @@ const routes: Routes = [
   {
     path: "",
     component: HomeLayoutComponent,
-    canActivate: [AuthGuardService],
+    // canActivate: [AuthGuardService],
     children: [
+      {
+        path: "",
+        component: PlantFactoryViewComponent,
+        data: { state: "One" },
+      },
       {
         path: "plant",
         component: PlantFactoryViewComponent,

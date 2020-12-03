@@ -11,12 +11,12 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class PlantFactoryViewComponent implements OnInit {
   location: GPS = {
-    deviceId: "861011047485656",
+    deviceId: "864308043364126",
     lat: 30.703943,
     lng: 120.890919,
     locString: "地址：由桥村",
   };
-  public device_id = "861011047485656";
+  public device_id = "864308043364126";
   public historyDatas = null;
   constructor(
     private route: ActivatedRoute,

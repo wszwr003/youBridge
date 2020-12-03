@@ -7,7 +7,10 @@
     fxLayoutGap="20px"
   >
     <div fxLayout="column" fxFlex="calc(50%-20px)" fxLayoutGap="20px">
-      <app-airsensor-card></app-airsensor-card>
+      <app-airsensor-card
+        [deviceId]="device_id"
+        [newestData]="_sensor5in1Service.subSensorData"
+      ></app-airsensor-card>
 
       <!-- <app-mutisensor-card
         [deviceId]="device_id"
