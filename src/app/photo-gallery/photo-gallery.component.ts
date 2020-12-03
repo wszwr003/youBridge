@@ -9,31 +9,11 @@ export class PhotoGalleryComponent implements OnInit {
   flipped: boolean = false;
 
   public sliderImages = [
-    [
-      "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(131).jpg",
-      "一、超声波清洗",
-      "使用超声波清洗龙虾壳。",
-    ],
-    [
-      "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(132).jpg",
-      "二、真空烘干",
-      "对清洗后的龙虾壳进行烘干。",
-    ],
-    [
-      "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(118).jpg",
-      "三、紫外线杀菌",
-      "使用紫外线杀死残留细菌。",
-    ],
-    [
-      "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(131).jpg",
-      "四、粗粉碎",
-      "对龙虾壳进行粗粉碎。",
-    ],
-    [
-      "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(132).jpg",
-      "五、细粉碎",
-      "对龙虾壳进行精细粉碎。",
-    ],
+    ["../../assets/lob01.jpeg", "一、超声波清洗", "使用超声波清洗龙虾壳。"],
+    ["../../assets/lob02.jpeg", "二、真空烘干", "对清洗后的龙虾壳进行烘干。"],
+    ["../../assets/lob03.jpeg", "三、紫外线杀菌", "使用紫外线杀死残留细菌。"],
+    ["../../assets/lob04.jpeg", "四、粗粉碎", "对龙虾壳进行粗粉碎。"],
+    ["../../assets/lob04.jpeg", "五、细粉碎", "对龙虾壳进行精细粉碎。"],
   ];
   public sliderVideos = [
     [

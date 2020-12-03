@@ -65,17 +65,17 @@ export class DustsensorCardComponent implements OnChanges, OnDestroy {
                     this.Air_T = this.initMyData.Air_T.toString();
                     this.Air_H = this.initMyData.Air_H.toString();
                     this.Soil_Temperature = this.initMyData.Soil_Temperature.toString();
-                    this.Water_Height = this.initMyData.Water_Height.toString();
                     this.CO2 = this.initMyData.CO2.toString();
                     this.Shine = this.initMyData.Shine.toString();
                     this.PH = this.initMyData.PH.toString();
                     this.Conductivity = this.initMyData.Conductivity.toString();
                     var unixTimestamp =
-                      this.initMyData.time == undefined
-                        ? new Date()
-                        : new Date(this.initMyData.time.toString());
-
+                    this.initMyData.time == undefined
+                    ? new Date()
+                    : new Date(this.initMyData.time.toString());
+                    
                     this.timeString = unixTimestamp.toLocaleString();
+                    this.Water_Height = this.initMyData.Water_Height.toString();
                   } catch (error) {
                     console.log("!!!!", error);
                   }
@@ -90,16 +90,16 @@ export class DustsensorCardComponent implements OnChanges, OnDestroy {
             this.Air_T = this.newestData.Air_T.toString();
             this.Air_H = this.newestData.Air_H.toString();
             this.Soil_Temperature = this.newestData.Soil_Temperature.toString();
-            this.Water_Height = this.newestData.Water_Height.toString();
             this.CO2 = this.newestData.CO2.toString();
             this.Shine = this.newestData.Shine.toString();
             this.PH = this.newestData.PH.toString();
             this.Conductivity = this.newestData.Conductivity.toString();
             var unixTimestamp =
-              this.newestData.time == undefined
-                ? new Date()
-                : new Date(this.newestData.time * 1000);
+            this.newestData.time == undefined
+            ? new Date()
+            : new Date(this.newestData.time * 1000);
             this.timeString = unixTimestamp.toLocaleString();
+            this.Water_Height = this.newestData.Water_Height.toString();
             break;
           }
         }

@@ -10,10 +10,14 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ["./plant-factory-view.component.scss"],
 })
 export class PlantFactoryViewComponent implements OnInit {
+  public flipped1;
+  public flipped2;
+  public flipped3;
+
   location: GPS = {
     deviceId: "864308043364126",
-    lat: 30.703943,
-    lng: 120.890919,
+    lat: 30.703014,
+    lng: 120.891071,
     locString: "地址：由桥村",
   };
   public device_id = "864308043364126";

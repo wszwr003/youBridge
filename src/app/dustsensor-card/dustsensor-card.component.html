@@ -8,21 +8,24 @@
   </mat-card>
 </div> -->
 <!-- <div *ngIf="device != undefined"> -->
-<mat-card
-  [routerLink]="['/devices/env', device == null ? '' : device.device_no]"
->
+<mat-card>
   <mat-card-header>
     <mat-card-title class="title-left">实时植物生长环境</mat-card-title>
-    <mat-card-title class="title-right"
-      >title
-      <a style="display: inline; position: relative; right: 0px"> </a>
-      <mat-icon
+    <mat-card-title class="title-right">
+      <a style="display: inline; position: relative; right: 0px">设备在线</a>
+      <!-- <mat-icon
         *ngIf="device == null ? true : device.device_state == 0 ? true : false"
         style="display: inline; position: relative; top: 5px"
         >error</mat-icon
       >
       <mat-spinner
         *ngIf="device == null ? false : device.device_state == 1 ? true : false"
+        color="warn"
+        class="title-right"
+        [diameter]="20"
+        style="display: inline; position: relative; right: 0px; top: 1px"
+      ></mat-spinner> -->
+      <mat-spinner
         color="warn"
         class="title-right"
         [diameter]="20"
@@ -34,7 +37,7 @@
     </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <div fxLayout="row warp" fxLayoutAlign="space-around start">
+    <div fxLayout="row warp" fxLayoutAlign="space-around space-around">
       <div
         fxFlex="calc(25%)"
         fxFlex.lt-lg="calc(50%)"

@@ -66,17 +66,17 @@ export class AirsensorCardComponent implements OnChanges, OnDestroy {
                     this.Air_H = this.initMyData.Air_H.toString();
                     this.PM25 = this.initMyData.PM25.toString();
                     this.PM10 = this.initMyData.PM10.toString();
-                    this.VOC = this.initMyData.VOC.toString();
                     this.Noise = this.initMyData.Noise.toString();
                     this.H2S = this.initMyData.H2S.toString();
                     this.Shine = this.initMyData.Shine.toString();
                     this.Speed = this.initMyData.Speed.toString();
                     var unixTimestamp =
-                      this.initMyData.time == undefined
-                        ? new Date()
-                        : new Date(this.initMyData.time.toString());
-
+                    this.initMyData.time == undefined
+                    ? new Date()
+                    : new Date(this.initMyData.time.toString());
+                    
                     this.timeString = unixTimestamp.toLocaleString();
+                    this.VOC = this.initMyData.VOC.toString();
                   } catch (error) {
                     console.log("!!!!", error);
                   }
@@ -92,16 +92,16 @@ export class AirsensorCardComponent implements OnChanges, OnDestroy {
             this.Air_H = this.newestData.Air_H.toString();
             this.PM25 = this.newestData.PM25.toString();
             this.PM10 = this.newestData.PM10.toString();
-            this.VOC = this.newestData.VOC.toString();
             this.Noise = this.newestData.Noise.toString();
             this.H2S = this.newestData.H2S.toString();
             this.Shine = this.newestData.Shine.toString();
             this.Speed = this.newestData.Speed.toString();
             var unixTimestamp =
-              this.newestData.time == undefined
-                ? new Date()
-                : new Date(this.newestData.time * 1000);
+            this.newestData.time == undefined
+            ? new Date()
+            : new Date(this.newestData.time * 1000);
             this.timeString = unixTimestamp.toLocaleString();
+            this.VOC = this.newestData.VOC.toString();
             break;
           }
         }

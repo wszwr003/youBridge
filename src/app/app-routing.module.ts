@@ -13,6 +13,8 @@ import { LiveVideoViewComponent } from "./live-video-view/live-video-view.compon
 import { PhotoGalleryViewComponent } from "./photo-gallery-view/photo-gallery-view.component";
 import { LobsterResourceViewComponent } from "./lobster-resource-view/lobster-resource-view.component";
 import { HistoryViewComponent } from "./history-view/history-view.component";
+import { BrowserModule } from "@angular/platform-browser";
+import { FormsModule } from "@angular/forms";
 const routes: Routes = [
   {
     path: "",
@@ -55,16 +57,6 @@ const routes: Routes = [
         data: { state: "Three" },
       },
       {
-        path: "devices/env",
-        component: MutisensorsViewComponent,
-        data: { state: "One" },
-      },
-      {
-        path: "group/env/:deviceId",
-        component: MutisensorViewComponent,
-        data: { state: "Two" },
-      },
-      {
         path: "devices/env/:deviceId",
         component: MutisensorViewComponent,
         data: { state: "Three" },
@@ -92,7 +84,11 @@ const routes: Routes = [
   { path: "**", redirectTo: "" },
 ];
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot(routes, { useHash: true }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

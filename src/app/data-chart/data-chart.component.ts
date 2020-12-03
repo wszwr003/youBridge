@@ -202,14 +202,22 @@ export class DataChartComponent implements OnInit, OnChanges {
     };
     this.options = {
       colors: [
-        "#888888", //pm25
-        "#e64b3f", //co2
-        "#de932e", //temp
-        "#7dcff8", //humi
-        "#888888", //pm25
-        "#e64b3f", //co2
-        "#de932e", //temp
-        "#7dcff8", //humi
+        // "#888888", //pm25
+        // "#e64b3f", //co2
+        // "#de932e", //temp
+        // "#7dcff8", //humi
+        // "#888888", //pm25
+        // "#e64b3f", //co2
+        // "#de932e", //temp
+        // "#7dcff8", //humi
+        "#2f7ed8",
+        "#0d233a",
+        "#8bbc21",
+        "#910000",
+        "#1aadce",
+        "#492970",
+        "#f28f43",
+        "#77a1e5",
       ],
       plotOptions: {
         spline: {
@@ -229,7 +237,7 @@ export class DataChartComponent implements OnInit, OnChanges {
         },
       },
       chart: {
-        backgroundColor: "#eeeeee",
+        backgroundColor: "#e5e5e5",
         type: "spline",
         height: 550,
       },
@@ -261,13 +269,13 @@ export class DataChartComponent implements OnInit, OnChanges {
             // text: "PM2.5浓度(μg/m3)",
             text: "",
             style: {
-              color: "#888888", //pm25
+              color: "#2f7ed8", //pm25
             },
           },
           labels: {
             format: "{value}",
             style: {
-              color: "#888888", //pm25
+              color: "#2f7ed8", //pm25
             },
           },
           minTickInterval: 1,
@@ -280,13 +288,13 @@ export class DataChartComponent implements OnInit, OnChanges {
             // text: "二氧化碳浓度(ppm)",
             text: "",
             style: {
-              color: "#e64b3f", //co2
+              color: "#0d233a", //co2
             },
           },
           labels: {
             format: "{value}",
             style: {
-              color: "#e64b3f", //co2
+              color: "#0d233a", //co2
             },
           },
           minTickInterval: 1,
@@ -300,13 +308,13 @@ export class DataChartComponent implements OnInit, OnChanges {
             // text: "温度(°C)",
             text: "",
             style: {
-              color: "#de932e", //temp
+              color: "#8bbc21", //temp
             },
           },
           labels: {
             format: "{value}",
             style: {
-              color: "#de932e", //temp
+              color: "#8bbc21", //temp
             },
           },
           minTickInterval: 1,
@@ -320,13 +328,13 @@ export class DataChartComponent implements OnInit, OnChanges {
             // text: "湿度(%)",
             text: "",
             style: {
-              color: "#7dcff8", //humi
+              color: "#910000", //humi
             },
           },
           labels: {
             format: "{value}",
             style: {
-              color: "#7dcff8", //humi
+              color: "#910000", //humi
             },
           },
           minTickInterval: 1,
@@ -340,13 +348,13 @@ export class DataChartComponent implements OnInit, OnChanges {
             // text: "PM2.5浓度(μg/m3)",
             text: "",
             style: {
-              color: "#666666", //pm25
+              color: "#1aadce", //pm25
             },
           },
           labels: {
             format: "{value}",
             style: {
-              color: "#666666", //pm25
+              color: "#1aadce", //pm25
             },
           },
           minTickInterval: 1,
@@ -360,13 +368,13 @@ export class DataChartComponent implements OnInit, OnChanges {
             // text: "二氧化碳浓度(ppm)",
             text: "",
             style: {
-              color: "#e64b3f", //co2
+              color: "#492970", //co2
             },
           },
           labels: {
             format: "{value}",
             style: {
-              color: "#e64b3f", //co2
+              color: "#492970", //co2
             },
           },
           minTickInterval: 1,
@@ -381,13 +389,13 @@ export class DataChartComponent implements OnInit, OnChanges {
             // text: "温度(°C)",
             text: "",
             style: {
-              color: "#de932e", //temp
+              color: "#f28f43", //temp
             },
           },
           labels: {
             format: "{value}",
             style: {
-              color: "#de932e", //temp
+              color: "#f28f43", //temp
             },
           },
           minTickInterval: 1,
@@ -402,13 +410,13 @@ export class DataChartComponent implements OnInit, OnChanges {
             // text: "湿度(%)",
             text: "",
             style: {
-              color: "#7dcff8", //humi
+              color: "#77a1e5", //humi
             },
           },
           labels: {
             format: "{value}",
             style: {
-              color: "#7dcff8", //humi
+              color: "#77a1e5", //humi
             },
           },
           minTickInterval: 1,
@@ -418,7 +426,7 @@ export class DataChartComponent implements OnInit, OnChanges {
       ],
       series: [
         {
-          name: "温度(℃)",
+          name: "空气温度(℃)",
           turboThreshold: 50000,
           yAxis: 0,
           data: [
@@ -426,7 +434,7 @@ export class DataChartComponent implements OnInit, OnChanges {
           ],
         },
         {
-          name: "湿度(%)",
+          name: "空气湿度(%)",
           turboThreshold: 50000,
           yAxis: 1,
           data: [
@@ -466,7 +474,7 @@ export class DataChartComponent implements OnInit, OnChanges {
           ],
         },
         {
-          name: "营养液pH值()",
+          name: "营养液pH值",
           turboThreshold: 50000,
           yAxis: 6,
           data: [
@@ -474,7 +482,7 @@ export class DataChartComponent implements OnInit, OnChanges {
           ],
         },
         {
-          name: "营养液电导率()",
+          name: "营养液电导率",
           turboThreshold: 50000,
           yAxis: 7,
           data: [

@@ -13,7 +13,7 @@ export class LiveVideoComponent implements OnInit {
   public player: videojs.Player;
   public sliderVideos = [
     [
-      "https://mdbootstrap.com/img/video/Tropical.mp4",
+      "../../assets/lob-camera.jpg",
       "Tropical",
       "mdbootstrap.com/img/video/Tropical",
     ],

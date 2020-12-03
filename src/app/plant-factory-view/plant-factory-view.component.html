@@ -14,26 +14,66 @@
           fxLayoutGap="20px"
           fxLayoutAlign="space-around"
         >
-          <mat-card fxFlex="calc(50%-20px)">
-            <mat-card-header>
-              <!-- <div mat-card-avatar class="example-header-image"></div> -->
-              <mat-card-title>电磁阀1</mat-card-title>
-              <mat-card-subtitle> </mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content class="summary-text">{{
-              "已关闭"
-            }}</mat-card-content>
-          </mat-card>
-          <mat-card fxFlex="calc(50%-20px)">
-            <mat-card-header>
-              <!-- <div mat-card-avatar class="example-header-image"></div> -->
-              <mat-card-title>电磁阀2</mat-card-title>
-              <mat-card-subtitle> </mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content class="summary-text">{{
-              "已关闭"
-            }}</mat-card-content>
-          </mat-card>
+          <div class="card-container" style="height: 110px">
+            <div
+              class="flippable-card"
+              [ngClass]="{ flipped1: flipped1 }"
+              (click)="flipped1 = !flipped1"
+            >
+              <mat-card class="" fxFlex="calc(50%-20px)">
+                <mat-card-header>
+                  <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                  <mat-card-title>电磁阀1开关</mat-card-title>
+                  <mat-card-subtitle> </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content class="summary-text">{{
+                  "已关闭"
+                }}</mat-card-content>
+              </mat-card>
+              <mat-card class="back" fxFlex="calc(50%-20px)">
+                <mat-card-header>
+                  <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                  <mat-card-title>电磁阀1开关</mat-card-title>
+                  <mat-card-subtitle> </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content
+                  class="summary-text"
+                  style="color: limegreen"
+                  >{{ "已打开" }}</mat-card-content
+                >
+              </mat-card>
+            </div>
+          </div>
+          <div class="card-container">
+            <div
+              class="flippable-card"
+              [ngClass]="{ flipped2: flipped2 }"
+              (click)="flipped2 = !flipped2"
+            >
+              <mat-card class="" fxFlex="calc(50%-20px)">
+                <mat-card-header>
+                  <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                  <mat-card-title>电磁阀2开关</mat-card-title>
+                  <mat-card-subtitle> </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content class="summary-text">{{
+                  "已关闭"
+                }}</mat-card-content>
+              </mat-card>
+              <mat-card class="back" fxFlex="calc(50%-20px)">
+                <mat-card-header>
+                  <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                  <mat-card-title>电磁阀2开关</mat-card-title>
+                  <mat-card-subtitle> </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content
+                  class="summary-text"
+                  style="color: limegreen"
+                  >{{ "已打开" }}</mat-card-content
+                >
+              </mat-card>
+            </div>
+          </div>
         </div>
       </div>
       <app-dustsensor-card
@@ -47,16 +87,57 @@
         [newestData]="_sensor5in1Service.subSensorData"
       ></app-mutisensor-card> -->
     </div>
-    <!-- TODO:baidu地图显示问题 -->
-    <mat-card fxFlex="calc(50%-20px)">
+    <!-- <div class="card-container">
+      <div
+        class="flippable-card"
+        [ngClass]="{ flipped3: flipped3 }"
+        (click)="flipped3 = !flipped3"
+      >
+        <mat-card fxFlex="calc(50%-20px)" class="">
+          <mat-card-header>
+            <mat-card-title class="title-left">实时监控</mat-card-title>
+            <mat-card-title class="title-right">
+              <a style="display: inline; position: relative; right: 0px"></a>
+              <mat-icon style="display: inline; position: relative; top: 5px"
+                >cached</mat-icon
+              >
+            </mat-card-title>
+            <mat-card-subtitle></mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div fxLayoutAlign="center center" style="overflow: hidden">
+              <app-live-video></app-live-video>
+            </div>
+          </mat-card-content>
+        </mat-card>
+        <mat-card fxFlex="calc(50%-20px)" class="back">
+          <mat-card-header>
+            <mat-card-title class="title-left">平台简介</mat-card-title>
+            <mat-card-title class="title-right">
+              <a style="display: inline; position: relative; right: 0px"></a>
+              <mat-icon style="display: inline; position: relative; top: 5px"
+                >cached</mat-icon
+              >
+            </mat-card-title>
+            <mat-card-subtitle></mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div fxLayoutAlign="center center" style="overflow: hidden">
+              <app-live-video></app-live-video>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div> -->
+    <mat-card fxFlex="calc(50%-20px)" class="">
       <mat-card-header>
-        <!-- <div mat-card-avatar class="example-header-image"></div> -->
-        <mat-card-title>实时监控</mat-card-title>
+        <mat-card-title class="title-left">实时监控</mat-card-title>
         <mat-card-subtitle></mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
         <div fxLayoutAlign="center center" style="overflow: hidden">
-          <app-live-video></app-live-video>
+          <!-- <app-live-video></app-live-video> -->
+          <app-fake-camera2></app-fake-camera2>
         </div>
       </mat-card-content>
     </mat-card>

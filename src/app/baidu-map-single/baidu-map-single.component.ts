@@ -67,24 +67,24 @@ export class BaiduMapSingleComponent implements OnInit, OnChanges {
 
     this.mapTypeOpts = {
       type: MapTypeControlType.BMAP_MAPTYPE_CONTROL_HORIZONTAL,
-      mapTypes: [MapTypeEnum.BMAP_NORMAL_MAP, MapTypeEnum.BMAP_SATELLITE_MAP],
+      mapTypes: [MapTypeEnum.BMAP_NORMAL_MAP, MapTypeEnum.BMAP_HYBRID_MAP],
     };
     this.marker = {
       options: {
         title: "",
       },
       point: {
-        lat: 30.5761,
-        lng: 120.678724,
+        lat: 30.703014,
+        lng: 120.891071,
       },
     };
     this.options = {
       centerAndZoom: {
-        lat: 30.5761, //   - ^  +  V
-        lng: 120.678624, // - >  +  <
+        lat: 30.703014, //   - ^  +  V
+        lng: 120.891071, // - >  +  <
         zoom: 18,
       },
-      mapType: MapTypeEnum.BMAP_NORMAL_MAP,
+      mapType: MapTypeEnum.BMAP_HYBRID_MAP,
       //enableScrollWheelZoom: true,
       enableKeyboard: true,
     };

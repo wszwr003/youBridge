@@ -62,6 +62,9 @@ import { LobsterResourceViewComponent } from "./lobster-resource-view/lobster-re
 import { AirsensorCardComponent } from "./airsensor-card/airsensor-card.component";
 import { DustsensorCardComponent } from "./dustsensor-card/dustsensor-card.component";
 import { HistoryViewComponent } from "./history-view/history-view.component";
+import { AirChartComponent } from './air-chart/air-chart.component';
+import { FakeCameraComponent } from './fake-camera/fake-camera.component';
+import { FakeCamera2Component } from './fake-camera2/fake-camera2.component';
 
 // export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
 //   // hostname: "127.0.0.1",
@@ -109,6 +112,9 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     AirsensorCardComponent,
     DustsensorCardComponent,
     HistoryViewComponent,
+    AirChartComponent,
+    FakeCameraComponent,
+    FakeCamera2Component,
   ],
   imports: [
     BrowserModule,

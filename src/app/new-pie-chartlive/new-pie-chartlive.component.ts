@@ -1,6 +1,7 @@
 import { Component, OnInit, SimpleChanges, Input } from "@angular/core";
 import * as Highcharts from "highcharts";
-
+import highcharts3D from "highcharts/highcharts-3d.src";
+highcharts3D(Highcharts);
 @Component({
   selector: "app-new-pie-chartlive",
   templateUrl: "./new-pie-chartlive.component.html",
@@ -16,7 +17,7 @@ export class NewPieChartliveComponent implements OnInit {
       enabled: false,
     },
     chart: {
-      backgroundColor: "#eeeeee",
+      backgroundColor: "#e5e5e5",
       type: "pie",
       height: 350,
       width: 300,

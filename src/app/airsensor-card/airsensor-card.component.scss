@@ -23,15 +23,15 @@
 .data-icon {
   position: relative;
   top: 10px;
-  left: 0px;
-  font-size: 80px;
+  left: -5px;
+  font-size: 75px;
   font-weight: light;
 }
 .data-label {
   position: relative;
   top: -75px;
-  left: 90px;
-  font-size: 25px;
+  left: 75px;
+  font-size: 20px;
   font-weight: bold;
   color: #aaaaaa;
 }
@@ -40,7 +40,7 @@
   position: relative;
 
   top: -75px;
-  left: 90px;
+  left: 75px;
   font-size: 50px;
   font-weight: light;
   color: rgb(40, 63, 82);

@@ -8,22 +8,24 @@
   </mat-card>
 </div> -->
 <!-- <div *ngIf="device != undefined"> -->
-<mat-card
-  [routerLink]="['/devices/env', device == null ? '' : device.device_no]"
-  style="height: 550px"
->
+<mat-card>
   <mat-card-header>
     <mat-card-title class="title-left">实时环境数据</mat-card-title>
-    <mat-card-title class="title-right"
-      >title
-      <a style="display: inline; position: relative; right: 0px"> </a>
-      <mat-icon
+    <mat-card-title class="title-right">
+      <a style="display: inline; position: relative; right: 0px">设备在线</a>
+      <!-- <mat-icon
         *ngIf="device == null ? true : device.device_state == 0 ? true : false"
         style="display: inline; position: relative; top: 5px"
         >error</mat-icon
       >
       <mat-spinner
         *ngIf="device == null ? false : device.device_state == 1 ? true : false"
+        color="warn"
+        class="title-right"
+        [diameter]="20"
+        style="display: inline; position: relative; right: 0px; top: 1px"
+      ></mat-spinner> -->
+      <mat-spinner
         color="warn"
         class="title-right"
         [diameter]="20"
@@ -35,11 +37,11 @@
     </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <div fxLayout="row warp" fxLayoutAlign="space-around start">
+    <div fxLayout="row warp" fxLayoutAlign="space-around space-around">
       <div fxFlex="calc(33%)" fxFlex.xs="calc(50%)">
         <mat-icon class="data-icon" style="color: #e64b3f">wb_sunny</mat-icon>
         <div class="data-label">温度</div>
-        <div class="data-value">{{ Air_T }}<a class="unit">℃</a></div>
+        <div class="data-value">{{ Air_T}}<a class="unit">℃</a></div>
       </div>
       <div fxFlex="calc(33%)" fxFlex.xs="calc(50%)">
         <mat-icon class="data-icon" style="color: #0699e2">opacity</mat-icon>
@@ -49,21 +51,21 @@
       <div fxFlex="calc(33%)" fxFlex.xs="calc(50%)">
         <mat-icon class="data-icon" style="color: #888888">grain</mat-icon>
         <div class="data-label">PM2.5</div>
-        <div class="data-value">{{ PM25 }}<a class="unit">℃</a></div>
+        <div class="data-value">{{ PM25 }}<a class="unit"></a></div>
       </div>
       <div fxFlex="calc(33%)" fxFlex.xs="calc(50%)">
         <mat-icon class="data-icon" style="color: #444444"
           >scatter_plot</mat-icon
         >
         <div class="data-label">PM10</div>
-        <div class="data-value">{{ PM10 }}<a class="unit">%</a></div>
+        <div class="data-value">{{ PM10 }}<a class="unit"></a></div>
       </div>
       <div fxFlex="calc(33%)" fxFlex.xs="calc(50%)">
         <mat-icon class="data-icon" style="color: rgb(28, 170, 28)"
           >filter_list</mat-icon
         >
         <div class="data-label">VOC</div>
-        <div class="data-value">{{ VOC }}<a class="unit">ppm</a></div>
+        <div class="data-value">{{ VOC }}<a class="unit"></a></div>
       </div>
       <div fxFlex="calc(33%)" fxFlex.xs="calc(50%)">
         <mat-icon class="data-icon" style="color: rgb(250, 112, 0)"
@@ -75,7 +77,7 @@
       <div fxFlex="calc(33%)" fxFlex.xs="calc(50%)">
         <mat-icon class="data-icon">bubble_chart</mat-icon>
         <div class="data-label">H<sub>2</sub>S</div>
-        <div class="data-value">{{ H2S }}<a class="unit">ppm</a></div>
+        <div class="data-value">{{ H2S }}<a class="unit"></a></div>
       </div>
       <div fxFlex="calc(33%)" fxFlex.xs="calc(50%)">
         <mat-icon class="data-icon" style="color: rgb(252, 208, 88)"

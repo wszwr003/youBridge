@@ -9,7 +9,10 @@ import { SensorData } from "../services/sensor5in1";
   styleUrls: ["./lobster-resource-view.component.scss"],
 })
 export class LobsterResourceViewComponent implements OnInit {
-  public device_id = "861011047485656";
+  public flipped1;
+  public flipped2;
+  public flipped3;
+  public device_id = "";
   constructor(
     public _deviceService: DeviceService,
     public _sensor5in1Service: Sensor5in1Service

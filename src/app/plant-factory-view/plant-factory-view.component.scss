@@ -3,6 +3,21 @@
   width: 100%;
   //height: 100%;
 }
+
+.title-left {
+  color: rgb(40, 63, 82);
+  display: inline;
+  font-weight: light;
+  font-size: 15px;
+}
+.title-right {
+  color: rgb(40, 63, 82);
+  display: inline;
+  float: right;
+  font-weight: light;
+  font-size: 15px;
+}
+
 .view-name {
   position: relative;
   top: 10px;
@@ -49,3 +64,51 @@
 .pie-chart {
   overflow: hidden;
 }
+
+//card flip
+.card-container {
+  width: 100%;
+  position: relative;
+  -webkit-perspective: 500px;
+  perspective: 500px;
+}
+
+.flippable-card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.flippable-card mat-card {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.flippable-card app-data-table {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.flippable-card .back {
+  background: #f0f0f0;
+  transform: rotateY(180deg);
+}
+
+.flippable-card.flipped1 {
+  transform: rotateY(180deg);
+}
+.flippable-card.flipped2 {
+  transform: rotateY(180deg);
+}
+.flippable-card.flipped3 {
+  transform: rotateY(180deg);
+}
+//card flip

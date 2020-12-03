@@ -28,26 +28,66 @@
           fxLayoutGap="20px"
           fxLayoutAlign="space-around"
         >
-          <mat-card fxFlex="calc(50%-20px)">
-            <mat-card-header>
-              <!-- <div mat-card-avatar class="example-header-image"></div> -->
-              <mat-card-title>电磁阀一</mat-card-title>
-              <mat-card-subtitle> </mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content class="summary-text">{{
-              "已关闭"
-            }}</mat-card-content>
-          </mat-card>
-          <mat-card fxFlex="calc(50%-20px)">
-            <mat-card-header>
-              <!-- <div mat-card-avatar class="example-header-image"></div> -->
-              <mat-card-title>电磁阀二</mat-card-title>
-              <mat-card-subtitle> </mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content class="summary-text">{{
-              "已关闭"
-            }}</mat-card-content>
-          </mat-card>
+          <div class="card-container" style="height: 110px">
+            <div
+              class="flippable-card"
+              [ngClass]="{ flipped1: flipped1 }"
+              (click)="flipped1 = !flipped1"
+            >
+              <mat-card class="" fxFlex="calc(50%-20px)">
+                <mat-card-header>
+                  <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                  <mat-card-title>电磁阀1开关</mat-card-title>
+                  <mat-card-subtitle> </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content class="summary-text">{{
+                  "已关闭"
+                }}</mat-card-content>
+              </mat-card>
+              <mat-card class="back" fxFlex="calc(50%-20px)">
+                <mat-card-header>
+                  <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                  <mat-card-title>电磁阀1开关</mat-card-title>
+                  <mat-card-subtitle> </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content
+                  class="summary-text"
+                  style="color: limegreen"
+                  >{{ "已打开" }}</mat-card-content
+                >
+              </mat-card>
+            </div>
+          </div>
+          <div class="card-container">
+            <div
+              class="flippable-card"
+              [ngClass]="{ flipped2: flipped2 }"
+              (click)="flipped2 = !flipped2"
+            >
+              <mat-card class="" fxFlex="calc(50%-20px)">
+                <mat-card-header>
+                  <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                  <mat-card-title>电磁阀2开关</mat-card-title>
+                  <mat-card-subtitle> </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content class="summary-text">{{
+                  "已关闭"
+                }}</mat-card-content>
+              </mat-card>
+              <mat-card class="back" fxFlex="calc(50%-20px)">
+                <mat-card-header>
+                  <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                  <mat-card-title>电磁阀2开关</mat-card-title>
+                  <mat-card-subtitle> </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content
+                  class="summary-text"
+                  style="color: limegreen"
+                  >{{ "已打开" }}</mat-card-content
+                >
+              </mat-card>
+            </div>
+          </div>
         </div>
       </div>
       <mat-card class="pie-chart">
@@ -76,7 +116,12 @@
           </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content overflow="hidden">
-          <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-around">
+          <div
+            fxLayout="row"
+            fxLayout.xs="column"
+            fxLayoutAlign="space-around"
+            fxLayoutAlign.xs="center center"
+          >
             <app-new-pie-chartdevice
               [num]="_deviceService.deviceNum + 5"
             ></app-new-pie-chartdevice>
@@ -97,8 +142,9 @@
         <mat-card-subtitle></mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <div fxLayoutAlign="center center">
-          <app-live-video></app-live-video>
+        <div fxLayoutAlign="center center" style="overflow: hidden">
+          <!-- <app-live-video></app-live-video> -->
+          <app-fake-camera></app-fake-camera>
         </div>
       </mat-card-content>
     </mat-card>

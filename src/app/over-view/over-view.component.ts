@@ -12,8 +12,8 @@ import { ActivatedRoute } from "@angular/router";
 export class OverViewComponent implements OnInit, OnDestroy, OnChanges {
   location: GPS = {
     deviceId: "864308043896812",
-    lat: 30.703943,
-    lng: 120.890919,
+    lat: 30.703014,
+    lng: 120.891071,
     locString: "地址：由桥村",
   };
   public device_id = "864308043896812";

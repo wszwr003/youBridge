@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, SimpleChanges } from "@angular/core";
 import * as Highcharts from "highcharts";
-
+import highcharts3D from "highcharts/highcharts-3d.src";
+highcharts3D(Highcharts);
 @Component({
   selector: "app-new-line-chart",
   templateUrl: "./new-line-chart.component.html",
@@ -17,7 +18,7 @@ export class NewLineChartComponent implements OnInit {
     //FAO:放到此处初始化,如果在声明的时候初始化,会出现INPUT尚未传值的情况.
     this.options = {
       chart: {
-        backgroundColor: "#eeeeee",
+        backgroundColor: "#e5e5e5",
         type: "column",
         options3d: {
           enabled: true,
@@ -44,13 +45,13 @@ export class NewLineChartComponent implements OnInit {
 
       xAxis: {
         categories: [
-          "2020年11月3日",
-          "2020年11月4日",
-          "2020年11月5日",
-          "2020年11月6日",
-          "2020年11月7日",
-          "2020年11月8日",
-          "2020年11月9日",
+          "2020年11月19日",
+          "2020年11月20日",
+          "2020年11月21日",
+          "2020年11月22日",
+          "2020年11月23日",
+          "2020年11月24日",
+          "2020年11月25日",
         ],
         labels: {
           x: -10,
