@@ -11,8 +11,10 @@ export class Sensor5in1Service implements OnDestroy {
   public subSensorData: SensorData;
   private dataTopic = "data";
   private subscription: Subscription;
-  private sensorDataUrl = "/sensor5in1/data";
-  private sensorDatasUrl = "/sensor5in1/datas";
+  private airDataUrl = "/air/data";
+  private airDatasUrl = "/air/datas";
+  private dustDataUrl = "/dust/data";
+  private dustDatasUrl = "/dust/datas";
   private sensorsDataUrl = "/sensor5in1/all/data";
   private testDeviceId = { device_id: "861011047486233" };
 
@@ -31,9 +33,9 @@ export class Sensor5in1Service implements OnDestroy {
       .observe(this.dataTopic)
       .subscribe((message: IMqttMessage) => {
         this.subSensorData = JSON.parse(message.payload.toString());
-        // console.log(">>>>Sensor5in1Service>>>>");
-        // console.log("subSensorData:", this.subSensorData);
-        // console.log("<<<<Sensor5in1Service<<<<");
+        console.log(">>>>Sensor5in1Service>>>>");
+        console.log("subSensorData:", this.subSensorData);
+        console.log("<<<<Sensor5in1Service<<<<");
       });
     console.log("mqtt data subscribe start!");
     ////Test API
@@ -56,12 +58,20 @@ export class Sensor5in1Service implements OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  getNewestSensorData(deviceId: object): Observable<Object> {
-    const url = this.HTTP_SERVICE_OPTIONS.URL + this.sensorDataUrl;
+  getAirSensorData(deviceId: object): Observable<Object> {
+    const url = this.HTTP_SERVICE_OPTIONS.URL + this.airDataUrl;
     return this._httpClient.post(url, deviceId);
   }
-  getSensorDatas(deviceId: object): Observable<Object> {
-    const url = this.HTTP_SERVICE_OPTIONS.URL + this.sensorDatasUrl;
+  getAirSensorDatas(deviceId: object): Observable<Object> {
+    const url = this.HTTP_SERVICE_OPTIONS.URL + this.airDatasUrl;
+    return this._httpClient.post(url, deviceId);
+  }
+  getDustSensorData(deviceId: object): Observable<Object> {
+    const url = this.HTTP_SERVICE_OPTIONS.URL + this.dustDataUrl;
+    return this._httpClient.post(url, deviceId);
+  }
+  getDustSensorDatas(deviceId: object): Observable<Object> {
+    const url = this.HTTP_SERVICE_OPTIONS.URL + this.dustDatasUrl;
     return this._httpClient.post(url, deviceId);
   }
   getNewestSensorsData(): Observable<Object> {

@@ -57,7 +57,7 @@ export class AirsensorCardComponent implements OnChanges, OnDestroy {
               this.subscription.unsubscribe();
             } catch {}
             this.subscription = this._sensor5in1Service
-              .getNewestSensorData({ device_id: this.deviceId })
+              .getAirSensorData({ device_id: this.deviceId })
               .subscribe((data: SensorData[]) => {
                 this.initMyData = data[0];
                 setTimeout(() => {
