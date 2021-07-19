@@ -65,7 +65,6 @@ export class NewPieChartdeviceComponent implements OnInit {
 
   ngOnInit() {
     //FAO:放到此处初始化,如果在声明的时候初始化,会出现INPUT尚未传值的情况.
-    console.log("!!!!!!!!!!!!!!!!!!!");
     this.dataChart = Highcharts.chart("container1", this.chartOptions);
   }
   ngOnChanges(changes: SimpleChanges): void {

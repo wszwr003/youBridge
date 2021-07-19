@@ -26,7 +26,7 @@ export class MutisensorViewComponent implements OnInit {
     this.route.paramMap.subscribe((params) => {
       this.deviceId = params.get("deviceId");
       this.historyDatas = this._sensor5in1Service
-        .getSensorDatas({ device_id: this.deviceId })
+        .getAirSensorDatas({ device_id: this.deviceId })
         .subscribe((datas: SensorData[]) => {
           this.historyDatas = datas;
           // console.log("!!historyDatas:", datas);

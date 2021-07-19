@@ -50,7 +50,7 @@ export class OverViewComponent implements OnInit, OnDestroy, OnChanges {
     //定时任务:获取所有设备参数和状态 FAO:destory
     this.route.paramMap.subscribe((params) => {
       this.historyDatas = this._sensor5in1Service
-        .getSensorDatas({ device_id: this.device_id })
+        .getAirSensorDatas({ device_id: this.device_id })
         .subscribe((datas: SensorData[]) => {
           this.historyDatas = datas;
           // console.log("!!historyDatas:", datas);

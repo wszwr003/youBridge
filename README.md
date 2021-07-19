@@ -1,6 +1,6 @@
 # CloudAngular
 
-云平台前端
+由桥云平台前端
 
 ## project setup
 

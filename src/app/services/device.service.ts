@@ -18,7 +18,8 @@ export class DeviceService implements OnDestroy {
   private devicesUrl = "/device/all/info";
   private HTTP_SERVICE_OPTIONS: any = {
     // URL: "http://127.0.0.1:4000",
-    URL: "http://116.62.151.59:4000",
+    //URL: "http://116.62.151.59:4000",
+    URL: "http://47.101.57.243:4000",
   };
   private httpOptions = {
     headers: new HttpHeaders({ "Content-Type": "application/json" }),

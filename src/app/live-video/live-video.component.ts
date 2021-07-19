@@ -19,7 +19,9 @@ export class LiveVideoComponent implements OnInit {
     ],
   ];
   url =
-    "https://hls01open.ys7.com/openlive/d87fa54269d34203910b00aa1198d735.m3u8";
+    "https://hls01open.ys7.com/openlive/108ebba5bc7a449880749f49e922d8bd.m3u8";
+  //"http://hls01open.ys7.com/openlive/5c8b9b7ec59744dd814671b49116fb57.hd.m3u8";
+  //"https://hls01open.ys7.com/openlive/d87fa54269d34203910b00aa1198d735.m3u8";
 
   constructor() {}
 
